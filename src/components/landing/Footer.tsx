@@ -21,11 +21,11 @@ const Footer = () => {
               analyze, and improve your trading performance.
             </p>
             <a
-              href="mailto:support@bobitrades.com"
+              href="mailto:amdevfred@gmail.com"
               className="inline-flex items-center gap-2 text-primary hover:text-primary-soft transition-colors"
             >
               <Mail className="w-4 h-4" />
-              support@bobitrades.com
+              amdevfred@gmail.com
             </a>
           </div>
 
@@ -49,14 +49,6 @@ const Footer = () => {
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   How It Works
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#testimonials"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Testimonials
                 </a>
               </li>
               <li>
