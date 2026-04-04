@@ -1,146 +1,92 @@
-import { motion } from "framer-motion";
-import { ArrowRight, TrendingUp, Shield, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+const Pulse = () => <div className="bfx-pulse" />;
 
-import screenshot1 from "@/assets/screenshots/screenshot-1.jpg";
-import screenshot2 from "@/assets/screenshots/screenshot-2.jpg";
-import screenshot3 from "@/assets/screenshots/screenshot-3.jpg";
-import screenshot4 from "@/assets/screenshots/screenshot-4.jpg";
-import screenshot5 from "@/assets/screenshots/screenshot-5.jpg";
-import screenshot6 from "@/assets/screenshots/screenshot-6.jpg";
-
-const screenshots = [screenshot1, screenshot2, screenshot3, screenshot4, screenshot5, screenshot6];
-
-const Hero = () => {
+export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-gradient-hero overflow-hidden flex items-center justify-center">
-      {/* Background Glow Effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-[100px] animate-pulse-glow" />
+    <section className="bfx-hero">
+      <div className="bfx-hero-grid" />
+      <div className="bfx-hero-glow" />
+      <div className="bfx-hero-glow2" />
+      <div className="bfx-hero-inner">
+        {/* ── LEFT ── */}
+        <div>
+          <div className="bfx-hero-eyebrow"><Pulse /><span className="bfx-eyebrow-text">Signal engine · LIVE</span></div>
+          <h1 className="bfx-h1">Trade with<br /><em>algorithmic</em><br />precision.</h1>
+          <p className="bfx-hero-sub">
+            BobiFX detects HTF supply &amp; demand zones, fires entry signals at the LTF rejection candle,
+            and executes trades directly on your MT4/MT5 broker — fully automated.
+          </p>
+          <div className="bfx-hero-actions">
+            <a href="https://app.bobifx.com/login" className="bfx-btn-hero">Start free <span style={{ fontSize: 18 }}>→</span></a>
+            <a href="#backtest" className="bfx-btn-hero-ghost">📊 View backtest results</a>
+          </div>
+          <div className="bfx-hero-trust">
+            <div className="bfx-trust-item"><span className="bfx-trust-val">+944R</span> backtested</div>
+            <div className="bfx-trust-sep" />
+            <div className="bfx-trust-item"><span className="bfx-trust-val">1,249</span> trades</div>
+            <div className="bfx-trust-sep" />
+            <div className="bfx-trust-item"><span className="bfx-trust-val">1.89</span> profit factor</div>
+            <div className="bfx-trust-sep" />
+            <div className="bfx-trust-item"><span className="bfx-trust-val">11</span> months</div>
+          </div>
+        </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col items-center justify-center py-16 lg:py-24 gap-12 lg:gap-16">
-          {/* Center Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center max-w-3xl"
-          >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-6"
-            >
-              <TrendingUp className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-muted-foreground">
-                Trade Smarter, Not Harder
-              </span>
-            </motion.div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-foreground leading-tight mb-6">
-              Master Your{" "}
-              <span className="text-gradient-primary">Trading</span>{" "}
-              Journey
-            </h1>
-
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-              Track, analyze, and improve your trades with powerful analytics.
-              BobiTrades is your personal trading journal designed to help you
-              become a consistently profitable trader.
-            </p>
-
-            {/* Feature Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-border">
-                <Zap className="w-4 h-4 text-accent" />
-                <span className="text-sm text-muted-foreground">Fast Logging</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-border">
-                <TrendingUp className="w-4 h-4 text-primary" />
-                <span className="text-sm text-muted-foreground">Analytics</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-border">
-                <Shield className="w-4 h-4 text-trust" />
-                <span className="text-sm text-muted-foreground">Secure Data</span>
-              </div>
+        {/* ── RIGHT: Signal feed mockup ── */}
+        <div className="bfx-hero-right">
+          <div className="bfx-mockup">
+            <div className="bfx-mockup-bar">
+              <div className="bfx-mockup-dots"><div className="bfx-mockup-dot"/><div className="bfx-mockup-dot"/><div className="bfx-mockup-dot"/></div>
+              <span className="bfx-mockup-ttl">SIGNAL FEED</span>
+              <div className="bfx-mockup-live"><Pulse />LIVE</div>
             </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="accent" size="xl" asChild>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.devfred.bobitradesapp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  Download Free
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-              </Button>
-              <Button variant="glass" size="xl" asChild>
-                <a href="#features">Learn More</a>
-              </Button>
-            </div>
-          </motion.div>
-
-          {/* App Screenshots Showcase */}
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="w-full max-w-6xl"
-          >
-            <div className="relative">
-              {/* Glow behind screenshots */}
-              <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full" />
-              
-              {/* Screenshots Grid */}
-              <div className="relative grid grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4">
-                {screenshots.map((screenshot, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                    className="relative group"
-                  >
-                    <div className="overflow-hidden rounded-xl sm:rounded-2xl border border-border/50 shadow-card bg-card/50 backdrop-blur-sm">
-                      <img
-                        src={screenshot}
-                        alt={`BobiTrades App Screenshot ${index + 1}`}
-                        className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
+            <div className="bfx-mockup-body">
+              {[
+                { pair: "XAU/USD", dir: "LONG",  tf: "1H/5M",  e:"2,318.40", sl:"2,311.20", tp:"2,339.80", rr:"3.0R", status:<><Pulse />TRIGGERED · London</>,  statusColor: "var(--green)", rrColor: "var(--gold)" },
+                { pair: "EUR/USD", dir: "SHORT", tf: "30M/5M", e:"1.08842",  sl:"1.08960",  tp:"1.08370",  rr:"4.0R", status:"◆ TP1 HIT · Moving to BE",         statusColor: "var(--gold)", rrColor: "var(--green)" },
+                { pair: "GBP/USD", dir: "LONG",  tf: "1H/5M",  e:"1.26310",  sl:"1.26148",  tp:"1.26960",  rr:"4.0R", status:"◎ WATCHING · New York",             statusColor: "var(--muted)", rrColor: "var(--gold)" },
+              ].map((s, i) => (
+                <div key={i} className="bfx-signal" style={{ animationDelay: `${i * 0.12}s` }}>
+                  <div>
+                    <div className="bfx-sig-top">
+                      <span className="bfx-sig-pair">{s.pair}</span>
+                      <span className={`bfx-sig-dir bfx-${s.dir.toLowerCase()}`}>{s.dir}</span>
+                      <span className="bfx-sig-tf">{s.tf}</span>
                     </div>
-                  </motion.div>
-                ))}
+                    <div className="bfx-sig-levels">
+                      <span className="bfx-sig-lvl">E <span>{s.e}</span></span>
+                      <span className="bfx-sig-lvl">SL <span>{s.sl}</span></span>
+                      <span className="bfx-sig-lvl">TP <span>{s.tp}</span></span>
+                    </div>
+                    <div className="bfx-sig-status" style={{ color: s.statusColor }}>{s.status}</div>
+                  </div>
+                  <div>
+                    <div className="bfx-sig-rr" style={{ color: s.rrColor }}>{s.rr}</div>
+                    <div className="bfx-sig-rr-lbl">R:R RATIO</div>
+                  </div>
+                </div>
+              ))}
+
+              {/* Mini equity curve */}
+              <div className="bfx-mini-eq">
+                <div className="bfx-mini-eq-head">
+                  <span className="bfx-mini-eq-lbl">RUNNING P&amp;L (R)</span>
+                  <span className="bfx-mini-eq-val">+18.4R</span>
+                </div>
+                <svg viewBox="0 0 320 56" width="100%" style={{ display: "block" }}>
+                  <defs>
+                    <linearGradient id="mEqG" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#e6b800" stopOpacity={0.28}/>
+                      <stop offset="100%" stopColor="#e6b800" stopOpacity={0}/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,50 L22,47 L44,40 L66,43 L88,34 L110,38 L132,26 L154,30 L176,18 L198,22 L220,12 L242,16 L264,8 L286,11 L320,4 L320,56 L0,56Z" fill="url(#mEqG)"/>
+                  <path d="M0,50 L22,47 L44,40 L66,43 L88,34 L110,38 L132,26 L154,30 L176,18 L198,22 L220,12 L242,16 L264,8 L286,11 L320,4" fill="none" stroke="#e6b800" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="320" cy="4" r="3.5" fill="#e6b800"/>
+                </svg>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
-      >
-        <span className="text-xs text-muted-foreground">Scroll to explore</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="w-6 h-10 rounded-full border-2 border-border flex items-start justify-center p-2"
-        >
-          <motion.div className="w-1.5 h-1.5 rounded-full bg-primary" />
-        </motion.div>
-      </motion.div>
     </section>
   );
-};
-
-export default Hero;
+}
