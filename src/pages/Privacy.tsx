@@ -170,10 +170,10 @@ const Privacy = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   To request data deletion, contact us at:{" "}
                   <a
-                    href="mailto:support@bobitrades.com"
+                    href="mailto:amdevfred@gmail.com"
                     className="text-primary hover:text-primary-soft transition-colors"
                   >
-                    support@bobitrades.com
+                    amdevfred@gmail.com
                   </a>
                 </p>
               </section>
@@ -206,10 +206,10 @@ const Privacy = () => {
                   If you have questions about this Privacy Policy, contact us
                   at:{" "}
                   <a
-                    href="mailto:support@bobitrades.com"
+                    href="mailto:amdevfred@gmail.com"
                     className="text-primary hover:text-primary-soft transition-colors"
                   >
-                    support@bobitrades.com
+                    amdevfred@gmail.com
                   </a>
                 </p>
               </section>

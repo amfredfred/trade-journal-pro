@@ -171,10 +171,10 @@ const Terms = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   For questions or support, contact us at:{" "}
                   <a
-                    href="mailto:support@bobitrades.com"
+                    href="mailto:amdevfred@gmail.com"
                     className="text-primary hover:text-primary-soft transition-colors"
                   >
-                    support@bobitrades.com
+                    amdevfred@gmail.com
                   </a>
                 </p>
               </section>
