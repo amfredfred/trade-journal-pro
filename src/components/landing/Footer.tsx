@@ -53,14 +53,6 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#testimonials"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Testimonials
-                </a>
-              </li>
-              <li>
-                <a
                   href="https://play.google.com/store/apps/details?id=com.devfred.bobitradesapp"
                   target="_blank"
                   rel="noopener noreferrer"
