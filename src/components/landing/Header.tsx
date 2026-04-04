@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="bfx-nav">
       <Link to="/" className="bfx-nav-logo">
-        <div className="bfx-logo-mark">B</div>
+        <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="BobiFX" /></div>
         <span className="bfx-nav-brand">BobiFX</span>
       </Link>
       <nav className="bfx-nav-links">

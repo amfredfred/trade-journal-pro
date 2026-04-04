@@ -5,7 +5,7 @@ export default function Footer() {
       <div className="bfx-footer-inner">
         <div>
           <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:14 }}>
-            <div className="bfx-logo-mark">B</div>
+            <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="BobiFX" /></div>
             <span className="bfx-footer-brand">BobiFX</span>
           </div>
           <p className="bfx-footer-desc">Precision algorithmic signal engine for serious forex traders. HTF/LTF zone detection, auto-execution, deep analytics, and journaling — one platform.</p>
