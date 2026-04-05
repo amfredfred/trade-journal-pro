@@ -35,13 +35,13 @@ export default function Hero() {
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false }, tooltip: {
           callbacks: { label: (c) => `+${c.parsed.y}R` },
-          backgroundColor: "#141419", borderColor: "#1e1e28", borderWidth: 1,
-          titleColor: "#60606e", bodyColor: "#f0f0f8",
+          backgroundColor: "#141414", borderColor: "#252525", borderWidth: 1,
+          titleColor: "#555555", bodyColor: "#f0f0f0",
           titleFont: { family: "JetBrains Mono" }, bodyFont: { family: "JetBrains Mono" },
         }},
         scales: {
-          x: { grid: { display: false }, ticks: { color: "#60606e", font: { family: "JetBrains Mono", size: 9 } }, border: { display: false } },
-          y: { grid: { color: "#1e1e28", lineWidth: 0.5 }, ticks: { color: "#60606e", font: { family: "JetBrains Mono", size: 9 }, callback: (v) => v + "R" }, border: { display: false } },
+          x: { grid: { display: false }, ticks: { color: "#555", font: { family: "JetBrains Mono", size: 9 } }, border: { display: false } },
+          y: { grid: { color: "#1a1a1a", lineWidth: 0.5 }, ticks: { color: "#555", font: { family: "JetBrains Mono", size: 9 }, callback: (v) => v + "R" }, border: { display: false } },
         },
       },
     });
@@ -69,23 +69,24 @@ export default function Hero() {
       <div className="bfx-hero-inner">
         <div className="bfx-hero-eyebrow">
           <div className="bfx-pulse" />
-          Signal engine · 20 pairs · Live
+          Precision Signal Engine · 20 Pairs · Live
         </div>
-        <h1 className="bfx-h1">Precision signal engine<br />for serious <em>forex traders.</em></h1>
+        <h1 className="bfx-h1">
+          Forex Signals<br /><em>Automated</em>
+        </h1>
         <p className="bfx-hero-sub">
-          HTF zone detection, LTF rejection scoring, auto-execution, and deep analytics —
-          one platform running the full trade lifecycle while you focus on your strategy.
+          HTF zone detection, LTF rejection scoring, auto-execution, and deep analytics.
+          The full trade lifecycle — running while you focus on what matters.
         </p>
         <div className="bfx-hero-actions">
           <a href="https://app.bobifx.com/login" className="bfx-btn-hero">Start free →</a>
-          <a href="#backtest" className="bfx-btn-hero-ghost">View backtest results</a>
+          <a href="#backtest" className="bfx-btn-hero-ghost">▶ View backtest results</a>
         </div>
 
-        {/* Dashboard preview */}
         <div className="bfx-dash-preview">
           <div className="bfx-dash-topbar">
-            <div className="bfx-dash-dot" style={{ background: "#f05454" }} />
-            <div className="bfx-dash-dot" style={{ background: "#f5a623" }} />
+            <div className="bfx-dash-dot" style={{ background: "#ef4444" }} />
+            <div className="bfx-dash-dot" style={{ background: "#f59e0b" }} />
             <div className="bfx-dash-dot" style={{ background: "#00d68f" }} />
             <span className="bfx-dash-topbar-title">BobiFX · Dashboard</span>
             <div className="bfx-dash-live"><div className="bfx-pulse" />Live</div>
@@ -107,36 +108,12 @@ export default function Hero() {
             </div>
             <div className="bfx-dash-main">
               <div className="bfx-kpi-row">
-                <div className="bfx-kpi green">
-                  <div className="bfx-kpi-lbl">Balance</div>
-                  <div className="bfx-kpi-val green">$12.4k</div>
-                  <div className="bfx-kpi-sub">+24.3% all time</div>
-                </div>
-                <div className="bfx-kpi">
-                  <div className="bfx-kpi-lbl">Today P&L</div>
-                  <div className="bfx-kpi-val green">+$186</div>
-                  <div className="bfx-kpi-sub">+1.5%</div>
-                </div>
-                <div className="bfx-kpi">
-                  <div className="bfx-kpi-lbl">Win Rate</div>
-                  <div className="bfx-kpi-val green">41.5%</div>
-                  <div className="bfx-kpi-sub">1,484 trades</div>
-                </div>
-                <div className="bfx-kpi gold">
-                  <div className="bfx-kpi-lbl">Prof. Factor</div>
-                  <div className="bfx-kpi-val gold">2.84</div>
-                  <div className="bfx-kpi-sub">Above target</div>
-                </div>
-                <div className="bfx-kpi green">
-                  <div className="bfx-kpi-lbl">Total RR</div>
-                  <div className="bfx-kpi-val green">+1,111R</div>
-                  <div className="bfx-kpi-sub">+0.75R/sig</div>
-                </div>
-                <div className="bfx-kpi blue">
-                  <div className="bfx-kpi-lbl">Streak</div>
-                  <div className="bfx-kpi-val blue">4 🔥</div>
-                  <div className="bfx-kpi-sub">win streak</div>
-                </div>
+                <div className="bfx-kpi green"><div className="bfx-kpi-lbl">Balance</div><div className="bfx-kpi-val green">$12.4k</div><div className="bfx-kpi-sub">+24.3% all time</div></div>
+                <div className="bfx-kpi"><div className="bfx-kpi-lbl">Today P&L</div><div className="bfx-kpi-val green">+$186</div><div className="bfx-kpi-sub">+1.5%</div></div>
+                <div className="bfx-kpi"><div className="bfx-kpi-lbl">Win Rate</div><div className="bfx-kpi-val green">41.5%</div><div className="bfx-kpi-sub">1,484 trades</div></div>
+                <div className="bfx-kpi gold"><div className="bfx-kpi-lbl">Prof. Factor</div><div className="bfx-kpi-val gold">2.84</div><div className="bfx-kpi-sub">Above target</div></div>
+                <div className="bfx-kpi green"><div className="bfx-kpi-lbl">Total RR</div><div className="bfx-kpi-val green">+1,111R</div><div className="bfx-kpi-sub">+0.75R/sig</div></div>
+                <div className="bfx-kpi blue"><div className="bfx-kpi-lbl">Streak</div><div className="bfx-kpi-val blue">4 🔥</div><div className="bfx-kpi-sub">win streak</div></div>
               </div>
               <div className="bfx-charts-row">
                 <div className="bfx-dash-card">
@@ -152,7 +129,7 @@ export default function Hero() {
                       {signals.map((s) => (
                         <tr key={s.pair + s.dir}>
                           <td className="bfx-sig-pair-mini">{s.pair}</td>
-                          <td><span className={`bfx-sig-dir bfx-${s.dir.toLowerCase()}`}>▲ {s.dir === "LONG" ? "L" : "S"}</span></td>
+                          <td><span className={`bfx-sig-dir bfx-${s.dir.toLowerCase()}`}>{s.dir === "LONG" ? "▲ L" : "▼ S"}</span></td>
                           <td style={{ color: "var(--info)", fontFamily: "var(--mono)", fontSize: 9 }}>{s.rr}</td>
                           <td style={{ color: s.sc, fontFamily: "var(--mono)", fontSize: 9 }}>{s.status}</td>
                         </tr>

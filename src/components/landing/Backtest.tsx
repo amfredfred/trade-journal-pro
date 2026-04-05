@@ -10,9 +10,11 @@ export default function Backtest() {
   return (
     <section className="bfx-backtest" id="backtest">
       <div className="bfx-section-inner">
-        <div className="bfx-label">Verified Results</div>
-        <h2 className="bfx-h2">The numbers, unfiltered.</h2>
-        <p className="bfx-sub">Walk-forward simulation across 10 months, 10 liquid pairs, 1,484 trades. No cherry-picked symbols — session filters match live trading discipline exactly.</p>
+        <div style={{ textAlign: "center", marginBottom: 52 }}>
+          <div className="bfx-label">Verified Results</div>
+          <h2 className="bfx-h2">The Numbers, <span className="dim">Unfiltered</span></h2>
+          <p className="bfx-sub" style={{ margin: "0 auto" }}>Walk-forward simulation. 10 months, 10 liquid pairs, 1,484 trades. No cherry-picking — session filters match live trading discipline exactly.</p>
+        </div>
 
         <div className="bfx-bt-grid">
           {/* ── LEFT ── */}
@@ -67,7 +69,7 @@ export default function Backtest() {
             <div className="bfx-bt-cta">
               <div className="bfx-bt-cta-title">Full backtest report available</div>
               <p className="bfx-bt-cta-desc">Download the complete trade-by-trade CSV with symbol, timeframe, session, entry, SL, TP, R:R, and outcome for all 1,484 trades. Includes the full HTML analytics report.</p>
-              <a href="https://results.bobifx.com/fbs-ceil" className="bfx-btn-ghost" style={{ fontSize: 13 }}>
+              <a href="https://results.bobifx.com/fbs-ceil" className="bfx-btn-ghost-sm">
                 ↗ View full backtest · fbs-ceil
               </a>
             </div>

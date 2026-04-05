@@ -1,59 +1,52 @@
 const steps = [
   {
-    n: "01",
-    phase: "HTF SCAN",
+    n: "1", phase: "HTF SCAN", color: "var(--accent)",
+    icon: "⬡",
     name: "Break of Structure Detected",
-    desc: "The engine continuously scans all pairs on the Higher Timeframe (30M or 1H). When pivot-based BOS is confirmed — a clean break above a swing high or below a swing low — a Supply or Demand zone is locked and the engine enters WATCHING state.",
+    desc: "The engine scans all pairs on the higher timeframe (30M / 1H). When price breaks cleanly above a swing high or below a swing low, a supply or demand zone is confirmed and locked.",
     tag: "MarketStructure · TrendBias",
-    color: "var(--accent)",
   },
   {
-    n: "02",
-    phase: "ZONE MAP",
-    name: "Zone Ranked & Session-Filtered",
-    desc: "The confirmed zone is mapped against all active zones, filtered by session (Tokyo / London / NY), and ranked by proximity and quality. The Zone Map dashboard updates in real-time. Duplicate zones within the same session are suppressed via SessionMemory dedup rules.",
+    n: "2", phase: "ZONE MAP", color: "var(--info)",
+    icon: "◈",
+    name: "Zone Logged & Session-Filtered",
+    desc: "The zone is added to the Zone Map and checked against your active sessions — Tokyo, London, NY. Overlapping zones within the same session are deduplicated.",
     tag: "SessionMemory · ZoneMap",
-    color: "var(--info)",
   },
   {
-    n: "03",
-    phase: "LTF APPROACH",
-    name: "Price Approaches — PENDING Alert Fired",
-    desc: "The engine switches to high-frequency LTF polling (5M) when price closes within proximity of the HTF zone boundary. Signal advances to PENDING. Push notification fired immediately. Entry, SL, TP1, and TP2 pre-calculated.",
+    n: "3", phase: "APPROACH", color: "var(--warn)",
+    icon: "◎",
+    name: "Price Nears Zone — PENDING Alert",
+    desc: "When price closes within range of the zone on the LTF (5M), status advances to PENDING. Push notification fires with pre-calculated entry, SL, TP1, and TP2.",
     tag: "SignalScheduler · LTF_WATCH",
-    color: "var(--warn)",
   },
   {
-    n: "04",
-    phase: "TRIGGER",
-    name: "Rejection Candle Scored & Signal Fired",
-    desc: "A hammer (demand) or shooting-star (supply) candle forms at the zone edge on the LTF. The RejectionDetector scores wick ratio, body position, and close location. If the quality gate passes, a TRIGGERED signal is emitted with full entry parameters.",
-    tag: "RejectionDetector · SignalQualityGate",
-    color: "#f05454",
+    n: "4", phase: "TRIGGER", color: "var(--danger)",
+    icon: "◆",
+    name: "Rejection Candle Scored",
+    desc: "A hammer at demand or shooting-star at supply forms at the zone edge. The engine scores wick ratio, body position, and close. If it passes, signal is TRIGGERED.",
+    tag: "RejectionDetector · QualityGate",
   },
   {
-    n: "05",
-    phase: "EXECUTION",
+    n: "5", phase: "EXECUTION", color: "var(--accent)",
+    icon: "▶",
     name: "Order Placed on Broker",
-    desc: "If auto-trade is enabled, the engine places the order on your connected broker (MT4 / MT5 / cTrader / Match Trader) via MetaAPI within milliseconds. Risk is sized to your configured R value. SL sits 1–3 pips beyond the zone boundary.",
+    desc: "With auto-trade on, the order hits your MT4/MT5/cTrader account immediately via MetaAPI — sized to your configured R. SL placed just beyond the zone.",
     tag: "MetaAPI · AutoTradeEngine",
-    color: "var(--accent)",
   },
   {
-    n: "06",
-    phase: "MANAGEMENT",
-    name: "TP1 Hit → Stop Moved to Breakeven",
-    desc: "At TP1 the engine automatically moves the stop-loss to entry price, locking in a risk-free runner. Partial profit is recorded to your trade journal. The remaining position continues targeting TP2 at maximum R:R.",
-    tag: "TradeManagement · BreakevenLogic",
-    color: "var(--gold)",
+    n: "6", phase: "MANAGEMENT", color: "var(--gold)",
+    icon: "⟳",
+    name: "TP1 Hit — Stop to Breakeven",
+    desc: "At TP1 the engine automatically moves stop-loss to entry, locking in a risk-free runner. Partial profit logged. Position continues toward TP2.",
+    tag: "TradeManagement · Breakeven",
   },
   {
-    n: "07",
-    phase: "CLOSE & LOG",
-    name: "TP2 Closed — R:R Logged to Analytics",
-    desc: "Final target reached and position closed. Realized R:R is written to the analytics engine, journal, and equity curve simultaneously. Signal is marked WIN, LOSS, or BE — feeding the rolling performance windows and session heatmap.",
-    tag: "Analytics · PerformanceHub · Journal",
-    color: "var(--gold)",
+    n: "7", phase: "CLOSE", color: "var(--gold)",
+    icon: "✓",
+    name: "TP2 Reached — Logged to Analytics",
+    desc: "Final target hit. Position closes. R:R, outcome, and duration are written to journal, equity curve, and analytics simultaneously. WIN, LOSS, or BE — all recorded.",
+    tag: "Analytics · Journal · EquityCurve",
   },
 ];
 
@@ -61,25 +54,22 @@ export default function HowItWorks() {
   return (
     <section className="bfx-hiw" id="how-it-works">
       <div className="bfx-section-inner">
-        <div className="bfx-label">Signal Engine Pipeline</div>
-        <h2 className="bfx-h2">Seven steps.<br />Zero manual intervention.</h2>
-        <p className="bfx-sub">
-          From BOS detection on the higher timeframe to final trade closure — the engine runs
-          the complete lifecycle autonomously while you monitor from the dashboard.
-        </p>
-        <div className="bfx-hiw-track">
-          <div className="bfx-hiw-line" />
+        <div className="bfx-hiw-header">
+          <div className="bfx-label">Signal Engine Pipeline</div>
+          <h2 className="bfx-h2">How It <span className="dim">Works</span></h2>
+          <p className="bfx-sub">Seven steps. Every one runs automatically — from zone detection to closed trade.</p>
+        </div>
+        <div className="bfx-hiw-grid">
           {steps.map((s) => (
-            <div key={s.n} className="bfx-hiw-step">
-              <div className="bfx-hiw-node" style={{ borderColor: s.color, color: s.color }}>
-                {s.n}
+            <div key={s.n} className="bfx-hiw-card">
+              <div className="bfx-hiw-ghost">{s.n}</div>
+              <div className="bfx-hiw-icon" style={{ borderColor: `color-mix(in srgb, ${s.color} 30%, var(--border2))` }}>
+                <span style={{ color: s.color, fontSize: 18 }}>{s.icon}</span>
               </div>
-              <div className="bfx-hiw-content">
-                <div className="bfx-hiw-phase" style={{ color: s.color }}>{s.phase}</div>
-                <div className="bfx-hiw-name">{s.name}</div>
-                <p className="bfx-hiw-desc">{s.desc}</p>
-                <div className="bfx-hiw-tag">{s.tag}</div>
-              </div>
+              <div className="bfx-hiw-phase" style={{ color: s.color }}>{s.phase}</div>
+              <div className="bfx-hiw-name">{s.name}</div>
+              <p className="bfx-hiw-desc">{s.desc}</p>
+              <div className="bfx-hiw-tag">{s.tag}</div>
             </div>
           ))}
         </div>

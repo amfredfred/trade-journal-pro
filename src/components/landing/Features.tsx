@@ -41,12 +41,13 @@ export default function Features() {
   return (
     <section id="features" className="bfx-features-section">
       <div className="bfx-section-inner">
-        <div className="bfx-label">Platform</div>
-        <h2 className="bfx-h2">Built for traders<br />running real accounts.</h2>
-        <p className="bfx-sub">
-          Signal engine, auto-execution, deep analytics, journaling, and session analysis —
-          grouped by function so you know exactly what you're getting.
-        </p>
+        <div style={{ textAlign: "center", marginBottom: 60 }}>
+          <div className="bfx-label">Platform</div>
+          <h2 className="bfx-h2">Everything a <span className="dim">Serious Trader</span> Needs</h2>
+          <p className="bfx-sub" style={{ margin: "0 auto" }}>
+            Signal engine, auto-execution, analytics, journaling — grouped by function.
+          </p>
+        </div>
         <div className="bfx-feat-groups">
           {groups.map((g) => (
             <div key={g.label} className="bfx-feat-group">
