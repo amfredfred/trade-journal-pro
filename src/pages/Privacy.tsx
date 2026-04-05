@@ -3,56 +3,56 @@ import { Link } from "react-router-dom";
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div style={{ marginBottom: 48 }}>
     <h2 style={{
-      fontFamily: "'Syne', sans-serif", fontSize: 22, fontWeight: 800,
-      color: "#ede9e0", marginBottom: 16, letterSpacing: "-0.02em",
-      paddingBottom: 12, borderBottom: "1px solid #2c2820",
+      fontFamily: "'Syne', system-ui, sans-serif", fontSize: 20, fontWeight: 700,
+      color: "#ffffff", marginBottom: 16, letterSpacing: "-0.02em",
+      paddingBottom: 12, borderBottom: "1px solid #252525",
     }}>{title}</h2>
-    <div style={{ color: "#a09890", fontSize: 14, lineHeight: 1.85 }}>{children}</div>
+    <div style={{ color: "#888888", fontSize: 15, lineHeight: 1.8 }}>{children}</div>
   </div>
 );
 
 const Sub = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div style={{ marginBottom: 20 }}>
-    <h3 style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, fontWeight: 700, color: "#d4a432", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 8 }}>{title}</h3>
+    <h3 style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace", fontSize: 11, fontWeight: 600, color: "#00d68f", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 8 }}>{title}</h3>
     <div>{children}</div>
   </div>
 );
 
 const Li = ({ children }: { children: React.ReactNode }) => (
-  <div style={{ display: "flex", gap: 10, marginBottom: 6 }}>
-    <span style={{ color: "#d4a432", fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, marginTop: 3, flexShrink: 0 }}>→</span>
+  <div style={{ display: "flex", gap: 10, marginBottom: 8 }}>
+    <span style={{ color: "#00d68f", fontFamily: "'JetBrains Mono', monospace", fontSize: 11, marginTop: 4, flexShrink: 0 }}>→</span>
     <span>{children}</span>
   </div>
 );
 
 export default function Privacy() {
   return (
-    <div style={{ background: "#0d0c0a", minHeight: "100vh", fontFamily: "'IBM Plex Sans', sans-serif" }}>
+    <div style={{ background: "#0a0a0a", minHeight: "100vh", fontFamily: "'Instrument Sans','Segoe UI',system-ui,sans-serif" }}>
       {/* Nav strip */}
-      <div style={{ padding: "0 40px", height: 64, display: "flex", alignItems: "center", borderBottom: "1px solid #2c2820", background: "rgba(13,12,10,.9)", position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(20px)" }}>
-        <Link to="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <div style={{ width: 28, height: 28, background: "#d4a432", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Syne',sans-serif", fontWeight: 800, fontSize: 13, color: "#0d0c0a" }}>B</div>
-          <span style={{ fontFamily: "'Syne',sans-serif", fontSize: 17, fontWeight: 700, color: "#ede9e0" }}>BobiFX</span>
+      <div style={{ padding: "0 40px", height: 64, display: "flex", alignItems: "center", borderBottom: "1px solid #1a1a1a", background: "rgba(10,10,10,.9)", position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(20px)" }}>
+        <Link to="/" className="bfx-nav-logo">
+          <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="BobiFX" /></div>
+          <span className="bfx-nav-brand">BobiFX</span>
         </Link>
-        <span style={{ marginLeft: "auto", fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: "#7a7268" }}>Privacy Policy</span>
+        <span style={{ marginLeft: "auto", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555", letterSpacing: "0.06em" }}>PRIVACY POLICY</span>
       </div>
 
       <div style={{ maxWidth: 760, margin: "0 auto", padding: "64px 40px 100px" }}>
         {/* Header */}
         <div style={{ marginBottom: 56 }}>
-          <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: "#d4a432", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ display: "block", width: 24, height: 1, background: "#d4a432" }} />
+          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#00d68f", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+            <span style={{ display: "block", width: 24, height: 1, background: "#00d68f" }} />
             Legal
           </div>
-          <h1 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(36px, 5vw, 52px)", fontWeight: 800, color: "#ede9e0", letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: 20 }}>
+          <h1 style={{ fontFamily: "'Syne',system-ui,sans-serif", fontSize: "clamp(36px, 5vw, 52px)", fontWeight: 800, color: "#ffffff", letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: 20 }}>
             Privacy Policy
           </h1>
-          <p style={{ color: "#a09890", fontSize: 15, lineHeight: 1.7, marginBottom: 16 }}>
-            This Privacy Policy explains how BobiFX ("we", "us", "our") collects, uses, stores, and protects your personal information when you use our web platform at <strong style={{ color: "#ede9e0" }}>app.bobifx.com</strong>, our Android mobile application <strong style={{ color: "#ede9e0" }}>BoBi Trades & Journal</strong>, and our public website at <strong style={{ color: "#ede9e0" }}>bobifx.com</strong> (collectively, the "Service").
+          <p style={{ color: "#888888", fontSize: 16, lineHeight: 1.75, marginBottom: 16 }}>
+            This Privacy Policy explains how BobiFX ("we", "us", "our") collects, uses, stores, and protects your personal information when you use our web platform at <strong style={{ color: "#e0e0e0" }}>app.bobifx.com</strong>, our Android mobile application <strong style={{ color: "#e0e0e0" }}>BoBi Trades & Journal</strong>, and our public website at <strong style={{ color: "#e0e0e0" }}>bobifx.com</strong> (collectively, the "Service").
           </p>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-            <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: "#7a7268" }}>Effective date: April 4, 2026</span>
-            <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: "#7a7268" }}>Last updated: April 4, 2026</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Effective date: April 4, 2026</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Last updated: April 4, 2026</span>
           </div>
         </div>
 
@@ -93,7 +93,7 @@ export default function Privacy() {
             <Li>Error logs and crash reports (used to diagnose and fix bugs)</Li>
           </Sub>
           <Sub title="1.6 Payment Data">
-            <p>Subscription payments are processed by <strong style={{ color: "#ede9e0" }}>Stripe</strong> via <strong style={{ color: "#ede9e0" }}>RevenueCat</strong>. We never see or store your full card number, CVV, or bank details. We only receive a RevenueCat App User ID and the active entitlement tier returned by RevenueCat's API.</p>
+            <p>Subscription payments are processed by <strong style={{ color: "#e0e0e0" }}>Stripe</strong> via <strong style={{ color: "#e0e0e0" }}>RevenueCat</strong>. We never see or store your full card number, CVV, or bank details. We only receive a RevenueCat App User ID and the active entitlement tier returned by RevenueCat's API.</p>
           </Sub>
         </Section>
 
@@ -106,12 +106,12 @@ export default function Privacy() {
           <Li>Send account-level notifications: drawdown warnings, profit target alerts, strategy reminders (if enabled)</Li>
           <Li>Diagnose bugs, monitor service health, and improve the platform</Li>
           <Li>Respond to support requests</Li>
-          <p style={{ marginTop: 16 }}>We do <strong style={{ color: "#ede9e0" }}>not</strong> use your trading data to train AI models, sell to advertisers, or share with third parties for marketing purposes.</p>
+          <p style={{ marginTop: 16 }}>We do <strong style={{ color: "#e0e0e0" }}>not</strong> use your trading data to train AI models, sell to advertisers, or share with third parties for marketing purposes.</p>
         </Section>
 
         <Section title="3. Data Storage & Security">
           <Sub title="3.1 Infrastructure">
-            <Li>User authentication and session tokens are managed by <strong style={{ color: "#ede9e0" }}>Supabase</strong> (hosted on AWS, SOC 2 compliant)</Li>
+            <Li>User authentication and session tokens are managed by <strong style={{ color: "#e0e0e0" }}>Supabase</strong> (hosted on AWS, SOC 2 compliant)</Li>
             <Li>Application data (profiles, trades, signals, accounts) is stored in a PostgreSQL database hosted on a cloud provider in a secure environment</Li>
             <Li>All data in transit is encrypted via TLS 1.2+</Li>
             <Li>Broker credentials are stored encrypted at rest and are transmitted only over HTTPS — never via WebSocket or any unencrypted channel</Li>
@@ -129,7 +129,7 @@ export default function Privacy() {
 
         <Section title="4. Third-Party Services">
           <p style={{ marginBottom: 16 }}>We share minimal data with the following third parties to operate the Service:</p>
-          <div style={{ background: "#171511", border: "1px solid #2c2820", borderRadius: 8, overflow: "hidden", marginBottom: 16 }}>
+          <div style={{ background: "#111111", border: "1px solid #252525", borderRadius: 10, overflow: "hidden", marginBottom: 16 }}>
             {[
               { name: "Supabase", purpose: "User authentication, session management", data: "Email, password hash, IP at login" },
               { name: "MetaAPI", purpose: "Real-time broker connection and trade execution", data: "Broker login credentials, account instructions" },
@@ -138,10 +138,10 @@ export default function Privacy() {
               { name: "Firebase / FCM", purpose: "Android and web push notifications", data: "Device push token" },
               { name: "TradingView", purpose: "Optional companion indicator (separate product)", data: "None — no data is shared" },
             ].map((r, i) => (
-              <div key={r.name} style={{ display: "grid", gridTemplateColumns: "120px 1fr 1fr", gap: 16, padding: "12px 16px", borderBottom: i < 5 ? "1px solid #2c2820" : "none", fontSize: 12 }}>
-                <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontWeight: 600, color: "#d4a432" }}>{r.name}</div>
-                <div style={{ color: "#a09890" }}>{r.purpose}</div>
-                <div style={{ color: "#7a7268" }}>{r.data}</div>
+              <div key={r.name} style={{ display: "grid", gridTemplateColumns: "120px 1fr 1fr", gap: 16, padding: "12px 16px", borderBottom: i < 5 ? "1px solid #1a1a1a" : "none", fontSize: 13 }}>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 600, color: "#00d68f" }}>{r.name}</div>
+                <div style={{ color: "#888888" }}>{r.purpose}</div>
+                <div style={{ color: "#555555" }}>{r.data}</div>
               </div>
             ))}
           </div>
@@ -150,13 +150,13 @@ export default function Privacy() {
 
         <Section title="5. Your Rights">
           <p style={{ marginBottom: 16 }}>Depending on your location, you may have the following rights regarding your personal data:</p>
-          <Li><strong style={{ color: "#ede9e0" }}>Access</strong> — Request a copy of the data we hold about you</Li>
-          <Li><strong style={{ color: "#ede9e0" }}>Correction</strong> — Ask us to correct inaccurate data</Li>
-          <Li><strong style={{ color: "#ede9e0" }}>Deletion</strong> — Request deletion of your account and associated data</Li>
-          <Li><strong style={{ color: "#ede9e0" }}>Portability</strong> — Request an export of your trade journal data in CSV format</Li>
-          <Li><strong style={{ color: "#ede9e0" }}>Opt-out of notifications</strong> — Disable push alerts at any time in Settings → Notifications</Li>
-          <Li><strong style={{ color: "#ede9e0" }}>Disconnect your broker</strong> — Remove MetaAPI credentials at any time in Settings → Accounts</Li>
-          <p style={{ marginTop: 16 }}>To exercise any of these rights, contact us at <a href="mailto:privacy@bobifx.com" style={{ color: "#d4a432", textDecoration: "none" }}>privacy@bobifx.com</a>. We will respond within 30 days.</p>
+          <Li><strong style={{ color: "#e0e0e0" }}>Access</strong> — Request a copy of the data we hold about you</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Correction</strong> — Ask us to correct inaccurate data</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Deletion</strong> — Request deletion of your account and associated data</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Portability</strong> — Request an export of your trade journal data in CSV format</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Opt-out of notifications</strong> — Disable push alerts at any time in Settings → Notifications</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Disconnect your broker</strong> — Remove MetaAPI credentials at any time in Settings → Accounts</Li>
+          <p style={{ marginTop: 16 }}>To exercise any of these rights, contact us at <a href="mailto:privacy@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>privacy@bobifx.com</a>. We will respond within 30 days.</p>
         </Section>
 
         <Section title="6. Cookies & Local Storage">
@@ -167,7 +167,7 @@ export default function Privacy() {
         </Section>
 
         <Section title="7. Children's Privacy">
-          <p>The Service is not directed to children under 18 years of age. We do not knowingly collect personal information from anyone under 18. If you believe a minor has provided us with personal data, contact us immediately at <a href="mailto:privacy@bobifx.com" style={{ color: "#d4a432", textDecoration: "none" }}>privacy@bobifx.com</a>.</p>
+          <p>The Service is not directed to children under 18 years of age. We do not knowingly collect personal information from anyone under 18. If you believe a minor has provided us with personal data, contact us immediately at <a href="mailto:privacy@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>privacy@bobifx.com</a>.</p>
         </Section>
 
         <Section title="8. International Data Transfers">
@@ -180,16 +180,16 @@ export default function Privacy() {
 
         <Section title="10. Contact">
           <p style={{ marginBottom: 12 }}>For privacy-related enquiries, data access requests, or to report a concern:</p>
-          <div style={{ background: "#171511", border: "1px solid #2c2820", borderRadius: 8, padding: "20px 24px" }}>
-            <div style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, fontSize: 15, color: "#ede9e0", marginBottom: 8 }}>BobiFX</div>
-            <div style={{ fontSize: 13, color: "#a09890", marginBottom: 4 }}>Privacy enquiries: <a href="mailto:privacy@bobifx.com" style={{ color: "#d4a432", textDecoration: "none" }}>privacy@bobifx.com</a></div>
-            <div style={{ fontSize: 13, color: "#a09890" }}>General support: <a href="mailto:support@bobifx.com" style={{ color: "#d4a432", textDecoration: "none" }}>support@bobifx.com</a></div>
+          <div style={{ background: "#111111", border: "1px solid #252525", borderRadius: 10, padding: "20px 24px" }}>
+            <div style={{ fontFamily: "'Syne',system-ui,sans-serif", fontWeight: 700, fontSize: 15, color: "#ffffff", marginBottom: 8 }}>BobiFX</div>
+            <div style={{ fontSize: 14, color: "#888888", marginBottom: 4 }}>Privacy enquiries: <a href="mailto:privacy@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>privacy@bobifx.com</a></div>
+            <div style={{ fontSize: 14, color: "#888888" }}>General support: <a href="mailto:support@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>support@bobifx.com</a></div>
           </div>
         </Section>
 
-        <div style={{ paddingTop: 32, borderTop: "1px solid #2c2820", display: "flex", gap: 24, flexWrap: "wrap" }}>
-          <Link to="/" style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 12, color: "#7a7268", textDecoration: "none" }}>← Back to BobiFX</Link>
-          <Link to="/terms" style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 12, color: "#7a7268", textDecoration: "none" }}>Terms of Service →</Link>
+        <div style={{ paddingTop: 32, borderTop: "1px solid #1a1a1a", display: "flex", gap: 24, flexWrap: "wrap" }}>
+          <Link to="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#555555", textDecoration: "none" }}>← Back to BobiFX</Link>
+          <Link to="/terms" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#555555", textDecoration: "none" }}>Terms of Service →</Link>
         </div>
       </div>
     </div>

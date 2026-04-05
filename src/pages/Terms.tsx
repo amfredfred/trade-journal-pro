@@ -3,90 +3,90 @@ import { Link } from "react-router-dom";
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div style={{ marginBottom: 48 }}>
     <h2 style={{
-      fontFamily: "'Syne', sans-serif", fontSize: 22, fontWeight: 800,
-      color: "#ede9e0", marginBottom: 16, letterSpacing: "-0.02em",
-      paddingBottom: 12, borderBottom: "1px solid #2c2820",
+      fontFamily: "'Syne', system-ui, sans-serif", fontSize: 20, fontWeight: 700,
+      color: "#ffffff", marginBottom: 16, letterSpacing: "-0.02em",
+      paddingBottom: 12, borderBottom: "1px solid #252525",
     }}>{title}</h2>
-    <div style={{ color: "#a09890", fontSize: 14, lineHeight: 1.85 }}>{children}</div>
+    <div style={{ color: "#888888", fontSize: 15, lineHeight: 1.8 }}>{children}</div>
   </div>
 );
 
 const Sub = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div style={{ marginBottom: 20 }}>
-    <h3 style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, fontWeight: 700, color: "#d4a432", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 8 }}>{title}</h3>
+    <h3 style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace", fontSize: 11, fontWeight: 600, color: "#00d68f", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 8 }}>{title}</h3>
     <div>{children}</div>
   </div>
 );
 
 const Li = ({ children }: { children: React.ReactNode }) => (
-  <div style={{ display: "flex", gap: 10, marginBottom: 6 }}>
-    <span style={{ color: "#d4a432", fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, marginTop: 3, flexShrink: 0 }}>→</span>
+  <div style={{ display: "flex", gap: 10, marginBottom: 8 }}>
+    <span style={{ color: "#00d68f", fontFamily: "'JetBrains Mono', monospace", fontSize: 11, marginTop: 4, flexShrink: 0 }}>→</span>
     <span>{children}</span>
   </div>
 );
 
 const Warning = ({ children }: { children: React.ReactNode }) => (
-  <div style={{ background: "rgba(212,164,50,.05)", border: "1px solid rgba(212,164,50,.2)", borderRadius: 8, padding: "16px 20px", marginBottom: 16, fontSize: 13, color: "#a09890", lineHeight: 1.7 }}>
+  <div style={{ background: "rgba(0,214,143,.05)", border: "1px solid rgba(0,214,143,.18)", borderRadius: 10, padding: "16px 20px", marginBottom: 16, fontSize: 14, color: "#888888", lineHeight: 1.75 }}>
     {children}
   </div>
 );
 
 export default function Terms() {
   return (
-    <div style={{ background: "#0d0c0a", minHeight: "100vh", fontFamily: "'IBM Plex Sans', sans-serif" }}>
+    <div style={{ background: "#0a0a0a", minHeight: "100vh", fontFamily: "'Instrument Sans','Segoe UI',system-ui,sans-serif" }}>
       {/* Nav strip */}
-      <div style={{ padding: "0 40px", height: 64, display: "flex", alignItems: "center", borderBottom: "1px solid #2c2820", background: "rgba(13,12,10,.9)", position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(20px)" }}>
-        <Link to="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <div style={{ width: 28, height: 28, background: "#d4a432", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Syne',sans-serif", fontWeight: 800, fontSize: 13, color: "#0d0c0a" }}>B</div>
-          <span style={{ fontFamily: "'Syne',sans-serif", fontSize: 17, fontWeight: 700, color: "#ede9e0" }}>BobiFX</span>
+      <div style={{ padding: "0 40px", height: 64, display: "flex", alignItems: "center", borderBottom: "1px solid #1a1a1a", background: "rgba(10,10,10,.9)", position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(20px)" }}>
+        <Link to="/" className="bfx-nav-logo">
+          <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="BobiFX" /></div>
+          <span className="bfx-nav-brand">BobiFX</span>
         </Link>
-        <span style={{ marginLeft: "auto", fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: "#7a7268" }}>Terms of Service</span>
+        <span style={{ marginLeft: "auto", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555", letterSpacing: "0.06em" }}>TERMS OF SERVICE</span>
       </div>
 
       <div style={{ maxWidth: 760, margin: "0 auto", padding: "64px 40px 100px" }}>
         {/* Header */}
         <div style={{ marginBottom: 56 }}>
-          <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: "#d4a432", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ display: "block", width: 24, height: 1, background: "#d4a432" }} />
+          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#00d68f", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+            <span style={{ display: "block", width: 24, height: 1, background: "#00d68f" }} />
             Legal
           </div>
-          <h1 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(36px, 5vw, 52px)", fontWeight: 800, color: "#ede9e0", letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: 20 }}>
+          <h1 style={{ fontFamily: "'Syne',system-ui,sans-serif", fontSize: "clamp(36px, 5vw, 52px)", fontWeight: 800, color: "#ffffff", letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: 20 }}>
             Terms of Service
           </h1>
-          <p style={{ color: "#a09890", fontSize: 15, lineHeight: 1.7, marginBottom: 16 }}>
-            These Terms of Service ("Terms") govern your access to and use of BobiFX, including the web platform at <strong style={{ color: "#ede9e0" }}>app.bobifx.com</strong>, the Android mobile application <strong style={{ color: "#ede9e0" }}>BoBi Trades & Journal</strong>, and the public website at <strong style={{ color: "#ede9e0" }}>bobifx.com</strong> (collectively, the "Service"). By creating an account or using the Service you agree to be bound by these Terms.
+          <p style={{ color: "#888888", fontSize: 16, lineHeight: 1.75, marginBottom: 16 }}>
+            These Terms of Service ("Terms") govern your access to and use of BobiFX, including the web platform at <strong style={{ color: "#e0e0e0" }}>app.bobifx.com</strong>, the Android mobile application <strong style={{ color: "#e0e0e0" }}>BoBi Trades & Journal</strong>, and the public website at <strong style={{ color: "#e0e0e0" }}>bobifx.com</strong> (collectively, the "Service"). By creating an account or using the Service you agree to be bound by these Terms.
           </p>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-            <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: "#7a7268" }}>Effective date: April 4, 2026</span>
-            <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: "#7a7268" }}>Last updated: April 4, 2026</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Effective date: April 4, 2026</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Last updated: April 4, 2026</span>
           </div>
         </div>
 
         {/* Risk warning banner */}
         <Warning>
-          <strong style={{ color: "#d4a432", display: "block", marginBottom: 6, fontFamily: "'Syne',sans-serif", fontSize: 14 }}>⚠ Important Risk Disclosure</strong>
+          <strong style={{ color: "#00d68f", display: "block", marginBottom: 6, fontFamily: "'Syne',sans-serif", fontSize: 14 }}>⚠ Important Risk Disclosure</strong>
           Trading foreign exchange, CFDs, and other leveraged financial instruments involves a high degree of risk and may not be suitable for all investors. You may lose some or all of your invested capital. Past performance — including backtested results published on this website — does not guarantee future returns. The +944.67R backtest figure was generated through a walk-forward simulation on historical data and is not a guarantee of live trading performance. Never trade with money you cannot afford to lose. Seek independent financial advice if necessary.
         </Warning>
 
         <Section title="1. Acceptance of Terms">
-          <p>By accessing or using the Service you confirm that you are at least 18 years old, have the legal capacity to enter into a binding agreement, and agree to these Terms and our <Link to="/privacy" style={{ color: "#d4a432", textDecoration: "none" }}>Privacy Policy</Link>. If you do not agree, you must not use the Service.</p>
+          <p>By accessing or using the Service you confirm that you are at least 18 years old, have the legal capacity to enter into a binding agreement, and agree to these Terms and our <Link to="/privacy" style={{ color: "#00d68f", textDecoration: "none" }}>Privacy Policy</Link>. If you do not agree, you must not use the Service.</p>
         </Section>
 
         <Section title="2. Description of Service">
           <p style={{ marginBottom: 12 }}>BobiFX provides a suite of tools for retail and professional forex traders, including:</p>
-          <Li><strong style={{ color: "#ede9e0" }}>Live Signal Engine</strong> — Algorithmic detection of HTF supply and demand zones across 20 currency pairs; real-time entry signal generation with entry, SL, and TP levels</Li>
-          <Li><strong style={{ color: "#ede9e0" }}>Auto-Trade Execution</strong> — Automated trade placement, management, and closure on connected MT4, MT5, Match Trader, cTrader, or TradingView accounts via the MetaAPI service</Li>
-          <Li><strong style={{ color: "#ede9e0" }}>Trade Journal</strong> — Manual and auto-synced trade logging with notes, screenshots, strategy tags, and emotion tracking</Li>
-          <Li><strong style={{ color: "#ede9e0" }}>Analytics Suite</strong> — Equity curve, session heatmap, rolling performance, risk-of-ruin calculator, income projection, and monthly scorecard</Li>
-          <Li><strong style={{ color: "#ede9e0" }}>Trade Ideas</strong> — AI-scored setup suggestions ranked by signal quality, pair history, and session alignment</Li>
-          <Li><strong style={{ color: "#ede9e0" }}>Mobile App</strong> — Android companion app for push notifications, journal access, and live signal monitoring</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Live Signal Engine</strong> — Algorithmic detection of HTF supply and demand zones across 20 currency pairs; real-time entry signal generation with entry, SL, and TP levels</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Auto-Trade Execution</strong> — Automated trade placement, management, and closure on connected MT4, MT5, Match Trader, cTrader, or TradingView accounts via the MetaAPI service</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Trade Journal</strong> — Manual and auto-synced trade logging with notes, screenshots, strategy tags, and emotion tracking</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Analytics Suite</strong> — Equity curve, session heatmap, rolling performance, risk-of-ruin calculator, income projection, and monthly scorecard</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Trade Ideas</strong> — AI-scored setup suggestions ranked by signal quality, pair history, and session alignment</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Mobile App</strong> — Android companion app for push notifications, journal access, and live signal monitoring</Li>
           <p style={{ marginTop: 12 }}>The Service is an informational and automation tool only. BobiFX is not a licensed financial adviser, broker-dealer, investment adviser, or regulated financial institution. Nothing on the Service constitutes investment advice or a solicitation to trade.</p>
         </Section>
 
         <Section title="3. Account Registration">
           <Li>You must provide accurate information when registering. You are responsible for maintaining the confidentiality of your credentials.</Li>
           <Li>You are responsible for all activity that occurs under your account.</Li>
-          <Li>You must notify us immediately at <a href="mailto:support@bobifx.com" style={{ color: "#d4a432", textDecoration: "none" }}>support@bobifx.com</a> if you suspect unauthorised access to your account.</Li>
+          <Li>You must notify us immediately at <a href="mailto:support@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>support@bobifx.com</a> if you suspect unauthorised access to your account.</Li>
           <Li>We reserve the right to suspend or terminate accounts that violate these Terms, are used for fraudulent activity, or pose a security risk.</Li>
         </Section>
 
@@ -112,11 +112,11 @@ export default function Terms() {
 
         <Section title="5. Subscriptions & Billing">
           <Sub title="5.1 Plans">
-            <p style={{ marginBottom: 12 }}>BobiFX offers four tiers: Free, Basic, Pro, and Elite. Paid plans are priced per broker account. Current pricing is displayed on the <Link to="/#pricing" style={{ color: "#d4a432", textDecoration: "none" }}>Pricing</Link> page and within the app. We reserve the right to change prices with 30 days' notice.</p>
+            <p style={{ marginBottom: 12 }}>BobiFX offers four tiers: Free, Basic, Pro, and Elite. Paid plans are priced per broker account. Current pricing is displayed on the <Link to="/#pricing" style={{ color: "#00d68f", textDecoration: "none" }}>Pricing</Link> page and within the app. We reserve the right to change prices with 30 days' notice.</p>
           </Sub>
           <Sub title="5.2 Billing">
             <Li>Subscriptions are billed monthly or annually depending on the option you select.</Li>
-            <Li>Payments are processed by <strong style={{ color: "#ede9e0" }}>Stripe</strong> via <strong style={{ color: "#ede9e0" }}>RevenueCat</strong>. By subscribing you agree to RevenueCat's and Stripe's terms of service.</Li>
+            <Li>Payments are processed by <strong style={{ color: "#e0e0e0" }}>Stripe</strong> via <strong style={{ color: "#e0e0e0" }}>RevenueCat</strong>. By subscribing you agree to RevenueCat's and Stripe's terms of service.</Li>
             <Li>Your subscription renews automatically at the end of each billing period unless you cancel before the renewal date.</Li>
           </Sub>
           <Sub title="5.3 Cancellation">
@@ -192,16 +192,16 @@ export default function Terms() {
 
         <Section title="14. Contact">
           <p style={{ marginBottom: 12 }}>For questions about these Terms:</p>
-          <div style={{ background: "#171511", border: "1px solid #2c2820", borderRadius: 8, padding: "20px 24px" }}>
-            <div style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, fontSize: 15, color: "#ede9e0", marginBottom: 8 }}>BobiFX</div>
-            <div style={{ fontSize: 13, color: "#a09890", marginBottom: 4 }}>Legal enquiries: <a href="mailto:legal@bobifx.com" style={{ color: "#d4a432", textDecoration: "none" }}>legal@bobifx.com</a></div>
-            <div style={{ fontSize: 13, color: "#a09890" }}>General support: <a href="mailto:support@bobifx.com" style={{ color: "#d4a432", textDecoration: "none" }}>support@bobifx.com</a></div>
+          <div style={{ background: "#111111", border: "1px solid #252525", borderRadius: 10, padding: "20px 24px" }}>
+            <div style={{ fontFamily: "'Syne',system-ui,sans-serif", fontWeight: 700, fontSize: 15, color: "#ffffff", marginBottom: 8 }}>BobiFX</div>
+            <div style={{ fontSize: 14, color: "#888888", marginBottom: 4 }}>Legal enquiries: <a href="mailto:legal@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>legal@bobifx.com</a></div>
+            <div style={{ fontSize: 14, color: "#888888" }}>General support: <a href="mailto:support@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>support@bobifx.com</a></div>
           </div>
         </Section>
 
-        <div style={{ paddingTop: 32, borderTop: "1px solid #2c2820", display: "flex", gap: 24, flexWrap: "wrap" }}>
-          <Link to="/" style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 12, color: "#7a7268", textDecoration: "none" }}>← Back to BobiFX</Link>
-          <Link to="/privacy" style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 12, color: "#7a7268", textDecoration: "none" }}>Privacy Policy →</Link>
+        <div style={{ paddingTop: 32, borderTop: "1px solid #1a1a1a", display: "flex", gap: 24, flexWrap: "wrap" }}>
+          <Link to="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#555555", textDecoration: "none" }}>← Back to BobiFX</Link>
+          <Link to="/privacy" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#555555", textDecoration: "none" }}>Privacy Policy →</Link>
         </div>
       </div>
     </div>

@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
-const months = ["Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar","Apr"];
-const cumR   = [14, 65, 163, 240, 305, 411, 588, 751, 934, 1098, 1111];
+const months = ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr"];
+const cumR = [14, 65, 163, 240, 305, 411, 588, 751, 934, 1098, 1111];
 
 export default function Hero() {
   const chartRef = useRef<HTMLCanvasElement>(null);
@@ -33,12 +33,14 @@ export default function Hero() {
       },
       options: {
         responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false }, tooltip: {
-          callbacks: { label: (c) => `+${c.parsed.y}R` },
-          backgroundColor: "#141414", borderColor: "#252525", borderWidth: 1,
-          titleColor: "#555555", bodyColor: "#f0f0f0",
-          titleFont: { family: "JetBrains Mono" }, bodyFont: { family: "JetBrains Mono" },
-        }},
+        plugins: {
+          legend: { display: false }, tooltip: {
+            callbacks: { label: (c) => `+${c.parsed.y}R` },
+            backgroundColor: "#141414", borderColor: "#252525", borderWidth: 1,
+            titleColor: "#555555", bodyColor: "#f0f0f0",
+            titleFont: { family: "JetBrains Mono" }, bodyFont: { family: "JetBrains Mono" },
+          }
+        },
         scales: {
           x: { grid: { display: false }, ticks: { color: "#555", font: { family: "JetBrains Mono", size: 9 } }, border: { display: false } },
           y: { grid: { color: "#1a1a1a", lineWidth: 0.5 }, ticks: { color: "#555", font: { family: "JetBrains Mono", size: 9 }, callback: (v) => v + "R" }, border: { display: false } },
@@ -50,18 +52,18 @@ export default function Hero() {
 
   const navItems = ["Dashboard", "Signals", "Analytics", "Trades", "Calendar"];
   const navIcons = [
-    <><rect x="1" y="1" width="4" height="4" rx="0.5"/><rect x="7" y="1" width="4" height="4" rx="0.5"/><rect x="1" y="7" width="4" height="4" rx="0.5"/><rect x="7" y="7" width="4" height="4" rx="0.5"/></>,
-    <><path d="M6 1v10M1 6h10"/></>,
-    <><polyline points="1,9 4,5 7,7 11,2"/></>,
-    <><rect x="2" y="3" width="8" height="7" rx="1"/><path d="M5 3V2M7 3V2M2 6h8"/></>,
-    <><rect x="1" y="2" width="10" height="9" rx="1"/><path d="M8 1v2M4 1v2M1 5h10"/></>,
+    <><rect x="1" y="1" width="4" height="4" rx="0.5" /><rect x="7" y="1" width="4" height="4" rx="0.5" /><rect x="1" y="7" width="4" height="4" rx="0.5" /><rect x="7" y="7" width="4" height="4" rx="0.5" /></>,
+    <><path d="M6 1v10M1 6h10" /></>,
+    <><polyline points="1,9 4,5 7,7 11,2" /></>,
+    <><rect x="2" y="3" width="8" height="7" rx="1" /><path d="M5 3V2M7 3V2M2 6h8" /></>,
+    <><rect x="1" y="2" width="10" height="9" rx="1" /><path d="M8 1v2M4 1v2M1 5h10" /></>,
   ];
 
   const signals = [
-    { pair:"XAU/USD", dir:"LONG",  rr:"2.5R", status:"ACTIVE",  sc:"var(--accent)" },
-    { pair:"EUR/USD", dir:"SHORT", rr:"1.8R", status:"TP1",     sc:"var(--warn)"   },
-    { pair:"GBP/USD", dir:"LONG",  rr:"2.5R", status:"ACTIVE",  sc:"var(--accent)" },
-    { pair:"USD/JPY", dir:"SHORT", rr:"2.1R", status:"PENDING", sc:"var(--muted)"  },
+    { pair: "XAU/USD", dir: "LONG", rr: "2.5R", status: "ACTIVE", sc: "var(--accent)" },
+    { pair: "EUR/USD", dir: "SHORT", rr: "1.8R", status: "TP1", sc: "var(--warn)" },
+    { pair: "GBP/USD", dir: "LONG", rr: "2.5R", status: "ACTIVE", sc: "var(--accent)" },
+    { pair: "USD/JPY", dir: "SHORT", rr: "2.1R", status: "PENDING", sc: "var(--muted)" },
   ];
 
   return (
@@ -72,7 +74,7 @@ export default function Hero() {
           Precision Signal Engine · 20 Pairs · Live
         </div>
         <h1 className="bfx-h1">
-          Forex Signals<br /><em>Automated</em>
+          Trade smarter,<br /><em>not harder</em>
         </h1>
         <p className="bfx-hero-sub">
           HTF zone detection, LTF rejection scoring, auto-execution, and deep analytics.
