@@ -54,7 +54,7 @@ export default function Terms() {
             Terms of Service
           </h1>
           <p style={{ color: "#888888", fontSize: 16, lineHeight: 1.75, marginBottom: 16 }}>
-            These Terms of Service ("Terms") govern your access to and use of BobiFX, including the web platform at <strong style={{ color: "#e0e0e0" }}>app.bobifx.com</strong>, the Android mobile application <strong style={{ color: "#e0e0e0" }}>BoBi Trades & Journal</strong>, and the public website at <strong style={{ color: "#e0e0e0" }}>bobifx.com</strong> (collectively, the "Service"). By creating an account or using the Service you agree to be bound by these Terms.
+            These Terms of Service ("Terms") govern your access to and use of BobiFX, including the web platform at <strong style={{ color: "#e0e0e0" }}>https://bbfx.netlify.app/</strong>, the Android mobile application <strong style={{ color: "#e0e0e0" }}>BoBi Trades & Journal</strong>, and the public website at <strong style={{ color: "#e0e0e0" }}>bobifx.com</strong> (collectively, the "Service"). By creating an account or using the Service you agree to be bound by these Terms.
           </p>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Effective date: April 4, 2026</span>

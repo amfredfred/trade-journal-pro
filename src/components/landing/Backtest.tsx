@@ -69,7 +69,7 @@ export default function Backtest() {
             <div className="bfx-bt-cta">
               <div className="bfx-bt-cta-title">Full backtest report available</div>
               <p className="bfx-bt-cta-desc">Download the complete trade-by-trade CSV with symbol, timeframe, session, entry, SL, TP, R:R, and outcome for all 1,484 trades. Includes the full HTML analytics report.</p>
-              <a href="https://results.bobifx.com/fbs-ceil" className="bfx-btn-ghost-sm">
+              <a href="http://bbfx.netlify.app" className="bfx-btn-ghost-sm">
                 ↗ View full backtest · fbs-ceil
               </a>
             </div>

@@ -81,7 +81,7 @@ export default function Hero() {
           The full trade lifecycle — running while you focus on what matters.
         </p>
         <div className="bfx-hero-actions">
-          <a href="https://app.bobifx.com/login" className="bfx-btn-hero">Start free →</a>
+          <a href="https://bbfx.netlify.app/login" className="bfx-btn-hero">Start free →</a>
           <a href="#backtest" className="bfx-btn-hero-ghost">▶ View backtest results</a>
         </div>
 

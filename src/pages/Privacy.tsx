@@ -48,7 +48,7 @@ export default function Privacy() {
             Privacy Policy
           </h1>
           <p style={{ color: "#888888", fontSize: 16, lineHeight: 1.75, marginBottom: 16 }}>
-            This Privacy Policy explains how BobiFX ("we", "us", "our") collects, uses, stores, and protects your personal information when you use our web platform at <strong style={{ color: "#e0e0e0" }}>app.bobifx.com</strong>, our Android mobile application <strong style={{ color: "#e0e0e0" }}>BoBi Trades & Journal</strong>, and our public website at <strong style={{ color: "#e0e0e0" }}>bobifx.com</strong> (collectively, the "Service").
+            This Privacy Policy explains how BobiFX ("we", "us", "our") collects, uses, stores, and protects your personal information when you use our web platform at <strong style={{ color: "#e0e0e0" }}>https://bbfx.netlify.app/</strong>, our Android mobile application <strong style={{ color: "#e0e0e0" }}>BoBi Trades & Journal</strong>, and our public website at <strong style={{ color: "#e0e0e0" }}>bobifx.com</strong> (collectively, the "Service").
           </p>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Effective date: April 4, 2026</span>
