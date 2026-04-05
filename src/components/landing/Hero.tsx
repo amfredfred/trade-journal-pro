@@ -1,87 +1,165 @@
-const Pulse = () => <div className="bfx-pulse" />;
+import { useEffect, useRef } from "react";
+import { Chart, registerables } from "chart.js";
+Chart.register(...registerables);
+
+const months = ["Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar","Apr"];
+const cumR   = [14, 65, 163, 240, 305, 411, 588, 751, 934, 1098, 1111];
 
 export default function Hero() {
+  const chartRef = useRef<HTMLCanvasElement>(null);
+  const chartInst = useRef<Chart | null>(null);
+
+  useEffect(() => {
+    if (!chartRef.current) return;
+    chartInst.current?.destroy();
+    chartInst.current = new Chart(chartRef.current, {
+      type: "line",
+      data: {
+        labels: months,
+        datasets: [{
+          data: cumR,
+          borderColor: "#00d68f",
+          borderWidth: 1.5,
+          pointRadius: 0,
+          tension: 0.35,
+          fill: true,
+          backgroundColor: (ctx) => {
+            const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, ctx.chart.height);
+            g.addColorStop(0, "rgba(0,214,143,.14)");
+            g.addColorStop(1, "rgba(0,214,143,0)");
+            return g;
+          },
+        }],
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: {
+          callbacks: { label: (c) => `+${c.parsed.y}R` },
+          backgroundColor: "#141419", borderColor: "#1e1e28", borderWidth: 1,
+          titleColor: "#60606e", bodyColor: "#f0f0f8",
+          titleFont: { family: "JetBrains Mono" }, bodyFont: { family: "JetBrains Mono" },
+        }},
+        scales: {
+          x: { grid: { display: false }, ticks: { color: "#60606e", font: { family: "JetBrains Mono", size: 9 } }, border: { display: false } },
+          y: { grid: { color: "#1e1e28", lineWidth: 0.5 }, ticks: { color: "#60606e", font: { family: "JetBrains Mono", size: 9 }, callback: (v) => v + "R" }, border: { display: false } },
+        },
+      },
+    });
+    return () => chartInst.current?.destroy();
+  }, []);
+
+  const navItems = ["Dashboard", "Signals", "Analytics", "Trades", "Calendar"];
+  const navIcons = [
+    <><rect x="1" y="1" width="4" height="4" rx="0.5"/><rect x="7" y="1" width="4" height="4" rx="0.5"/><rect x="1" y="7" width="4" height="4" rx="0.5"/><rect x="7" y="7" width="4" height="4" rx="0.5"/></>,
+    <><path d="M6 1v10M1 6h10"/></>,
+    <><polyline points="1,9 4,5 7,7 11,2"/></>,
+    <><rect x="2" y="3" width="8" height="7" rx="1"/><path d="M5 3V2M7 3V2M2 6h8"/></>,
+    <><rect x="1" y="2" width="10" height="9" rx="1"/><path d="M8 1v2M4 1v2M1 5h10"/></>,
+  ];
+
+  const signals = [
+    { pair:"XAU/USD", dir:"LONG",  rr:"2.5R", status:"ACTIVE",  sc:"var(--accent)" },
+    { pair:"EUR/USD", dir:"SHORT", rr:"1.8R", status:"TP1",     sc:"var(--warn)"   },
+    { pair:"GBP/USD", dir:"LONG",  rr:"2.5R", status:"ACTIVE",  sc:"var(--accent)" },
+    { pair:"USD/JPY", dir:"SHORT", rr:"2.1R", status:"PENDING", sc:"var(--muted)"  },
+  ];
+
   return (
     <section className="bfx-hero">
-      <div className="bfx-hero-grid" />
-      <div className="bfx-hero-glow" />
-      <div className="bfx-hero-glow2" />
       <div className="bfx-hero-inner">
-        {/* ── LEFT ── */}
-        <div>
-          <div className="bfx-hero-eyebrow"><Pulse /><span className="bfx-eyebrow-text">Signal engine · LIVE</span></div>
-          <h1 className="bfx-h1">Trade with<br /><em>algorithmic</em><br />precision.</h1>
-          <p className="bfx-hero-sub">
-            BobiFX detects HTF supply &amp; demand zones, fires entry signals at the LTF rejection candle,
-            and executes trades directly on your MT4/MT5 broker — fully automated.
-          </p>
-          <div className="bfx-hero-actions">
-            <a href="https://app.bobifx.com/login" className="bfx-btn-hero">Start free <span style={{ fontSize: 18 }}>→</span></a>
-            <a href="#backtest" className="bfx-btn-hero-ghost">📊 View backtest results</a>
-          </div>
-          <div className="bfx-hero-trust">
-            <div className="bfx-trust-item"><span className="bfx-trust-val">+944R</span> backtested</div>
-            <div className="bfx-trust-sep" />
-            <div className="bfx-trust-item"><span className="bfx-trust-val">1,249</span> trades</div>
-            <div className="bfx-trust-sep" />
-            <div className="bfx-trust-item"><span className="bfx-trust-val">1.89</span> profit factor</div>
-            <div className="bfx-trust-sep" />
-            <div className="bfx-trust-item"><span className="bfx-trust-val">11</span> months</div>
-          </div>
+        <div className="bfx-hero-eyebrow">
+          <div className="bfx-pulse" />
+          Signal engine · 20 pairs · Live
+        </div>
+        <h1 className="bfx-h1">Precision signal engine<br />for serious <em>forex traders.</em></h1>
+        <p className="bfx-hero-sub">
+          HTF zone detection, LTF rejection scoring, auto-execution, and deep analytics —
+          one platform running the full trade lifecycle while you focus on your strategy.
+        </p>
+        <div className="bfx-hero-actions">
+          <a href="https://app.bobifx.com/login" className="bfx-btn-hero">Start free →</a>
+          <a href="#backtest" className="bfx-btn-hero-ghost">View backtest results</a>
         </div>
 
-        {/* ── RIGHT: Signal feed mockup ── */}
-        <div className="bfx-hero-right">
-          <div className="bfx-mockup">
-            <div className="bfx-mockup-bar">
-              <div className="bfx-mockup-dots"><div className="bfx-mockup-dot"/><div className="bfx-mockup-dot"/><div className="bfx-mockup-dot"/></div>
-              <span className="bfx-mockup-ttl">SIGNAL FEED</span>
-              <div className="bfx-mockup-live"><Pulse />LIVE</div>
-            </div>
-            <div className="bfx-mockup-body">
-              {[
-                { pair: "XAU/USD", dir: "LONG",  tf: "1H/5M",  e:"2,318.40", sl:"2,311.20", tp:"2,339.80", rr:"3.0R", status:<><Pulse />TRIGGERED · London</>,  statusColor: "var(--green)", rrColor: "var(--gold)" },
-                { pair: "EUR/USD", dir: "SHORT", tf: "30M/5M", e:"1.08842",  sl:"1.08960",  tp:"1.08370",  rr:"4.0R", status:"◆ TP1 HIT · Moving to BE",         statusColor: "var(--gold)", rrColor: "var(--green)" },
-                { pair: "GBP/USD", dir: "LONG",  tf: "1H/5M",  e:"1.26310",  sl:"1.26148",  tp:"1.26960",  rr:"4.0R", status:"◎ WATCHING · New York",             statusColor: "var(--muted)", rrColor: "var(--gold)" },
-              ].map((s, i) => (
-                <div key={i} className="bfx-signal" style={{ animationDelay: `${i * 0.12}s` }}>
-                  <div>
-                    <div className="bfx-sig-top">
-                      <span className="bfx-sig-pair">{s.pair}</span>
-                      <span className={`bfx-sig-dir bfx-${s.dir.toLowerCase()}`}>{s.dir}</span>
-                      <span className="bfx-sig-tf">{s.tf}</span>
-                    </div>
-                    <div className="bfx-sig-levels">
-                      <span className="bfx-sig-lvl">E <span>{s.e}</span></span>
-                      <span className="bfx-sig-lvl">SL <span>{s.sl}</span></span>
-                      <span className="bfx-sig-lvl">TP <span>{s.tp}</span></span>
-                    </div>
-                    <div className="bfx-sig-status" style={{ color: s.statusColor }}>{s.status}</div>
-                  </div>
-                  <div>
-                    <div className="bfx-sig-rr" style={{ color: s.rrColor }}>{s.rr}</div>
-                    <div className="bfx-sig-rr-lbl">R:R RATIO</div>
-                  </div>
+        {/* Dashboard preview */}
+        <div className="bfx-dash-preview">
+          <div className="bfx-dash-topbar">
+            <div className="bfx-dash-dot" style={{ background: "#f05454" }} />
+            <div className="bfx-dash-dot" style={{ background: "#f5a623" }} />
+            <div className="bfx-dash-dot" style={{ background: "#00d68f" }} />
+            <span className="bfx-dash-topbar-title">BobiFX · Dashboard</span>
+            <div className="bfx-dash-live"><div className="bfx-pulse" />Live</div>
+          </div>
+          <div className="bfx-dash-body">
+            <div className="bfx-dash-sidebar">
+              <div className="bfx-dash-sidebar-logo">
+                <div className="bfx-dash-sidebar-logomark">
+                  <img src="/bobi-foreground.png" alt="BobiFX" />
+                </div>
+                <span className="bfx-dash-sidebar-name">BobiFX</span>
+              </div>
+              {navItems.map((item, i) => (
+                <div key={item} className={`bfx-dash-nav-item${i === 0 ? " active" : ""}`}>
+                  <svg className="bfx-dash-nav-icon" viewBox="0 0 12 12">{navIcons[i]}</svg>
+                  {item}
                 </div>
               ))}
-
-              {/* Mini equity curve */}
-              <div className="bfx-mini-eq">
-                <div className="bfx-mini-eq-head">
-                  <span className="bfx-mini-eq-lbl">RUNNING P&amp;L (R)</span>
-                  <span className="bfx-mini-eq-val">+18.4R</span>
+            </div>
+            <div className="bfx-dash-main">
+              <div className="bfx-kpi-row">
+                <div className="bfx-kpi green">
+                  <div className="bfx-kpi-lbl">Balance</div>
+                  <div className="bfx-kpi-val green">$12.4k</div>
+                  <div className="bfx-kpi-sub">+24.3% all time</div>
                 </div>
-                <svg viewBox="0 0 320 56" width="100%" style={{ display: "block" }}>
-                  <defs>
-                    <linearGradient id="mEqG" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#e6b800" stopOpacity={0.28}/>
-                      <stop offset="100%" stopColor="#e6b800" stopOpacity={0}/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M0,50 L22,47 L44,40 L66,43 L88,34 L110,38 L132,26 L154,30 L176,18 L198,22 L220,12 L242,16 L264,8 L286,11 L320,4 L320,56 L0,56Z" fill="url(#mEqG)"/>
-                  <path d="M0,50 L22,47 L44,40 L66,43 L88,34 L110,38 L132,26 L154,30 L176,18 L198,22 L220,12 L242,16 L264,8 L286,11 L320,4" fill="none" stroke="#e6b800" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"/>
-                  <circle cx="320" cy="4" r="3.5" fill="#e6b800"/>
-                </svg>
+                <div className="bfx-kpi">
+                  <div className="bfx-kpi-lbl">Today P&L</div>
+                  <div className="bfx-kpi-val green">+$186</div>
+                  <div className="bfx-kpi-sub">+1.5%</div>
+                </div>
+                <div className="bfx-kpi">
+                  <div className="bfx-kpi-lbl">Win Rate</div>
+                  <div className="bfx-kpi-val green">41.5%</div>
+                  <div className="bfx-kpi-sub">1,484 trades</div>
+                </div>
+                <div className="bfx-kpi gold">
+                  <div className="bfx-kpi-lbl">Prof. Factor</div>
+                  <div className="bfx-kpi-val gold">2.84</div>
+                  <div className="bfx-kpi-sub">Above target</div>
+                </div>
+                <div className="bfx-kpi green">
+                  <div className="bfx-kpi-lbl">Total RR</div>
+                  <div className="bfx-kpi-val green">+1,111R</div>
+                  <div className="bfx-kpi-sub">+0.75R/sig</div>
+                </div>
+                <div className="bfx-kpi blue">
+                  <div className="bfx-kpi-lbl">Streak</div>
+                  <div className="bfx-kpi-val blue">4 🔥</div>
+                  <div className="bfx-kpi-sub">win streak</div>
+                </div>
+              </div>
+              <div className="bfx-charts-row">
+                <div className="bfx-dash-card">
+                  <div className="bfx-dash-card-title">Signal RR Equity</div>
+                  <div style={{ flex: 1, minHeight: 0, position: "relative" }}>
+                    <canvas ref={chartRef} style={{ width: "100%", height: "100%" }} />
+                  </div>
+                </div>
+                <div className="bfx-dash-card">
+                  <div className="bfx-dash-card-title">Open Signals</div>
+                  <table className="bfx-sig-mini-table">
+                    <tbody>
+                      {signals.map((s) => (
+                        <tr key={s.pair + s.dir}>
+                          <td className="bfx-sig-pair-mini">{s.pair}</td>
+                          <td><span className={`bfx-sig-dir bfx-${s.dir.toLowerCase()}`}>▲ {s.dir === "LONG" ? "L" : "S"}</span></td>
+                          <td style={{ color: "var(--info)", fontFamily: "var(--mono)", fontSize: 9 }}>{s.rr}</td>
+                          <td style={{ color: s.sc, fontFamily: "var(--mono)", fontSize: 9 }}>{s.status}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>

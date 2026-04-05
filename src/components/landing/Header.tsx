@@ -10,6 +10,7 @@ export default function Header() {
     { label: "Features",     href: "#features" },
     { label: "Backtest",     href: "#backtest" },
     { label: "Pricing",      href: "#pricing" },
+    { label: "FAQ",          href: "#faq" },
   ];
   return (
     <header className="bfx-nav">

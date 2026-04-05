@@ -2,28 +2,26 @@ import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
 import StatsBar from "@/components/landing/StatsBar";
 import HowItWorks from "@/components/landing/HowItWorks";
-import Features from "@/components/landing/Features";
-import BrokerStrip from "@/components/landing/BrokerStrip";
+import WhyUseIt from "@/components/landing/WhyUseIt";
 import Backtest from "@/components/landing/Backtest";
-import TVStrip from "@/components/landing/TVStrip";
+import Features from "@/components/landing/Features";
+import BuiltWith from "@/components/landing/BuiltWith";
 import Pricing from "@/components/landing/Pricing";
-import MobileApp from "@/components/landing/MobileApp";
-import CTA from "@/components/landing/CTA";
+import FAQ from "@/components/landing/FAQ";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => (
-  <div style={{ background: "#0d0c0a", minHeight: "100vh" }}>
+  <div className="bfx-page" style={{ background: "var(--bg)", minHeight: "100vh" }}>
     <Header />
     <Hero />
     <StatsBar />
     <HowItWorks />
-    <Features />
-    <BrokerStrip />
+    <WhyUseIt />
     <Backtest />
-    <TVStrip />
+    <Features />
+    <BuiltWith />
     <Pricing />
-    <MobileApp />
-    <CTA />
+    <FAQ />
     <Footer />
   </div>
 );

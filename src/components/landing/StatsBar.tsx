@@ -1,10 +1,10 @@
 const stats = [
-  { n: "+944R",    cls: "bfx-gold",  lbl: "Total backtested"    },
-  { n: "1,249",   cls: "bfx-dim",   lbl: "Trades analysed"     },
-  { n: "31%",     cls: "bfx-dim",   lbl: "Win rate"            },
-  { n: "1.89",    cls: "bfx-gold",  lbl: "Profit factor"       },
-  { n: "+0.756R", cls: "bfx-green", lbl: "Expectancy / trade"  },
-  { n: "20",      cls: "bfx-dim",   lbl: "Pairs covered"       },
+  { n: "+1,111R",  cls: "bfx-gold",  lbl: "Total backtested"   },
+  { n: "1,484",    cls: "bfx-dim",   lbl: "Trades analysed"    },
+  { n: "41.5%",    cls: "bfx-dim",   lbl: "Win rate"           },
+  { n: "2.84",     cls: "bfx-gold",  lbl: "Profit factor"      },
+  { n: "+0.749R",  cls: "bfx-green", lbl: "Expectancy / trade" },
+  { n: "10",       cls: "bfx-dim",   lbl: "Pairs covered"      },
 ];
 export default function StatsBar() {
   return (

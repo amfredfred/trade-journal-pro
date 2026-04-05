@@ -20,8 +20,9 @@ export default function Footer() {
             <li><a href="#how-it-works">How it works</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#backtest">Backtest results</a></li>
+            <li><a href="#built-with">Infrastructure</a></li>
             <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#mobile">Mobile app</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
         <div>

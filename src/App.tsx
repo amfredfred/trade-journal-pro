@@ -1,9 +1,9 @@
-import "./bobifx.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import "./bobifx.css";
 
 const App = () => (
   <BrowserRouter>
