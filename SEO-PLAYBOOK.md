@@ -181,7 +181,7 @@ Google's entity understanding relies on consistent brand signals across the web.
 - [ ] **Product Hunt launch** — huge one-day traffic spike + backlinks from a DA 90 site. Schedule for a Tuesday or Wednesday.
 - [ ] **G2 or Capterra listing** — review platforms for software. Each review is UGC that Google indexes. Even 5 reviews dramatically increases brand trust signals.
 - [ ] **Twitter/X account** as `@bobisquote` — already referenced in JSON-LD. The Twitter Card is set up, so links shared on X will show a rich preview.
-- [ ] **Android app store listing** — you already have the app. Ensure the Play Store listing says "Bobi's Quote" (not BobiFX or BobiTrades) and links to your website.
+- [ ] **Android app store listing** — you already have the app. Ensure the Play Store listing says "Bobi's Quote" (not Bobi's Quoteor BobiTrades) and links to your website.
 
 ---
 

@@ -1,77 +1,116 @@
-const steps = [
+type PipeStep = {
+  icon: string;
+  name: string;
+  desc: string;
+  color?: string;
+};
+
+type ForkStep = {
+  fork: true;
+  question: string;
+  yes: string;
+  no: string;
+};
+
+type Step = PipeStep | ForkStep;
+
+const steps: Step[] = [
   {
-    n: "1", phase: "HTF SCAN", color: "var(--accent)",
-    icon: "⬡",
-    name: "Break of Structure Detected",
-    desc: "The engine scans all pairs on the higher timeframe (30M / 1H). When price breaks cleanly above a swing high or below a swing low, a supply or demand zone is confirmed and locked.",
-    tag: "MarketStructure · TrendBias",
+    icon: "🔍",
+    name: "Zone Detected",
+    desc: "A key price level is identified and confirmed.",
   },
   {
-    n: "2", phase: "ZONE MAP", color: "var(--info)",
-    icon: "◈",
-    name: "Zone Logged & Session-Filtered",
-    desc: "The zone is added to the Zone Map and checked against your active sessions — Tokyo, London, NY. Overlapping zones within the same session are deduplicated.",
-    tag: "SessionMemory · ZoneMap",
+    icon: "📋",
+    name: "Added to Watchlist",
+    desc: "The zone is monitored continuously for price interaction.",
   },
   {
-    n: "3", phase: "APPROACH", color: "var(--warn)",
-    icon: "◎",
-    name: "Price Nears Zone — PENDING Alert",
-    desc: "When price closes within range of the zone on the LTF (5M), status advances to PENDING. Push notification fires with pre-calculated entry, SL, TP1, and TP2.",
-    tag: "SignalScheduler · LTF_WATCH",
+    fork: true,
+    question: "Converts to Signal?",
+    yes: "Signal generated →",
+    no: "Invalidated & removed",
   },
   {
-    n: "4", phase: "TRIGGER", color: "var(--danger)",
-    icon: "◆",
-    name: "Rejection Candle Scored",
-    desc: "A hammer at demand or shooting-star at supply forms at the zone edge. The engine scores wick ratio, body position, and close. If it passes, signal is TRIGGERED.",
-    tag: "RejectionDetector · QualityGate",
+    icon: "🛡️",
+    name: "Risk Check",
+    desc: "Loss limits, drawdown rules, and R:R thresholds validated.",
   },
   {
-    n: "5", phase: "EXECUTION", color: "var(--accent)",
-    icon: "▶",
-    name: "Order Placed on Broker",
-    desc: "With auto-trade on, the order hits your MT4 or MT5 account immediately via MetaAPI — sized to your configured R. SL placed just beyond the zone.",
-    tag: "MetaAPI · AutoTradeEngine",
+    icon: "📐",
+    name: "Trade Planned",
+    desc: "Entry, stop loss, TP1, and TP2 levels set automatically.",
   },
   {
-    n: "6", phase: "MANAGEMENT", color: "var(--gold)",
-    icon: "⟳",
-    name: "TP1 Hit — Stop to Breakeven",
-    desc: "At TP1 the engine automatically moves stop-loss to entry, locking in a risk-free runner. Partial profit logged. Position continues toward TP2.",
-    tag: "TradeManagement · Breakeven",
-  },
-  {
-    n: "7", phase: "CLOSE", color: "var(--gold)",
     icon: "✓",
-    name: "TP2 Reached — Logged to Analytics",
-    desc: "Final target hit. Position closes. R:R, outcome, and duration are written to journal, equity curve, and analytics simultaneously. WIN, LOSS, or BE — all recorded.",
-    tag: "Analytics · Journal · EquityCurve",
+    name: "Executed on Broker",
+    desc: "Order placed on your MT4 or MT5 account. No manual action needed.",
+    color: "var(--accent)",
   },
 ];
+
+function isFork(s: Step): s is ForkStep {
+  return (s as ForkStep).fork === true;
+}
 
 export default function HowItWorks() {
   return (
     <section className="bfx-hiw" id="how-it-works">
       <div className="bfx-section-inner">
         <div className="bfx-hiw-header">
-          <div className="bfx-label">Signal Engine Pipeline</div>
-          <h2 className="bfx-h2">How It <span className="dim">Works</span></h2>
-          <p className="bfx-sub">Seven steps. Every one runs automatically — from zone detection to closed trade.</p>
+          <div className="bfx-label">How It Works</div>
+          <h2 className="bfx-h2">From zone to trade. <span className="dim">Automatically.</span></h2>
+          <p className="bfx-sub">Bobi's Quote runs the full pipeline — from detecting a setup to executing on your broker — without you lifting a finger.</p>
         </div>
-        <div className="bfx-hiw-grid">
-          {steps.map((s) => (
-            <div key={s.n} className="bfx-hiw-card">
-              <div className="bfx-hiw-ghost">{s.n}</div>
-              <div className="bfx-hiw-icon" style={{ borderColor: `color-mix(in srgb, ${s.color} 30%, var(--border2))` }}>
-                <span style={{ color: s.color, fontSize: 18 }}>{s.icon}</span>
+
+        <div className="bfx-pipe">
+          {steps.map((step, i) =>
+            isFork(step) ? (
+              <div key={i} className="bfx-pipe-fork">
+                <div className="bfx-pipe-connector" />
+                <div className="bfx-pipe-fork-label">{step.question}</div>
+                <div className="bfx-pipe-fork-branches">
+                  <div className="bfx-pipe-branch bfx-pipe-branch--no">
+                    <div className="bfx-pipe-branch-tick bfx-pipe-branch-tick--no" />
+                    <span className="bfx-pipe-branch-dir">No</span>
+                    <div className="bfx-pipe-branch-tick bfx-pipe-branch-tick--no" />
+                    <div className="bfx-pipe-branch-node bfx-pipe-branch-node--no">{step.no}</div>
+                  </div>
+                  <div className="bfx-pipe-branch bfx-pipe-branch--yes">
+                    <div className="bfx-pipe-branch-tick bfx-pipe-branch-tick--yes" />
+                    <span className="bfx-pipe-branch-dir">Yes</span>
+                    <div className="bfx-pipe-branch-tick bfx-pipe-branch-tick--yes" />
+                    <div className="bfx-pipe-branch-node bfx-pipe-branch-node--yes">{step.yes}</div>
+                  </div>
+                </div>
+                <div className="bfx-pipe-connector" />
               </div>
-              <div className="bfx-hiw-phase" style={{ color: s.color }}>{s.phase}</div>
-              <div className="bfx-hiw-name">{s.name}</div>
-              <p className="bfx-hiw-desc">{s.desc}</p>
-              <div className="bfx-hiw-tag">{s.tag}</div>
-            </div>
-          ))}
+            ) : (
+              <div key={i} className="bfx-pipe-step-wrap">
+                {i > 0 && <div className="bfx-pipe-connector" />}
+                <div
+                  className="bfx-pipe-node"
+                  style={step.color ? { borderColor: `color-mix(in srgb, ${step.color} 30%, var(--border2))` } : undefined}
+                >
+                  <div
+                    className="bfx-pipe-node-icon"
+                    style={step.color ? { color: step.color, borderColor: `color-mix(in srgb, ${step.color} 30%, var(--border2))` } : undefined}
+                  >
+                    {step.icon}
+                  </div>
+                  <div>
+                    <div
+                      className="bfx-pipe-node-name"
+                      style={step.color ? { color: step.color } : undefined}
+                    >
+                      {step.name}
+                    </div>
+                    <div className="bfx-pipe-node-desc">{step.desc}</div>
+                  </div>
+                </div>
+              </div>
+            )
+          )}
         </div>
       </div>
     </section>

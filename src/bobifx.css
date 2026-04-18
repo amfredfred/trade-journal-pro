@@ -638,3 +638,92 @@ body{
   .bfx-footer-inner{grid-template-columns:1fr}
   .bfx-h1{font-size:clamp(40px,12vw,60px)}
 }
+
+/* ═══════════════════════════════════════════
+   HOW IT WORKS — PIPELINE
+═══════════════════════════════════════════ */
+.bfx-hiw { padding: 96px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.bfx-hiw-header { text-align: center; margin-bottom: 52px; }
+
+.bfx-pipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 580px;
+  margin: 0 auto;
+}
+.bfx-pipe-step-wrap { width: 100%; }
+
+.bfx-pipe-node {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px;
+  background: var(--panel);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.bfx-pipe-node:hover {
+  border-color: rgba(0,214,143,0.28);
+  box-shadow: 0 0 0 1px rgba(0,214,143,0.08);
+}
+.bfx-pipe-node-icon {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--surface); border: 1px solid var(--border2);
+  border-radius: 8px; font-size: 16px; flex-shrink: 0;
+  color: var(--dim); transition: color 0.2s;
+}
+.bfx-pipe-node-name {
+  font-family: var(--mono); font-size: 12px; font-weight: 600;
+  color: var(--text); letter-spacing: 0.02em;
+}
+.bfx-pipe-node-desc {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--dim); letter-spacing: 0.03em; margin-top: 3px;
+}
+
+.bfx-pipe-connector {
+  width: 1px; height: 22px;
+  background: var(--border2);
+  margin: 0 auto; position: relative;
+}
+.bfx-pipe-connector::after {
+  content: ''; position: absolute;
+  bottom: -4px; left: -3px;
+  width: 7px; height: 7px;
+  border-right: 1px solid var(--border2);
+  border-bottom: 1px solid var(--border2);
+  transform: rotate(45deg);
+}
+
+.bfx-pipe-fork { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.bfx-pipe-fork-label {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--warn); padding: 5px 16px;
+  border: 1px solid rgba(245,158,11,0.22);
+  border-radius: 999px; background: rgba(245,158,11,0.05);
+  margin-bottom: 6px;
+}
+.bfx-pipe-fork-branches {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; width: 100%;
+}
+.bfx-pipe-branch { display: flex; flex-direction: column; align-items: center; }
+.bfx-pipe-branch-tick { width: 1px; height: 14px; }
+.bfx-pipe-branch-tick--no  { background: rgba(239,68,68,0.4); }
+.bfx-pipe-branch-tick--yes { background: rgba(0,214,143,0.4); }
+.bfx-pipe-branch-dir {
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: 0.12em; text-transform: uppercase; margin: 2px 0;
+}
+.bfx-pipe-branch--no  .bfx-pipe-branch-dir { color: var(--danger); }
+.bfx-pipe-branch--yes .bfx-pipe-branch-dir { color: var(--accent); }
+.bfx-pipe-branch-node {
+  padding: 10px 14px; border-radius: 8px;
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.04em; text-align: center; width: 100%;
+}
+.bfx-pipe-branch-node--no  { background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); color: var(--danger); }
+.bfx-pipe-branch-node--yes { background: rgba(0,214,143,0.06); border: 1px solid rgba(0,214,143,0.2); color: var(--accent); }

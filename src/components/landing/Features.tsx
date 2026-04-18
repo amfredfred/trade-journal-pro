@@ -1,75 +1,122 @@
-const groups = [
+const features = [
   {
-    label: "Signal Engine",
-    desc: "The core — detecting and broadcasting high-quality setups.",
-    features: [
-      { name: "Live Signal Feed", tag: "FREE", desc: "Real-time alerts for all 20 pairs. Every signal includes HTF zone, LTF rejection candle, entry, SL, TP1, TP2, R:R, and current status — with push notifications on mobile." },
-      { name: "Zone Map", tag: "FREE", desc: "Visual dashboard of every active supply and demand zone across all pairs, grouped by status: WATCHING, ACTIVE, or DEAD. Always know exactly where the engine is focused." },
-      { name: "Session Filter", tag: "FREE", desc: "Signals are session-gated (Tokyo / London / NY). Only setups that align with your configured active sessions are emitted — reducing noise and improving edge consistency." },
-    ],
+    name: "Signal Alerts",
+    tier: "FREE",
+    desc: "Real-time alerts the moment a zone triggers. Every signal includes entry, stop loss, TP1, TP2, and R:R — ready to act on or auto-execute.",
   },
   {
-    label: "Execution & Automation",
-    desc: "Connect your broker and let the engine trade for you.",
-    features: [
-      { name: "Auto-Trade Engine", tag: "BASIC+", desc: "Connect MT4 or MT5 via MetaAPI. The engine places trades, manages breakeven at TP1, and closes positions automatically — no manual intervention." },
-      { name: "Breakeven Management", tag: "BASIC+", desc: "Stop-loss is automatically moved to entry price when TP1 is hit, eliminating risk on open runners and enforcing consistent trade management across all positions." },
-      { name: "Multi-Account Support", tag: "ELITE", desc: "Run up to 10 broker accounts simultaneously. Each account operates independently with its own risk settings, pipeline allocation, and loss-guard circuit breakers." },
-    ],
+    name: "Zone Watchlist",
+    tier: "FREE",
+    desc: "See every active zone across all pairs — watching, triggered, or invalidated. Always know where the next setup is building.",
   },
   {
-    label: "Analytics & Journaling",
-    desc: "Understand your edge deeply. Improve systematically.",
-    features: [
-      { name: "Trade Journal", tag: "FREE", desc: "Log every trade with entry/exit, screenshots, emotion tags, strategy notes, and conviction levels. Auto-populated from connected broker accounts via MetaAPI sync." },
-      { name: "Advanced Analytics", tag: "PRO", desc: "Full analytics suite: equity curve, session heatmap, rolling performance windows, monthly scorecard, strategy breakdown, and R:R distribution — all per account." },
-      { name: "Session & Hour Analysis", tag: "PRO", desc: "Hour-by-hour and session-level breakdown showing net R:R, win rate, and trade frequency across Tokyo, London, and New York. Find your highest-edge windows." },
-    ],
+    name: "Trade Journal",
+    tier: "FREE",
+    desc: "Every trade logged automatically from your broker. Filter by symbol, session, direction, or outcome. Full history, no manual entry.",
   },
   {
-    label: "Performance & Risk",
-    desc: "Track your edge over time and protect your capital.",
-    features: [
-      { name: "Performance Hub", tag: "PRO", desc: "Risk-of-ruin calculator, income projection, streak tracker, rolling equity curve, and monthly scorecard — everything to monitor whether your statistical edge holds over time." },
-      { name: "Economic Calendar", tag: "FREE", desc: "Integrated news calendar overlaid on your signal and trade history. See exactly how high-impact events affect your system's performance by session and pair." },
-      { name: "Loss-Guard Circuit Breakers", tag: "ELITE", desc: "Set daily or weekly drawdown limits per account. The engine automatically suspends auto-trading if thresholds are breached — protecting funded and prop accounts." },
-    ],
+    name: "Auto-Trade Execution",
+    tier: "BASIC+",
+    desc: "Connect your broker and let Bobi's Quote place, manage, and close trades automatically. Breakeven at TP1 is handled for you.",
+  },
+  {
+    name: "Advanced Analytics",
+    tier: "PRO",
+    desc: "Equity curve, win rate by session and hour, profit factor, and monthly scorecard. The numbers that actually tell you if your edge holds.",
+  },
+  {
+    name: "Loss Guard",
+    tier: "PRO",
+    desc: "Set daily loss limits and consecutive stop rules. Auto-pause kicks in before damage compounds — essential for funded accounts.",
   },
 ];
+
+const TIER_COLOR: Record<string, string> = {
+  "FREE": "var(--accent)",
+  "BASIC+": "var(--info)",
+  "PRO": "var(--gold)",
+  "ELITE": "var(--purple, #a78bfa)",
+};
 
 export default function Features() {
   return (
     <section id="features" className="bfx-features-section">
       <div className="bfx-section-inner">
-        <div style={{ textAlign: "center", marginBottom: 60 }}>
-          <div className="bfx-label">Platform</div>
-          <h2 className="bfx-h2">Everything a <span className="dim">Serious Trader</span> Needs</h2>
+        <div style={{ textAlign: "center", marginBottom: 52 }}>
+          <div className="bfx-label">What's Included</div>
+          <h2 className="bfx-h2">Everything that <span className="dim">matters.</span></h2>
           <p className="bfx-sub" style={{ margin: "0 auto" }}>
-            Signal engine, auto-execution, analytics, journaling — grouped by function.
+            The features that directly affect your trading — nothing else.
           </p>
         </div>
-        <div className="bfx-feat-groups">
-          {groups.map((g) => (
-            <div key={g.label} className="bfx-feat-group">
-              <div className="bfx-feat-group-header">
-                <div className="bfx-feat-group-label">{g.label}</div>
-                <p className="bfx-feat-group-desc">{g.desc}</p>
+        <div className="bfx-feat-flat-grid">
+          {features.map((f) => (
+            <div key={f.name} className="bfx-feat-flat-card">
+              <div className="bfx-feat-flat-top">
+                <div className="bfx-feat-name">{f.name}</div>
+                <span
+                  className="bfx-feat-tag"
+                  style={{ color: TIER_COLOR[f.tier], borderColor: `color-mix(in srgb, ${TIER_COLOR[f.tier]} 28%, transparent)`, background: `color-mix(in srgb, ${TIER_COLOR[f.tier]} 8%, transparent)` }}
+                >
+                  {f.tier}
+                </span>
               </div>
-              <div className="bfx-feat-group-cols">
-                {g.features.map((f) => (
-                  <div key={f.name} className="bfx-feat-card">
-                    <div className="bfx-feat-top">
-                      <div className="bfx-feat-name">{f.name}</div>
-                      <span className="bfx-feat-tag">{f.tag}</span>
-                    </div>
-                    <p className="bfx-feat-desc">{f.desc}</p>
-                  </div>
-                ))}
-              </div>
+              <p className="bfx-feat-desc">{f.desc}</p>
             </div>
           ))}
         </div>
       </div>
+
+      <style>{`
+        .bfx-feat-flat-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2px;
+          border: 1px solid var(--border);
+          border-radius: var(--radius);
+          overflow: hidden;
+        }
+        @media (max-width: 768px) {
+          .bfx-feat-flat-grid { grid-template-columns: 1fr; }
+        }
+        .bfx-feat-flat-card {
+          padding: 26px 24px;
+          background: var(--panel);
+          border-right: 1px solid var(--border);
+          border-bottom: 1px solid var(--border);
+          transition: background 0.15s;
+        }
+        .bfx-feat-flat-card:hover { background: var(--surface); }
+        .bfx-feat-flat-card:nth-child(3n) { border-right: none; }
+        .bfx-feat-flat-card:nth-last-child(-n+3) { border-bottom: none; }
+        .bfx-feat-flat-top {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 10px;
+        }
+        .bfx-feat-name {
+          font-family: var(--mono);
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--text);
+          letter-spacing: 0.03em;
+        }
+        .bfx-feat-tag {
+          font-family: var(--mono);
+          font-size: 9px;
+          letter-spacing: 0.12em;
+          padding: 2px 8px;
+          border-radius: 999px;
+          border: 1px solid;
+          font-weight: 600;
+        }
+        .bfx-feat-desc {
+          font-size: 13px;
+          color: var(--dim);
+          line-height: 1.65;
+        }
+      `}</style>
     </section>
   );
 }
