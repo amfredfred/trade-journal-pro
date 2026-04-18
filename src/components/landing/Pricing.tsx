@@ -4,7 +4,7 @@ const plans = [
     annual: "or $9.99/mo billed annually", featured: false,
     features: [
       { t: "Unlimited trade journal + screenshots", on: true },
-      { t: "1 broker account (MT4/MT5/cTrader…)", on: true },
+      { t: "1 broker account (MT4 / MT5)", on: true },
       { t: "3 signal pair subscriptions", on: true },
       { t: "Basic analytics dashboard", on: true },
       { t: "Signal & zone push alerts", on: true },
@@ -72,7 +72,7 @@ export default function Pricing() {
               <ul className="bfx-plan-features">
                 {p.features.map((f, i) => <li key={i} className={f.on ? "" : "off"}>{f.t}</li>)}
               </ul>
-              <a href="https://bbfx.netlify.app/login" className={`bfx-plan-btn ${p.btn}`}>{p.cta}</a>
+              <a href="https://app.bobisquote.com/login" className={`bfx-plan-btn ${p.btn}`}>{p.cta}</a>
             </div>
           ))}
         </div>

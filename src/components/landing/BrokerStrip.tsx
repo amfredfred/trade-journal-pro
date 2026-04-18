@@ -1,9 +1,6 @@
 const brokers = [
-  { short:"MT5",     name:"MetaTrader 5"  },
-  { short:"MT4",     name:"MetaTrader 4"  },
-  { short:"Match",   name:"Match Trader"  },
-  { short:"cTrader", name:"cTrader"       },
-  { short:"TV",      name:"TradingView"   },
+  { short: "MT5", name: "MetaTrader 5" },
+  { short: "MT4", name: "MetaTrader 4" },
 ];
 export default function BrokerStrip() {
   return (

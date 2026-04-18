@@ -1,65 +1,229 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ── Primary Meta ─────────────────────────────────────────────────── -->
-    <title>BobiFX — Trade Smarter. Not Harder.</title>
-    <meta name="title"       content="BobiFX — Trade Smarter. Not Harder." />
-    <meta name="description" content="BobiFX detects HTF supply & demand zones, fires entry signals at the LTF rejection candle, and journals every trade automatically. Built for serious prop traders." />
-    <meta name="keywords"    content="trading journal, forex signals, prop trading, HTF zones, supply demand, trade analytics, risk management, BobiFX" />
-    <meta name="author"      content="BobiFX" />
-    <meta name="robots"      content="index, follow" />
+    <!-- ══ PRIMARY META ══════════════════════════════════════════════════════ -->
+    <title>Bobi's Quote | Forex Signal Engine · Auto-Trade · Analytics</title>
+    <meta
+      name="description"
+      content="Bobi's Quote is a precision forex signal engine with auto-trade execution, zone detection, and deep analytics. 1,484 backtested trades · +1,111R · 2.84 profit factor. Supports MT4 and MT5. Try free."
+    />
+    <meta
+      name="keywords"
+      content="forex signal engine, forex auto trade, supply demand zone, MT4 auto trading, MT5 signal, forex analytics, trade journal, break of structure, forex bot, algorithmic trading, prop firm trading tool, funded account trading, forex signal app"
+    />
+    <meta name="author" content="Bobi's Quote" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://bobisquote.com/" />
 
-    <!-- ── Theme ────────────────────────────────────────────────────────── -->
-    <meta name="theme-color" content="#0a0a0c" />
-    <meta name="color-scheme" content="dark" />
-    <meta name="msapplication-TileColor" content="#0a0a0c" />
-    <meta name="msapplication-TileImage" content="/bobi-icon.png" />
-
-    <!-- ── Favicons ─────────────────────────────────────────────────────── -->
-    <link rel="icon"              type="image/svg+xml" href="/favicon.png" />
-    <link rel="icon"              type="image/png"     href="/favicon.png" sizes="32x32" />
-    <link rel="icon"              type="image/png"     href="/bobi-icon.png" sizes="192x192" />
-    <link rel="apple-touch-icon"  href="/bobi-icon.png" sizes="180x180" />
-    <link rel="shortcut icon"     href="/favicon.png" />
-
-    <!-- ── Open Graph ───────────────────────────────────────────────────── -->
+    <!-- ══ OPEN GRAPH (Facebook · LinkedIn · Discord · WhatsApp) ═════════════ -->
     <meta property="og:type"        content="website" />
-    <meta property="og:url"         content="https://bobifx.com/" />
-    <meta property="og:site_name"   content="BobiFX" />
-    <meta property="og:title"       content="BobiFX — Trade Smarter. Not Harder." />
-    <meta property="og:description" content="BobiFX detects HTF supply & demand zones, fires entry signals at the LTF rejection candle, and journals every trade automatically. Built for serious prop traders." />
-    <meta property="og:image"       content="https://bobifx.com/bobi-logo.png" />
+    <meta property="og:url"         content="https://bobisquote.com/" />
+    <meta property="og:site_name"   content="Bobi's Quote" />
+    <meta property="og:title"       content="Bobi's Quote — Precision Forex Signal Engine" />
+    <meta
+      property="og:description"
+      content="HTF zone detection · LTF rejection scoring · auto-execution · deep analytics. 1,484 backtested trades, +1,111R, 2.84 profit factor. MT4 / MT5. Free tier available."
+    />
+    <meta property="og:image"       content="https://bobisquote.com/og-image.png" />
     <meta property="og:image:width"  content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt"   content="BobiFX — Focused Trading Engine" />
+    <meta property="og:image:alt"   content="Bobi's Quote dashboard showing equity curve and live signal feed" />
     <meta property="og:locale"      content="en_US" />
 
-    <!-- ── Twitter / X Card ─────────────────────────────────────────────── -->
+    <!-- ══ TWITTER CARD ══════════════════════════════════════════════════════ -->
     <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:site"        content="@bobifx" />
-    <meta name="twitter:creator"     content="@bobifx" />
-    <meta name="twitter:url"         content="https://bobifx.com/" />
-    <meta name="twitter:title"       content="BobiFX — Trade Smarter. Not Harder." />
-    <meta name="twitter:description" content="BobiFX detects HTF supply & demand zones, fires entry signals at the LTF rejection candle, and journals every trade automatically. Built for serious prop traders." />
-    <meta name="twitter:image"       content="https://bobifx.com/bobi-logo.png" />
-    <meta name="twitter:image:alt"   content="BobiFX — Focused Trading Engine" />
-
-    <!-- ── Canonical ────────────────────────────────────────────────────── -->
-    <link rel="canonical" href="https://bobifx.com/" />
-
-    <!-- ── Fonts ────────────────────────────────────────────────────────── -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
-      rel="stylesheet"
+    <meta name="twitter:site"        content="@bobisquote" />
+    <meta name="twitter:title"       content="Bobi's Quote — Forex Signal Engine & Auto-Trade" />
+    <meta
+      name="twitter:description"
+      content="1,484 backtested trades · +1,111R total return · 2.84 profit factor. Zone detection, auto-execution, deep analytics. Supports MT4 and MT5. Try free."
     />
+    <meta name="twitter:image"       content="https://bobisquote.com/twitter-card.png" />
+    <meta name="twitter:image:alt"   content="Bobi's Quote signal dashboard" />
+
+    <!-- ══ ICONS & PWA ════════════════════════════════════════════════════════ -->
+    <link rel="icon"             type="image/png"   href="/favicon.png" />
+    <link rel="icon"             type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon"                   href="/apple-touch-icon.png" />
+    <link rel="manifest"                           href="/site.webmanifest" />
+    <meta name="theme-color"         content="#0a0a0a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Bobi's Quote" />
+
+    <!-- ══ STRUCTURED DATA — JSON-LD ════════════════════════════════════════ -->
+
+    <!-- 1. SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Bobi's Quote",
+      "url": "https://bobisquote.com",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web, Android, iOS",
+      "description": "Precision forex signal engine with HTF/LTF zone detection, auto-trade execution via MetaAPI, deep analytics, and trade journaling. Supports MT4 and MT5.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Basic",
+          "price": "14.99",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "44.97",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Elite",
+          "price": "149.90",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          }
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "47"
+      }
+    }
+    </script>
+
+    <!-- 2. Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Bobi's Quote",
+      "url": "https://bobisquote.com",
+      "logo": "https://bobisquote.com/bobi-logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "support@bobisquote.com",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://twitter.com/bobisquote",
+        "https://play.google.com/store/apps/details?id=com.devfred.bobitradesapp"
+      ]
+    }
+    </script>
+
+    <!-- 3. FAQPage — pulls directly from your FAQ component content -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What brokers are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bobi's Quote connects to any MT4 or MT5 account via MetaAPI. This covers the vast majority of retail forex brokers worldwide — including IC Markets, Pepperstone, FTMO, and most prop firms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Bobi's Quote different from a copy-trading service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A copy-trading service blindly mirrors someone else's trades. Bobi's Quote detects setups using deterministic technical rules — Break of Structure, zone formation, rejection candle scoring — based on what price is doing right now on your data feed. You own the logic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do the backtest results prove?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The walk-forward simulation ran across 10 liquid pairs over 10 months, producing 1,484 trades using the exact same rules the live engine applies — session filters, dedup rules, R:R gates, breakeven logic. +1,111.45R at a profit factor of 2.84 with a max drawdown of −7.75R."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Bobi's Quote without auto-trade enabled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The signal feed, zone map, trade journal, and analytics work fully without a connected broker. Many users monitor signals manually and enter trades themselves. Auto-trade is optional and can be enabled at any time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it suitable for prop or funded accounts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Elite plan includes funded account mode with configurable daily drawdown limits and loss-guard circuit breakers that automatically suspend trading if thresholds are breached — designed to comply with standard prop firm risk rules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What timeframe pairs does the signal engine use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The default runs 30M/5M and 1H/5M in parallel. Each pair runs an independent pipeline and emits signals tagged with its timeframe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is billing handled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Subscriptions are managed through RevenueCat with payments via Stripe. Subscribe, upgrade, downgrade, or cancel at any time. No contracts. A free tier lets you explore signals and zones before connecting any broker."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if my internet connection drops?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The signal engine runs server-side, not on your device. Open positions managed by auto-trade continue to be tracked and managed regardless of your connection status. Push notifications fire when TP1, TP2, or SL is hit."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- 4. BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bobisquote.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://bobisquote.com/#features" },
+        { "@type": "ListItem", "position": 3, "name": "Backtest Results", "item": "https://bobisquote.com/#backtest" },
+        { "@type": "ListItem", "position": 4, "name": "Pricing", "item": "https://bobisquote.com/#pricing" }
+      ]
+    }
+    </script>
+
+    <!-- ══ PRELOADS ═══════════════════════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preload"    href="/bobi-foreground.png" as="image" />
+
+    <!-- ══ ENTRY ═══════════════════════════════════════════════════════════════ -->
+    <script type="module" src="/src/main.tsx"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

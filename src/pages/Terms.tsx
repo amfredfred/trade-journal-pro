@@ -37,8 +37,8 @@ export default function Terms() {
       {/* Nav strip */}
       <div style={{ padding: "0 40px", height: 64, display: "flex", alignItems: "center", borderBottom: "1px solid #1a1a1a", background: "rgba(10,10,10,.9)", position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(20px)" }}>
         <Link to="/" className="bfx-nav-logo">
-          <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="BobiFX" /></div>
-          <span className="bfx-nav-brand">BobiFX</span>
+          <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="Bobi's Quote logo" /></div>
+          <span className="bfx-nav-brand">Bobi's Quote</span>
         </Link>
         <span style={{ marginLeft: "auto", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555", letterSpacing: "0.06em" }}>TERMS OF SERVICE</span>
       </div>
@@ -54,7 +54,7 @@ export default function Terms() {
             Terms of Service
           </h1>
           <p style={{ color: "#888888", fontSize: 16, lineHeight: 1.75, marginBottom: 16 }}>
-            These Terms of Service ("Terms") govern your access to and use of BobiFX, including the web platform at <strong style={{ color: "#e0e0e0" }}>https://bbfx.netlify.app/</strong>, the Android mobile application <strong style={{ color: "#e0e0e0" }}>BoBi Trades & Journal</strong>, and the public website at <strong style={{ color: "#e0e0e0" }}>bobifx.com</strong> (collectively, the "Service"). By creating an account or using the Service you agree to be bound by these Terms.
+            These Terms of Service ("Terms") govern your access to and use of Bobi's Quote, including the web platform at <strong style={{ color: "#e0e0e0" }}>https://app.bobisquote.com/</strong>, the Android mobile application <strong style={{ color: "#e0e0e0" }}>Bobi's Quote</strong>, and the public website at <strong style={{ color: "#e0e0e0" }}>bobisquote.com</strong> (collectively, the "Service"). By creating an account or using the Service you agree to be bound by these Terms.
           </p>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Effective date: April 4, 2026</span>
@@ -73,20 +73,20 @@ export default function Terms() {
         </Section>
 
         <Section title="2. Description of Service">
-          <p style={{ marginBottom: 12 }}>BobiFX provides a suite of tools for retail and professional forex traders, including:</p>
+          <p style={{ marginBottom: 12 }}>Bobi's Quote provides a suite of tools for retail and professional forex traders, including:</p>
           <Li><strong style={{ color: "#e0e0e0" }}>Live Signal Engine</strong> — Algorithmic detection of HTF supply and demand zones across 20 currency pairs; real-time entry signal generation with entry, SL, and TP levels</Li>
-          <Li><strong style={{ color: "#e0e0e0" }}>Auto-Trade Execution</strong> — Automated trade placement, management, and closure on connected MT4, MT5, Match Trader, cTrader, or TradingView accounts via the MetaAPI service</Li>
+          <Li><strong style={{ color: "#e0e0e0" }}>Auto-Trade Execution</strong> — Automated trade placement, management, and closure on connected MT4 or MT5 accounts via the MetaAPI service</Li>
           <Li><strong style={{ color: "#e0e0e0" }}>Trade Journal</strong> — Manual and auto-synced trade logging with notes, screenshots, strategy tags, and emotion tracking</Li>
           <Li><strong style={{ color: "#e0e0e0" }}>Analytics Suite</strong> — Equity curve, session heatmap, rolling performance, risk-of-ruin calculator, income projection, and monthly scorecard</Li>
           <Li><strong style={{ color: "#e0e0e0" }}>Trade Ideas</strong> — AI-scored setup suggestions ranked by signal quality, pair history, and session alignment</Li>
           <Li><strong style={{ color: "#e0e0e0" }}>Mobile App</strong> — Android companion app for push notifications, journal access, and live signal monitoring</Li>
-          <p style={{ marginTop: 12 }}>The Service is an informational and automation tool only. BobiFX is not a licensed financial adviser, broker-dealer, investment adviser, or regulated financial institution. Nothing on the Service constitutes investment advice or a solicitation to trade.</p>
+          <p style={{ marginTop: 12 }}>The Service is an informational and automation tool only. Bobi's Quote is not a licensed financial adviser, broker-dealer, investment adviser, or regulated financial institution. Nothing on the Service constitutes investment advice or a solicitation to trade.</p>
         </Section>
 
         <Section title="3. Account Registration">
           <Li>You must provide accurate information when registering. You are responsible for maintaining the confidentiality of your credentials.</Li>
           <Li>You are responsible for all activity that occurs under your account.</Li>
-          <Li>You must notify us immediately at <a href="mailto:support@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>support@bobifx.com</a> if you suspect unauthorised access to your account.</Li>
+          <Li>You must notify us immediately at <a href="mailto:support@bobisquote.com" style={{ color: "#00d68f", textDecoration: "none" }}>support@bobisquote.com</a> if you suspect unauthorised access to your account.</Li>
           <Li>We reserve the right to suspend or terminate accounts that violate these Terms, are used for fraudulent activity, or pose a security risk.</Li>
         </Section>
 
@@ -97,22 +97,22 @@ export default function Terms() {
           <Sub title="4.1 Your responsibilities">
             <Li>You must configure your risk parameters (lot sizing, max daily loss, stop-loss ratios, loss-guard circuit breakers) before enabling Auto-Trade. These settings are your responsibility.</Li>
             <Li>You must ensure your broker account is adequately funded and that margin requirements are met.</Li>
-            <Li>You are responsible for monitoring your account. BobiFX does not guarantee uninterrupted service; network outages, broker API downtime, or system errors may prevent timely execution.</Li>
+            <Li>You are responsible for monitoring your account. Bobi's Quote does not guarantee uninterrupted service; network outages, broker API downtime, or system errors may prevent timely execution.</Li>
             <Li>You must comply with your broker's terms of service. Some prop firm or funded account rules prohibit automated trading — verify this before enabling the feature.</Li>
           </Sub>
           <Sub title="4.2 Limitations of liability">
-            <Li>BobiFX and MetaAPI are separate services. We are not responsible for execution failures, latency, slippage, or rejections caused by MetaAPI or your broker.</Li>
+            <Li>Bobi's Quote and MetaAPI are separate services. We are not responsible for execution failures, latency, slippage, or rejections caused by MetaAPI or your broker.</Li>
             <Li>Signal-generated entries, SL levels, and TP levels are algorithmic outputs. They are not guaranteed to be profitable. Market conditions may cause signals to perform differently in live trading than in backtests.</Li>
             <Li>We do not accept liability for losses arising from: broker outages, internet connectivity issues, incorrect risk configuration set by the user, prop firm rule violations, or force majeure events.</Li>
           </Sub>
           <Sub title="4.3 Broker credentials">
-            <p>You authorise BobiFX to store and use your broker login credentials solely for the purpose of connecting to and operating your trading account via MetaAPI. We will not access your account for any purpose other than executing the automated pipeline you have configured.</p>
+            <p>You authorise Bobi's Quote to store and use your broker login credentials solely for the purpose of connecting to and operating your trading account via MetaAPI. We will not access your account for any purpose other than executing the automated pipeline you have configured.</p>
           </Sub>
         </Section>
 
         <Section title="5. Subscriptions & Billing">
           <Sub title="5.1 Plans">
-            <p style={{ marginBottom: 12 }}>BobiFX offers four tiers: Free, Basic, Pro, and Elite. Paid plans are priced per broker account. Current pricing is displayed on the <Link to="/#pricing" style={{ color: "#00d68f", textDecoration: "none" }}>Pricing</Link> page and within the app. We reserve the right to change prices with 30 days' notice.</p>
+            <p style={{ marginBottom: 12 }}>Bobi's Quote offers four tiers: Free, Basic, Pro, and Elite. Paid plans are priced per broker account. Current pricing is displayed on the <Link to="/#pricing" style={{ color: "#00d68f", textDecoration: "none" }}>Pricing</Link> page and within the app. We reserve the right to change prices with 30 days' notice.</p>
           </Sub>
           <Sub title="5.2 Billing">
             <Li>Subscriptions are billed monthly or annually depending on the option you select.</Li>
@@ -141,8 +141,8 @@ export default function Terms() {
         </Section>
 
         <Section title="7. Intellectual Property">
-          <p style={{ marginBottom: 12 }}>All content, code, algorithms, signal logic, design, trademarks, and branding associated with BobiFX are owned by us or licensed to us. These Terms do not grant you any right to:</p>
-          <Li>Use the BobiFX name, logo, or branding without our written permission</Li>
+          <p style={{ marginBottom: 12 }}>All content, code, algorithms, signal logic, design, trademarks, and branding associated with Bobi's Quote are owned by us or licensed to us. These Terms do not grant you any right to:</p>
+          <Li>Use the Bobi's Quote name, logo, or branding without our written permission</Li>
           <Li>Copy, adapt, or redistribute any part of the Service or its signal output</Li>
           <Li>Publish or publicly share signal data in a way that implies it is your own work or a separate product</Li>
           <p style={{ marginTop: 12 }}>You retain ownership of the trade data, journal entries, and screenshots you upload to the Service.</p>
@@ -150,7 +150,7 @@ export default function Terms() {
 
         <Section title="8. Disclaimers">
           <Sub title="8.1 No financial advice">
-            <p>The signal engine, trade ideas, analytics, and all other outputs of the Service are provided for informational and educational purposes only. They do not constitute investment advice, financial advice, trading advice, or any other type of advice. You should not make trading decisions based solely on signals or outputs from BobiFX without conducting your own analysis.</p>
+            <p>The signal engine, trade ideas, analytics, and all other outputs of the Service are provided for informational and educational purposes only. They do not constitute investment advice, financial advice, trading advice, or any other type of advice. You should not make trading decisions based solely on signals or outputs from Bobi's Quote without conducting your own analysis.</p>
           </Sub>
           <Sub title="8.2 Backtest results">
             <p>Historical backtest results, including the +944.67R figure, are simulated results based on historical market data. Simulated results have inherent limitations: they are computed with the benefit of hindsight, do not account for real broker slippage or spread variations, and cannot account for market impact. These results do not represent actual trading and should not be relied upon as a guarantee of future performance.</p>
@@ -164,7 +164,7 @@ export default function Terms() {
         </Section>
 
         <Section title="9. Limitation of Liability">
-          <p style={{ marginBottom: 12 }}>To the maximum extent permitted by applicable law, BobiFX and its owners, employees, and contractors shall not be liable for any:</p>
+          <p style={{ marginBottom: 12 }}>To the maximum extent permitted by applicable law, Bobi's Quote and its owners, employees, and contractors shall not be liable for any:</p>
           <Li>Trading losses incurred through use of the Service, including losses from auto-trade execution</Li>
           <Li>Indirect, incidental, special, consequential, or punitive damages</Li>
           <Li>Loss of profits, revenue, data, or business opportunity</Li>
@@ -173,7 +173,7 @@ export default function Terms() {
         </Section>
 
         <Section title="10. Indemnification">
-          <p>You agree to indemnify, defend, and hold harmless BobiFX and its affiliates from and against any claims, liabilities, damages, losses, and expenses (including legal fees) arising from: (a) your use of the Service; (b) your violation of these Terms; (c) your trading activity and any losses resulting from it; or (d) your violation of any applicable laws.</p>
+          <p>You agree to indemnify, defend, and hold harmless Bobi's Quote and its affiliates from and against any claims, liabilities, damages, losses, and expenses (including legal fees) arising from: (a) your use of the Service; (b) your violation of these Terms; (c) your trading activity and any losses resulting from it; or (d) your violation of any applicable laws.</p>
         </Section>
 
         <Section title="11. Termination">
@@ -187,20 +187,20 @@ export default function Terms() {
         </Section>
 
         <Section title="13. Governing Law & Disputes">
-          <p>These Terms are governed by and construed in accordance with applicable law. Any disputes arising under these Terms shall first be subject to good-faith negotiation. If unresolved, disputes shall be submitted to binding arbitration or the competent courts of the jurisdiction in which BobiFX operates, depending on applicable law.</p>
+          <p>These Terms are governed by and construed in accordance with applicable law. Any disputes arising under these Terms shall first be subject to good-faith negotiation. If unresolved, disputes shall be submitted to binding arbitration or the competent courts of the jurisdiction in which Bobi's Quote operates, depending on applicable law.</p>
         </Section>
 
         <Section title="14. Contact">
           <p style={{ marginBottom: 12 }}>For questions about these Terms:</p>
           <div style={{ background: "#111111", border: "1px solid #252525", borderRadius: 10, padding: "20px 24px" }}>
-            <div style={{ fontFamily: "'Syne',system-ui,sans-serif", fontWeight: 700, fontSize: 15, color: "#ffffff", marginBottom: 8 }}>BobiFX</div>
-            <div style={{ fontSize: 14, color: "#888888", marginBottom: 4 }}>Legal enquiries: <a href="mailto:legal@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>legal@bobifx.com</a></div>
-            <div style={{ fontSize: 14, color: "#888888" }}>General support: <a href="mailto:support@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>support@bobifx.com</a></div>
+            <div style={{ fontFamily: "'Syne',system-ui,sans-serif", fontWeight: 700, fontSize: 15, color: "#ffffff", marginBottom: 8 }}>Bobi's Quote</div>
+            <div style={{ fontSize: 14, color: "#888888", marginBottom: 4 }}>Legal enquiries: <a href="mailto:legal@bobisquote.com" style={{ color: "#00d68f", textDecoration: "none" }}>legal@bobisquote.com</a></div>
+            <div style={{ fontSize: 14, color: "#888888" }}>General support: <a href="mailto:support@bobisquote.com" style={{ color: "#00d68f", textDecoration: "none" }}>support@bobisquote.com</a></div>
           </div>
         </Section>
 
         <div style={{ paddingTop: 32, borderTop: "1px solid #1a1a1a", display: "flex", gap: 24, flexWrap: "wrap" }}>
-          <Link to="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#555555", textDecoration: "none" }}>← Back to BobiFX</Link>
+          <Link to="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#555555", textDecoration: "none" }}>← Back to Bobi's Quote</Link>
           <Link to="/privacy" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#555555", textDecoration: "none" }}>Privacy Policy →</Link>
         </div>
       </div>

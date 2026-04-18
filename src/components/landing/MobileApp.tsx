@@ -8,7 +8,7 @@ export default function MobileApp() {
         <div>
           <div className="bfx-label">Mobile App</div>
           <h2 className="bfx-h2">Signals in your<br />pocket.</h2>
-          <p className="bfx-mobile-desc">BoBi Trades &amp; Journal is the Android companion to the dashboard. Push notifications for every signal event — so you never miss an entry while away from your desk.</p>
+          <p className="bfx-mobile-desc">Bobi's Quote is the Android companion to the dashboard. Push notifications for every signal event — so you never miss an entry while away from your desk.</p>
           <div className="bfx-mobile-feats">
             {[
               { icon:"🔔", title:"Instant push alerts",         desc:"Signal triggered, TP1 hit, breakeven moved, trade closed — every event, the moment it happens." },
@@ -47,7 +47,7 @@ export default function MobileApp() {
             <div className="bfx-phone-notch" />
             <div className="bfx-phone-screen">
               <div className="bfx-ps-header">
-                <div className="bfx-ps-title">BoBi Trades</div>
+                <div className="bfx-ps-title">Bobi's Quote</div>
                 <div className="bfx-ps-live"><Pulse />LIVE</div>
               </div>
               {/* Signal 1 */}

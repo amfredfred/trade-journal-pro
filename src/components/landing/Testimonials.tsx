@@ -6,7 +6,7 @@ const testimonials = [
     name: "Marcus T.",
     role: "Forex Trader",
     content:
-      "BobiTrades completely changed how I approach trading. Being able to see my patterns and mistakes in data form has helped me cut my losses significantly.",
+      "Bobi's Quote completely changed how I approach trading. Being able to see my patterns and mistakes in data form has helped me cut my losses significantly.",
     rating: 5,
   },
   {
@@ -50,7 +50,7 @@ const Testimonials = () => {
           </h2>
           <p className="text-lg text-muted-foreground">
             Join thousands of traders who have improved their performance with
-            BobiTrades.
+            Bobi&apos;s Quote.
           </p>
         </motion.div>
 

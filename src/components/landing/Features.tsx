@@ -12,7 +12,7 @@ const groups = [
     label: "Execution & Automation",
     desc: "Connect your broker and let the engine trade for you.",
     features: [
-      { name: "Auto-Trade Engine", tag: "BASIC+", desc: "Connect MT4, MT5, Match Trader, or cTrader via MetaAPI. The engine places trades, manages breakeven at TP1, and closes positions automatically — no manual intervention." },
+      { name: "Auto-Trade Engine", tag: "BASIC+", desc: "Connect MT4 or MT5 via MetaAPI. The engine places trades, manages breakeven at TP1, and closes positions automatically — no manual intervention." },
       { name: "Breakeven Management", tag: "BASIC+", desc: "Stop-loss is automatically moved to entry price when TP1 is hit, eliminating risk on open runners and enforcing consistent trade management across all positions." },
       { name: "Multi-Account Support", tag: "ELITE", desc: "Run up to 10 broker accounts simultaneously. Each account operates independently with its own risk settings, pipeline allocation, and loss-guard circuit breakers." },
     ],

@@ -31,8 +31,8 @@ export default function Privacy() {
       {/* Nav strip */}
       <div style={{ padding: "0 40px", height: 64, display: "flex", alignItems: "center", borderBottom: "1px solid #1a1a1a", background: "rgba(10,10,10,.9)", position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(20px)" }}>
         <Link to="/" className="bfx-nav-logo">
-          <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="BobiFX" /></div>
-          <span className="bfx-nav-brand">BobiFX</span>
+          <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="Bobi's Quote logo" /></div>
+          <span className="bfx-nav-brand">Bobi's Quote</span>
         </Link>
         <span style={{ marginLeft: "auto", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555", letterSpacing: "0.06em" }}>PRIVACY POLICY</span>
       </div>
@@ -48,7 +48,7 @@ export default function Privacy() {
             Privacy Policy
           </h1>
           <p style={{ color: "#888888", fontSize: 16, lineHeight: 1.75, marginBottom: 16 }}>
-            This Privacy Policy explains how BobiFX ("we", "us", "our") collects, uses, stores, and protects your personal information when you use our web platform at <strong style={{ color: "#e0e0e0" }}>https://bbfx.netlify.app/</strong>, our Android mobile application <strong style={{ color: "#e0e0e0" }}>BoBi Trades & Journal</strong>, and our public website at <strong style={{ color: "#e0e0e0" }}>bobifx.com</strong> (collectively, the "Service").
+            This Privacy Policy explains how Bobi's Quote ("we", "us", "our") collects, uses, stores, and protects your personal information when you use our web platform at <strong style={{ color: "#e0e0e0" }}>https://app.bobisquote.com/</strong>, our Android mobile application <strong style={{ color: "#e0e0e0" }}>Bobi's Quote</strong>, and our public website at <strong style={{ color: "#e0e0e0" }}>bobisquote.com</strong> (collectively, the "Service").
           </p>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Effective date: April 4, 2026</span>
@@ -58,7 +58,7 @@ export default function Privacy() {
 
         <Section title="1. Information We Collect">
           <Sub title="1.1 Account & Profile Data">
-            <p style={{ marginBottom: 12 }}>When you create a BobiFX account, we collect:</p>
+            <p style={{ marginBottom: 12 }}>When you create a Bobi's Quote account, we collect:</p>
             <Li>Email address and password hash (managed by Supabase Auth)</Li>
             <Li>Display name and username (optional, set by you)</Li>
             <Li>Avatar image URL (optional)</Li>
@@ -70,7 +70,7 @@ export default function Privacy() {
             <p style={{ marginBottom: 12 }}>When you connect a broker account for live sync or auto-trade, we collect and securely store:</p>
             <Li>Broker login credentials (account number, password, server) — transmitted via HTTPS only, never over WebSocket</Li>
             <Li>MetaAPI account ID (a reference token used to communicate with your broker via the MetaAPI service)</Li>
-            <Li>Account metadata: account name, type (prop / personal / demo), currency, broker platform (MT4, MT5, Match Trader, cTrader, or TradingView)</Li>
+            <Li>Account metadata: account name, type (prop / personal / demo), currency, broker platform (MT4 or MT5)</Li>
             <Li>Risk configuration: risk mode, risk percent, max daily loss, SL/TP ratios, loss-guard settings</Li>
             <Li>Synced balance, today's P&L, and trade count (refreshed in real time when connected)</Li>
           </Sub>
@@ -156,7 +156,7 @@ export default function Privacy() {
           <Li><strong style={{ color: "#e0e0e0" }}>Portability</strong> — Request an export of your trade journal data in CSV format</Li>
           <Li><strong style={{ color: "#e0e0e0" }}>Opt-out of notifications</strong> — Disable push alerts at any time in Settings → Notifications</Li>
           <Li><strong style={{ color: "#e0e0e0" }}>Disconnect your broker</strong> — Remove MetaAPI credentials at any time in Settings → Accounts</Li>
-          <p style={{ marginTop: 16 }}>To exercise any of these rights, contact us at <a href="mailto:privacy@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>privacy@bobifx.com</a>. We will respond within 30 days.</p>
+          <p style={{ marginTop: 16 }}>To exercise any of these rights, contact us at <a href="mailto:privacy@bobisquote.com" style={{ color: "#00d68f", textDecoration: "none" }}>privacy@bobisquote.com</a>. We will respond within 30 days.</p>
         </Section>
 
         <Section title="6. Cookies & Local Storage">
@@ -167,11 +167,11 @@ export default function Privacy() {
         </Section>
 
         <Section title="7. Children's Privacy">
-          <p>The Service is not directed to children under 18 years of age. We do not knowingly collect personal information from anyone under 18. If you believe a minor has provided us with personal data, contact us immediately at <a href="mailto:privacy@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>privacy@bobifx.com</a>.</p>
+          <p>The Service is not directed to children under 18 years of age. We do not knowingly collect personal information from anyone under 18. If you believe a minor has provided us with personal data, contact us immediately at <a href="mailto:privacy@bobisquote.com" style={{ color: "#00d68f", textDecoration: "none" }}>privacy@bobisquote.com</a>.</p>
         </Section>
 
         <Section title="8. International Data Transfers">
-          <p>BobiFX operates globally. Your data may be processed in countries outside your own, including the United States, where Supabase and RevenueCat infrastructure is hosted. We ensure appropriate safeguards are in place for all international transfers in accordance with applicable data protection laws.</p>
+          <p>Bobi's Quote operates globally. Your data may be processed in countries outside your own, including the United States, where Supabase and RevenueCat infrastructure is hosted. We ensure appropriate safeguards are in place for all international transfers in accordance with applicable data protection laws.</p>
         </Section>
 
         <Section title="9. Changes to This Policy">
@@ -181,14 +181,14 @@ export default function Privacy() {
         <Section title="10. Contact">
           <p style={{ marginBottom: 12 }}>For privacy-related enquiries, data access requests, or to report a concern:</p>
           <div style={{ background: "#111111", border: "1px solid #252525", borderRadius: 10, padding: "20px 24px" }}>
-            <div style={{ fontFamily: "'Syne',system-ui,sans-serif", fontWeight: 700, fontSize: 15, color: "#ffffff", marginBottom: 8 }}>BobiFX</div>
-            <div style={{ fontSize: 14, color: "#888888", marginBottom: 4 }}>Privacy enquiries: <a href="mailto:privacy@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>privacy@bobifx.com</a></div>
-            <div style={{ fontSize: 14, color: "#888888" }}>General support: <a href="mailto:support@bobifx.com" style={{ color: "#00d68f", textDecoration: "none" }}>support@bobifx.com</a></div>
+            <div style={{ fontFamily: "'Syne',system-ui,sans-serif", fontWeight: 700, fontSize: 15, color: "#ffffff", marginBottom: 8 }}>Bobi's Quote</div>
+            <div style={{ fontSize: 14, color: "#888888", marginBottom: 4 }}>Privacy enquiries: <a href="mailto:privacy@bobisquote.com" style={{ color: "#00d68f", textDecoration: "none" }}>privacy@bobisquote.com</a></div>
+            <div style={{ fontSize: 14, color: "#888888" }}>General support: <a href="mailto:support@bobisquote.com" style={{ color: "#00d68f", textDecoration: "none" }}>support@bobisquote.com</a></div>
           </div>
         </Section>
 
         <div style={{ paddingTop: 32, borderTop: "1px solid #1a1a1a", display: "flex", gap: 24, flexWrap: "wrap" }}>
-          <Link to="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#555555", textDecoration: "none" }}>← Back to BobiFX</Link>
+          <Link to="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#555555", textDecoration: "none" }}>← Back to Bobi's Quote</Link>
           <Link to="/terms" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#555555", textDecoration: "none" }}>Terms of Service →</Link>
         </div>
       </div>

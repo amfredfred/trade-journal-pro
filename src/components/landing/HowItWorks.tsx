@@ -31,7 +31,7 @@ const steps = [
     n: "5", phase: "EXECUTION", color: "var(--accent)",
     icon: "▶",
     name: "Order Placed on Broker",
-    desc: "With auto-trade on, the order hits your MT4/MT5/cTrader account immediately via MetaAPI — sized to your configured R. SL placed just beyond the zone.",
+    desc: "With auto-trade on, the order hits your MT4 or MT5 account immediately via MetaAPI — sized to your configured R. SL placed just beyond the zone.",
     tag: "MetaAPI · AutoTradeEngine",
   },
   {

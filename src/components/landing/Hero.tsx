@@ -2,11 +2,12 @@ import { useEffect, useRef } from "react";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
+// Backtest equity curve — fbs-ceil run, Jun 2025 → Apr 2026
 const months = ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr"];
-const cumR = [14, 65, 163, 240, 305, 411, 588, 751, 934, 1098, 1111];
+const cumR    = [14, 65, 163, 240, 305, 411, 588, 751, 934, 1098, 1111];
 
 export default function Hero() {
-  const chartRef = useRef<HTMLCanvasElement>(null);
+  const chartRef  = useRef<HTMLCanvasElement>(null);
   const chartInst = useRef<Chart | null>(null);
 
   useEffect(() => {
@@ -60,46 +61,53 @@ export default function Hero() {
   ];
 
   const signals = [
-    { pair: "XAU/USD", dir: "LONG", rr: "2.5R", status: "ACTIVE", sc: "var(--accent)" },
-    { pair: "EUR/USD", dir: "SHORT", rr: "1.8R", status: "TP1", sc: "var(--warn)" },
-    { pair: "GBP/USD", dir: "LONG", rr: "2.5R", status: "ACTIVE", sc: "var(--accent)" },
-    { pair: "USD/JPY", dir: "SHORT", rr: "2.1R", status: "PENDING", sc: "var(--muted)" },
+    { pair: "XAU/USD", dir: "LONG",  rr: "2.5R", status: "ACTIVE",  sc: "var(--accent)" },
+    { pair: "EUR/USD", dir: "SHORT", rr: "1.8R", status: "TP1",     sc: "var(--warn)"   },
+    { pair: "GBP/USD", dir: "LONG",  rr: "2.5R", status: "ACTIVE",  sc: "var(--accent)" },
+    { pair: "USD/JPY", dir: "SHORT", rr: "2.1R", status: "PENDING", sc: "var(--muted)"  },
   ];
 
   return (
-    <section className="bfx-hero">
+    <section className="bfx-hero" aria-label="Hero">
       <div className="bfx-hero-inner">
         <div className="bfx-hero-eyebrow">
           <div className="bfx-pulse" />
           Precision Signal Engine · 20 Pairs · Live
         </div>
+
+        {/* H1 — primary keyword: forex signal engine */}
         <h1 className="bfx-h1">
           Trade smarter,<br /><em>not harder</em>
         </h1>
+
+        {/* Subheadline — secondary keywords: auto-trade, zone detection, analytics */}
         <p className="bfx-hero-sub">
-          HTF zone detection, LTF rejection scoring, auto-execution, and deep analytics.
-          The full trade lifecycle — running while you focus on what matters.
+          HTF zone detection, LTF rejection scoring, auto-execution, and deep trade analytics
+          for MT4 &amp; MT5 — the full forex trade lifecycle,
+          running while you focus on what matters.
         </p>
+
         <div className="bfx-hero-actions">
-          <a href="https://bbfx.netlify.app/login" className="bfx-btn-hero">Start free →</a>
+          <a href="https://app.bobisquote.com/login" className="bfx-btn-hero">Start free →</a>
           <a href="#backtest" className="bfx-btn-hero-ghost">▶ View backtest results</a>
         </div>
 
-        <div className="bfx-dash-preview">
+        {/* App preview — labelled for screen readers */}
+        <figure className="bfx-dash-preview" aria-label="Bobi's Quote dashboard preview">
           <div className="bfx-dash-topbar">
             <div className="bfx-dash-dot" style={{ background: "#ef4444" }} />
             <div className="bfx-dash-dot" style={{ background: "#f59e0b" }} />
             <div className="bfx-dash-dot" style={{ background: "#00d68f" }} />
-            <span className="bfx-dash-topbar-title">BobiFX · Dashboard</span>
+            <span className="bfx-dash-topbar-title">Bobi&apos;s Quote · Dashboard</span>
             <div className="bfx-dash-live"><div className="bfx-pulse" />Live</div>
           </div>
           <div className="bfx-dash-body">
             <div className="bfx-dash-sidebar">
               <div className="bfx-dash-sidebar-logo">
                 <div className="bfx-dash-sidebar-logomark">
-                  <img src="/bobi-foreground.png" alt="BobiFX" />
+                  <img src="/bobi-foreground.png" alt="Bobi's Quote" width={20} height={20} />
                 </div>
-                <span className="bfx-dash-sidebar-name">BobiFX</span>
+                <span className="bfx-dash-sidebar-name">Bobi&apos;s Quote</span>
               </div>
               {navItems.map((item, i) => (
                 <div key={item} className={`bfx-dash-nav-item${i === 0 ? " active" : ""}`}>
@@ -111,22 +119,22 @@ export default function Hero() {
             <div className="bfx-dash-main">
               <div className="bfx-kpi-row">
                 <div className="bfx-kpi green"><div className="bfx-kpi-lbl">Balance</div><div className="bfx-kpi-val green">$12.4k</div><div className="bfx-kpi-sub">+24.3% all time</div></div>
-                <div className="bfx-kpi"><div className="bfx-kpi-lbl">Today P&L</div><div className="bfx-kpi-val green">+$186</div><div className="bfx-kpi-sub">+1.5%</div></div>
+                <div className="bfx-kpi"><div className="bfx-kpi-lbl">Today P&amp;L</div><div className="bfx-kpi-val green">+$186</div><div className="bfx-kpi-sub">+1.5%</div></div>
                 <div className="bfx-kpi"><div className="bfx-kpi-lbl">Win Rate</div><div className="bfx-kpi-val green">41.5%</div><div className="bfx-kpi-sub">1,484 trades</div></div>
                 <div className="bfx-kpi gold"><div className="bfx-kpi-lbl">Prof. Factor</div><div className="bfx-kpi-val gold">2.84</div><div className="bfx-kpi-sub">Above target</div></div>
-                <div className="bfx-kpi green"><div className="bfx-kpi-lbl">Total RR</div><div className="bfx-kpi-val green">+1,111R</div><div className="bfx-kpi-sub">+0.75R/sig</div></div>
+                <div className="bfx-kpi green"><div className="bfx-kpi-lbl">Total RR</div><div className="bfx-kpi-val green">+1,111R</div><div className="bfx-kpi-sub">+0.749R/sig</div></div>
                 <div className="bfx-kpi blue"><div className="bfx-kpi-lbl">Streak</div><div className="bfx-kpi-val blue">4 🔥</div><div className="bfx-kpi-sub">win streak</div></div>
               </div>
               <div className="bfx-charts-row">
                 <div className="bfx-dash-card">
-                  <div className="bfx-dash-card-title">Signal RR Equity</div>
+                  <div className="bfx-dash-card-title">Signal RR Equity — 10 months</div>
                   <div style={{ flex: 1, minHeight: 0, position: "relative" }}>
-                    <canvas ref={chartRef} style={{ width: "100%", height: "100%" }} />
+                    <canvas ref={chartRef} style={{ width: "100%", height: "100%" }} aria-label="Equity curve chart showing +1,111R over 10 months" />
                   </div>
                 </div>
                 <div className="bfx-dash-card">
                   <div className="bfx-dash-card-title">Open Signals</div>
-                  <table className="bfx-sig-mini-table">
+                  <table className="bfx-sig-mini-table" aria-label="Live signal feed">
                     <tbody>
                       {signals.map((s) => (
                         <tr key={s.pair + s.dir}>
@@ -142,7 +150,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </div>
+        </figure>
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ const stack = [
   },
   {
     name: "MetaAPI", role: "Broker Connectivity", color: "#5b9cf6",
-    desc: "Real-time sync, trade execution, and position management across MT4, MT5, cTrader, Match Trader.",
+    desc: "Real-time sync, trade execution, and position management across MT4 and MT5.",
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" height="26" style={{ color: "#5b9cf6" }}>
         <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
