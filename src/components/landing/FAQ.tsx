@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "What does the backtest actually prove?",
-    a: "The walk-forward simulation ran across 10 liquid pairs over 10 months, producing 1,484 trades using the exact same rules the live engine applies — session filters, dedup rules, R:R gates, breakeven logic. +1,111.45R at a profit factor of 2.84 with a max drawdown of −7.75R. Full CSV available for independent verification.",
+    a: "The walk-forward simulation ran across 10 liquid pairs from Jan 2025 to Apr 2026, using the exact same rules as the live engine — session filters, deduplication, R:R gates, and breakeven logic. 31, 595 trades were executed, delivering + 22,042R total return with an expectancy of + 0.70R per trade and a profit factor of 2.72. Maximum drawdown was −21.50R. Win rate came in at 43.9 %, with 15.3 % breakeven and 40.7 % losses, reflecting realistic execution conditions. Full trade - by - trade CSV is available for independent verification, covering symbol, timeframe, entries, SL / TP, R: R, and outcomes across all trades.",
   },
   {
     q: "Can I use Bobi's Quote without auto-trade enabled?",
