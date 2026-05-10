@@ -1,157 +1,417 @@
-import { useEffect, useRef } from "react";
-import { Chart, registerables } from "chart.js";
-Chart.register(...registerables);
-
-// Backtest equity curve — fbs-ceil run, Jun 2025 → Apr 2026
-const months = ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr"];
-const cumR    = [14, 65, 163, 240, 305, 411, 588, 751, 934, 1098, 1111];
+import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
-  const chartRef  = useRef<HTMLCanvasElement>(null);
-  const chartInst = useRef<Chart | null>(null);
+  const [confirmed, setConfirmed] = useState(false);
+  const [visible, setVisible]     = useState(false);
 
   useEffect(() => {
-    if (!chartRef.current) return;
-    chartInst.current?.destroy();
-    chartInst.current = new Chart(chartRef.current, {
-      type: "line",
-      data: {
-        labels: months,
-        datasets: [{
-          data: cumR,
-          borderColor: "#00d68f",
-          borderWidth: 1.5,
-          pointRadius: 0,
-          tension: 0.35,
-          fill: true,
-          backgroundColor: (ctx) => {
-            const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, ctx.chart.height);
-            g.addColorStop(0, "rgba(0,214,143,.14)");
-            g.addColorStop(1, "rgba(0,214,143,0)");
-            return g;
-          },
-        }],
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false }, tooltip: {
-            callbacks: { label: (c) => `+${c.parsed.y}R` },
-            backgroundColor: "#141414", borderColor: "#252525", borderWidth: 1,
-            titleColor: "#555555", bodyColor: "#f0f0f0",
-            titleFont: { family: "JetBrains Mono" }, bodyFont: { family: "JetBrains Mono" },
-          }
-        },
-        scales: {
-          x: { grid: { display: false }, ticks: { color: "#555", font: { family: "JetBrains Mono", size: 9 } }, border: { display: false } },
-          y: { grid: { color: "#1a1a1a", lineWidth: 0.5 }, ticks: { color: "#555", font: { family: "JetBrains Mono", size: 9 }, callback: (v) => v + "R" }, border: { display: false } },
-        },
-      },
-    });
-    return () => chartInst.current?.destroy();
+    const t1 = setTimeout(() => setVisible(true),   400);
+    const t2 = setTimeout(() => setConfirmed(true), 1800);
+    return () => { clearTimeout(t1); clearTimeout(t2); }
   }, []);
-
-  const navItems = ["Dashboard", "Signals", "Analytics", "Trades", "Calendar"];
-  const navIcons = [
-    <><rect x="1" y="1" width="4" height="4" rx="0.5" /><rect x="7" y="1" width="4" height="4" rx="0.5" /><rect x="1" y="7" width="4" height="4" rx="0.5" /><rect x="7" y="7" width="4" height="4" rx="0.5" /></>,
-    <><path d="M6 1v10M1 6h10" /></>,
-    <><polyline points="1,9 4,5 7,7 11,2" /></>,
-    <><rect x="2" y="3" width="8" height="7" rx="1" /><path d="M5 3V2M7 3V2M2 6h8" /></>,
-    <><rect x="1" y="2" width="10" height="9" rx="1" /><path d="M8 1v2M4 1v2M1 5h10" /></>,
-  ];
-
-  const signals = [
-    { pair: "XAU/USD", dir: "LONG",  rr: "2.5R", status: "ACTIVE",  sc: "var(--accent)" },
-    { pair: "EUR/USD", dir: "SHORT", rr: "1.8R", status: "TP1",     sc: "var(--warn)"   },
-    { pair: "GBP/USD", dir: "LONG",  rr: "2.5R", status: "ACTIVE",  sc: "var(--accent)" },
-    { pair: "USD/JPY", dir: "SHORT", rr: "2.1R", status: "PENDING", sc: "var(--muted)"  },
-  ];
 
   return (
     <section className="bfx-hero" aria-label="Hero">
+      <div className="bfx-hero-glow" aria-hidden="true" />
       <div className="bfx-hero-inner">
+
+        {/* Eyebrow */}
         <div className="bfx-hero-eyebrow">
           <div className="bfx-pulse" />
-          Precision Signal Engine · 20 Pairs · Live
+          Live signals · 20 pairs · Around the clock
         </div>
 
-        {/* H1 — primary keyword: forex signal engine */}
+        {/* Primary headline */}
         <h1 className="bfx-h1">
-          Trade smarter,<br /><em>not harder</em>
+          Your forex trades,<br />
+          <em>planned and placed — automatically.</em>
         </h1>
 
-        {/* Subheadline — secondary keywords: auto-trade, zone detection, analytics */}
+        {/* Sub-copy */}
         <p className="bfx-hero-sub">
-          HTF zone detection, LTF rejection scoring, auto-execution, and deep trade analytics
-          for MT4 &amp; MT5 — the full forex trade lifecycle,
-          running while you focus on what matters.
+          Bobi's Quote monitors 20 forex pairs around the clock, generates
+          complete trade plans, and executes them directly on your MT4 or MT5
+          broker account.&nbsp;
+          <span style={{ color: "var(--text2)" }}>No manual work. No copy-trading.</span>
         </p>
 
+        {/* CTA row */}
         <div className="bfx-hero-actions">
-          <a href="https://app.bobisquote.com/login" className="bfx-btn-hero">Start free →</a>
-          <a href="#backtest" className="bfx-btn-hero-ghost">▶ View backtest results</a>
+          <a href="https://app.bobisquote.com/login" className="bfx-btn-hero">
+            Start free →
+          </a>
+          <a href="#backtest" className="bfx-btn-hero-ghost">
+            ▶ See the results
+          </a>
         </div>
 
-        {/* App preview — labelled for screen readers */}
-        <figure className="bfx-dash-preview" aria-label="Bobi's Quote dashboard preview">
-          <div className="bfx-dash-topbar">
-            <div className="bfx-dash-dot" style={{ background: "#ef4444" }} />
-            <div className="bfx-dash-dot" style={{ background: "#f59e0b" }} />
-            <div className="bfx-dash-dot" style={{ background: "#00d68f" }} />
-            <span className="bfx-dash-topbar-title">Bobi&apos;s Quote · Dashboard</span>
-            <div className="bfx-dash-live"><div className="bfx-pulse" />Live</div>
+        {/* Trust anchors */}
+        <div className="bfx-hero-anchors" aria-label="Key facts">
+          <div className="bfx-anchor-item">
+            <span className="bfx-anchor-n">25,403</span>
+            <span className="bfx-anchor-l">trades tested · 7 years</span>
           </div>
-          <div className="bfx-dash-body">
-            <div className="bfx-dash-sidebar">
-              <div className="bfx-dash-sidebar-logo">
-                <div className="bfx-dash-sidebar-logomark">
-                  <img src="/bobi-foreground.png" alt="Bobi's Quote" width={20} height={20} />
-                </div>
-                <span className="bfx-dash-sidebar-name">Bobi&apos;s Quote</span>
-              </div>
-              {navItems.map((item, i) => (
-                <div key={item} className={`bfx-dash-nav-item${i === 0 ? " active" : ""}`}>
-                  <svg className="bfx-dash-nav-icon" viewBox="0 0 12 12">{navIcons[i]}</svg>
-                  {item}
-                </div>
-              ))}
+          <div className="bfx-anchor-sep" aria-hidden="true" />
+          <div className="bfx-anchor-item">
+            <span className="bfx-anchor-n">MT4 &amp; MT5</span>
+            <span className="bfx-anchor-l">No fund transfers</span>
+          </div>
+          <div className="bfx-anchor-sep" aria-hidden="true" />
+          <div className="bfx-anchor-item">
+            <span className="bfx-anchor-n">Loss Guard</span>
+            <span className="bfx-anchor-l">Built for prop accounts</span>
+          </div>
+        </div>
+
+        {/* Signal card visual */}
+        <figure
+          className="bfx-signal-visual"
+          aria-label="Example signal showing what you receive when a setup is confirmed"
+        >
+          <div className={`bfx-sig-card${visible ? " bfx-sig-card--visible" : ""}`}>
+            <div className="bfx-sig-card-header">
+              <div className="bfx-sig-card-pair">XAU / USD</div>
+              <span className="bfx-sig-badge bfx-sig-badge--long">▲ LONG</span>
+              <div className="bfx-sig-live"><div className="bfx-pulse" />LIVE</div>
             </div>
-            <div className="bfx-dash-main">
-              <div className="bfx-kpi-row">
-                <div className="bfx-kpi green"><div className="bfx-kpi-lbl">Balance</div><div className="bfx-kpi-val green">$12.4k</div><div className="bfx-kpi-sub">+24.3% all time</div></div>
-                <div className="bfx-kpi"><div className="bfx-kpi-lbl">Today P&amp;L</div><div className="bfx-kpi-val green">+$186</div><div className="bfx-kpi-sub">+1.5%</div></div>
-                <div className="bfx-kpi"><div className="bfx-kpi-lbl">Win Rate</div><div className="bfx-kpi-val green">41.5%</div><div className="bfx-kpi-sub">1,484 trades</div></div>
-                <div className="bfx-kpi gold"><div className="bfx-kpi-lbl">Prof. Factor</div><div className="bfx-kpi-val gold">2.84</div><div className="bfx-kpi-sub">Above target</div></div>
-                <div className="bfx-kpi green"><div className="bfx-kpi-lbl">Total RR</div><div className="bfx-kpi-val green">+1,111R</div><div className="bfx-kpi-sub">+0.749R/sig</div></div>
-                <div className="bfx-kpi blue"><div className="bfx-kpi-lbl">Streak</div><div className="bfx-kpi-val blue">4 🔥</div><div className="bfx-kpi-sub">win streak</div></div>
+            <div className="bfx-sig-card-body">
+              <div className="bfx-sig-row">
+                <span className="bfx-sig-lbl">Entry</span>
+                <span className="bfx-sig-val">2,318.40</span>
               </div>
-              <div className="bfx-charts-row">
-                <div className="bfx-dash-card">
-                  <div className="bfx-dash-card-title">Signal RR Equity — 10 months</div>
-                  <div style={{ flex: 1, minHeight: 0, position: "relative" }}>
-                    <canvas ref={chartRef} style={{ width: "100%", height: "100%" }} aria-label="Equity curve chart showing +1,111R over 10 months" />
-                  </div>
-                </div>
-                <div className="bfx-dash-card">
-                  <div className="bfx-dash-card-title">Open Signals</div>
-                  <table className="bfx-sig-mini-table" aria-label="Live signal feed">
-                    <tbody>
-                      {signals.map((s) => (
-                        <tr key={s.pair + s.dir}>
-                          <td className="bfx-sig-pair-mini">{s.pair}</td>
-                          <td><span className={`bfx-sig-dir bfx-${s.dir.toLowerCase()}`}>{s.dir === "LONG" ? "▲ L" : "▼ S"}</span></td>
-                          <td style={{ color: "var(--info)", fontFamily: "var(--mono)", fontSize: 9 }}>{s.rr}</td>
-                          <td style={{ color: s.sc, fontFamily: "var(--mono)", fontSize: 9 }}>{s.status}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+              <div className="bfx-sig-row">
+                <span className="bfx-sig-lbl">Stop Loss</span>
+                <span className="bfx-sig-val bfx-red">2,304.60</span>
               </div>
+              <div className="bfx-sig-row">
+                <span className="bfx-sig-lbl">Take Profit 1</span>
+                <span className="bfx-sig-val bfx-green">2,332.70</span>
+              </div>
+              <div className="bfx-sig-row">
+                <span className="bfx-sig-lbl">Take Profit 2</span>
+                <span className="bfx-sig-val bfx-green">2,349.10</span>
+              </div>
+              <div className="bfx-sig-divider" />
+              <div className="bfx-sig-row">
+                <span className="bfx-sig-lbl">Risk : Reward</span>
+                <span className="bfx-sig-val bfx-gold">2.5R</span>
+              </div>
+            </div>
+            <div className="bfx-sig-card-source">
+              Signal confirmed · Auto-execution active
+            </div>
+          </div>
+
+          <div
+            className={`bfx-exec-card${confirmed ? " bfx-exec-card--visible" : ""}`}
+            aria-live="polite"
+          >
+            <div className="bfx-exec-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="2,9 6,13 14,3" />
+              </svg>
+            </div>
+            <div>
+              <div className="bfx-exec-title">Placed on your broker</div>
+              <div className="bfx-exec-detail">XAU/USD · 0.01 lots · Confirmed</div>
             </div>
           </div>
         </figure>
+
       </div>
+
+      <style>{`
+        /* ── Hero layout ── */
+        .bfx-hero {
+          padding: 140px 24px 100px;
+          display: flex;
+          justify-content: center;
+          background: var(--bg);
+          position: relative;
+          overflow: hidden;
+        }
+        .bfx-hero-glow {
+          position: absolute;
+          top: -120px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 700px;
+          height: 500px;
+          background: radial-gradient(ellipse at 50% 30%, rgba(0,214,143,.07) 0%, transparent 65%);
+          pointer-events: none;
+          z-index: 0;
+        }
+        .bfx-hero-inner {
+          max-width: 760px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 0;
+          position: relative;
+          z-index: 1;
+        }
+        .bfx-hero-eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font-family: var(--mono);
+          font-size: 11px;
+          letter-spacing: .1em;
+          color: var(--muted);
+          text-transform: uppercase;
+          margin-bottom: 28px;
+          background: rgba(255,255,255,.03);
+          border: 1px solid var(--border2);
+          padding: 6px 14px;
+          border-radius: var(--radius-pill);
+        }
+        .bfx-h1 {
+          font-family: var(--display-hero);
+          font-size: clamp(30px, 4.5vw, 52px);
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -.02em;
+          color: var(--text);
+          margin-bottom: 22px;
+        }
+        .bfx-h1 em {
+          font-style: normal;
+          color: var(--accent);
+        }
+        .bfx-hero-sub {
+          font-size: 17px;
+          color: var(--dim);
+          line-height: 1.7;
+          max-width: 600px;
+          margin-bottom: 36px;
+        }
+
+        /* ── CTA buttons ── */
+        .bfx-hero-actions {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-bottom: 40px;
+        }
+        .bfx-btn-hero {
+          font-family: var(--sans);
+          font-size: 15px;
+          font-weight: 600;
+          color: #000;
+          background: var(--text);
+          padding: 13px 30px;
+          border-radius: 8px;
+          text-decoration: none;
+          transition: opacity .15s, transform .15s;
+          box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 4px 24px rgba(255,255,255,.08);
+        }
+        .bfx-btn-hero:hover { opacity: .88; transform: translateY(-1px); }
+        .bfx-btn-hero-ghost {
+          font-family: var(--sans);
+          font-size: 15px;
+          font-weight: 500;
+          color: var(--dim);
+          background: transparent;
+          border: 1px solid var(--border2);
+          padding: 13px 24px;
+          border-radius: 8px;
+          text-decoration: none;
+          transition: border-color .15s, color .15s;
+        }
+        .bfx-btn-hero-ghost:hover { border-color: var(--dim); color: var(--text); }
+
+        /* ── Trust anchors ── */
+        .bfx-hero-anchors {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-bottom: 64px;
+        }
+        .bfx-anchor-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2px;
+        }
+        .bfx-anchor-n {
+          font-family: var(--mono);
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--text2);
+        }
+        .bfx-anchor-l {
+          font-size: 11px;
+          color: var(--muted);
+          font-family: var(--mono);
+        }
+        .bfx-anchor-sep {
+          width: 1px;
+          height: 32px;
+          background: var(--border);
+        }
+        @media (max-width: 480px) {
+          .bfx-anchor-sep { display: none; }
+        }
+
+        /* ── Signal card visual ── */
+        .bfx-signal-visual {
+          position: relative;
+          width: 100%;
+          max-width: 420px;
+          min-height: 280px;
+          display: flex;
+          justify-content: center;
+        }
+        .bfx-sig-card {
+          width: 100%;
+          background: var(--panel);
+          border: 1px solid var(--border2);
+          border-radius: var(--radius);
+          overflow: hidden;
+          opacity: 0;
+          transform: translateY(12px);
+          transition: opacity .5s ease, transform .5s ease;
+          box-shadow: 0 8px 40px rgba(0,0,0,.5);
+        }
+        .bfx-sig-card--visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .bfx-sig-card-header {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 16px 20px;
+          border-bottom: 1px solid var(--border);
+          background: rgba(255,255,255,.02);
+        }
+        .bfx-sig-card-pair {
+          font-family: var(--mono);
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--text);
+          flex: 1;
+        }
+        .bfx-sig-badge {
+          font-family: var(--mono);
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: .08em;
+          padding: 3px 10px;
+          border-radius: var(--radius-pill);
+          border: 1px solid;
+        }
+        .bfx-sig-badge--long {
+          color: var(--accent);
+          border-color: var(--accent-border);
+          background: var(--accent-bg);
+        }
+        .bfx-sig-live {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-family: var(--mono);
+          font-size: 10px;
+          color: var(--dim);
+        }
+        .bfx-sig-card-body {
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .bfx-sig-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .bfx-sig-lbl {
+          font-size: 12px;
+          color: var(--dim);
+          font-family: var(--mono);
+        }
+        .bfx-sig-val {
+          font-family: var(--mono);
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--text2);
+        }
+        .bfx-sig-divider {
+          border-top: 1px solid var(--border);
+          margin: 4px 0;
+        }
+        .bfx-sig-card-source {
+          padding: 10px 20px;
+          font-family: var(--mono);
+          font-size: 10px;
+          color: var(--muted);
+          border-top: 1px solid var(--border);
+          text-align: right;
+          letter-spacing: .05em;
+        }
+
+        /* Execution confirmation pill */
+        .bfx-exec-card {
+          position: absolute;
+          bottom: -16px;
+          right: -8px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: var(--surface);
+          border: 1px solid var(--accent-border);
+          border-radius: var(--radius);
+          padding: 12px 16px;
+          opacity: 0;
+          transform: translateY(8px) scale(.97);
+          transition: opacity .45s ease, transform .45s ease;
+          box-shadow: 0 8px 32px rgba(0,0,0,.4), 0 0 0 1px rgba(0,214,143,.08);
+        }
+        .bfx-exec-card--visible {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+        .bfx-exec-icon {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background: var(--accent-bg);
+          border: 1px solid var(--accent-border);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--accent);
+          flex-shrink: 0;
+        }
+        .bfx-exec-title {
+          font-family: var(--mono);
+          font-size: 11px;
+          font-weight: 600;
+          color: var(--accent);
+          letter-spacing: .04em;
+        }
+        .bfx-exec-detail {
+          font-family: var(--mono);
+          font-size: 10px;
+          color: var(--dim);
+          margin-top: 1px;
+        }
+
+        .bfx-green { color: var(--accent) !important; }
+        .bfx-red   { color: var(--danger) !important; }
+        .bfx-gold  { color: var(--gold) !important; }
+
+        @media (max-width: 560px) {
+          .bfx-hero { padding: 110px 16px 64px; }
+          .bfx-hero-sub { font-size: 15px; }
+          .bfx-exec-card { right: 0; bottom: -20px; }
+        }
+      `}</style>
     </section>
   );
 }

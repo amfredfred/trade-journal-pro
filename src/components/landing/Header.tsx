@@ -8,7 +8,6 @@ export default function Header() {
   const nav = [
     { label: "How it works", href: "#how-it-works" },
     { label: "Features",     href: "#features"     },
-    { label: "Backtest",     href: "#backtest"      },
     { label: "Pricing",      href: "#pricing"       },
     { label: "FAQ",          href: "#faq"           },
   ];
