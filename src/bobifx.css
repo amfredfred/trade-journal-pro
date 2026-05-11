@@ -1075,9 +1075,11 @@ body {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 30px;
+  padding: 32px;
   position: relative;
   transition: border-color .2s, transform .2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .bfx-plan:hover {
@@ -1087,7 +1089,7 @@ body {
 .bfx-plan-featured {
   background: var(--surface);
   border-color: var(--gold-border);
-  border-top: 2px solid var(--gold);
+  border-top: 3px solid var(--gold);
 }
 
 .bfx-plan-featured:hover {
@@ -1096,103 +1098,128 @@ body {
 
 .bfx-plan-badge {
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: .12em;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: #000;
   background: var(--gold);
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 4px 12px;
+  border-radius: 12px;
   display: inline-block;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.bfx-plan-header {
   margin-bottom: 16px;
 }
 
 .bfx-plan-name {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px 0;
+  font-family: var(--sans);
+}
+
+.bfx-plan-price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 8px;
 }
 
 .bfx-plan-price {
-  font-family: var(--display);
-  font-size: 42px;
-  font-weight: 800;
-  color: var(--text);
-  line-height: 1;
-  margin-bottom: 4px;
-  letter-spacing: -.025em;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
 }
 
-.bfx-plan-price sup {
-  font-size: 18px;
-  vertical-align: super;
-  font-weight: 600
+.bfx-plan-price-free {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text);
+  font-family: var(--display);
+}
+
+.bfx-plan-price-currency {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+.bfx-plan-price-amount {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text);
+  font-family: var(--display);
+  line-height: 1;
+  letter-spacing: -.02em;
 }
 
 .bfx-plan-period {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 14px;
   color: var(--muted);
-  margin-bottom: 4px
+  font-weight: 500;
 }
 
-.bfx-plan-annual {
-  font-family: var(--mono);
-  font-size: 10px;
+.bfx-plan-tagline {
+  font-size: 14px;
   color: var(--dim);
-  margin-bottom: 18px
-}
-
-.bfx-plan-divider {
-  height: 1px;
-  background: var(--border);
-  margin: 18px 0
+  margin: 0 0 24px 0;
+  line-height: 1.4;
 }
 
 .bfx-plan-features {
   list-style: none;
-  margin-bottom: 26px
+  margin: 0 0 32px 0;
+  padding: 0;
+  flex: 1;
 }
 
-.bfx-plan-features li {
-  font-size: 13px;
-  color: var(--dim);
-  padding: 7px 0;
-  border-bottom: 1px solid var(--border);
+.bfx-plan-feature {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  padding: 0;
 }
 
-.bfx-plan-features li::before {
-  content: '·';
-  color: var(--dim);
-  font-size: 18px;
-  line-height: 1;
-  flex-shrink: 0
+.bfx-plan-feature:last-child {
+  margin-bottom: 0;
 }
 
-.bfx-plan-features li.off {
-  opacity: .3
+.bfx-plan-feature-icon {
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
 }
 
 .bfx-plan-btn {
-  display: block;
+  display: inline-block;
   text-align: center;
   text-decoration: none;
-  border-radius: 9px;
-  padding: 13px;
+  border-radius: 8px;
+  padding: 12px 24px;
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 600;
-  transition: opacity .15s;
+  transition: all .15s ease;
+  width: 100%;
+  margin-top: auto;
 }
 
 .bfx-plan-btn:hover {
-  opacity: .88;
+  opacity: .9;
+  transform: translateY(-1px);
 }
 
 .bfx-plan-btn-gold {
@@ -1201,17 +1228,16 @@ body {
   box-shadow: none;
 }
 
-.bfx-plan-btn-sec,
-.bfx-plan-btn-out {
-  background: rgba(255, 255, 255, .04);
+.bfx-plan-btn-sec {
+  background: transparent;
   border: 1px solid var(--border2);
-  color: var(--dim);
+  color: var(--text);
 }
 
-.bfx-plan-btn-sec:hover,
-.bfx-plan-btn-out:hover {
-  border-color: var(--dim);
-  color: var(--text)
+.bfx-plan-btn-sec:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(255, 193, 7, 0.05);
 }
 
 .bfx-pricing-note {

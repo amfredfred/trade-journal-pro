@@ -1,67 +1,65 @@
 // Free tier limitations sourced from pitch deck Slide 6
 const plans = [
   {
-    name: "Free", price: "0", accounts: 0, period: "",
-    annual: null, annualSave: null, featured: false, badge: null,
-    tagline: "Explore before you connect",
+    name: "Free", price: "0", period: "",
+    tagline: "Perfect for exploring signals & getting started.",
     features: [
-      { t: "Live signal alerts (view only)", on: true },
-      { t: "Setup monitor — all 6 instruments", on: true },
-      { t: "Trade journal (manual entry)", on: true },
-      { t: "Broker account connection", on: false },
-      { t: "Auto-trade pipelines", on: false },
-      { t: "Advanced analytics suite", on: false },
-      { t: "Loss Guard circuit breaker", on: false },
+      "Live signal alerts (view only)",
+      "Setup monitor — all 6 instruments",
+      "Trade journal (manual entry)",
+      "Community support"
     ],
-    btn: "bfx-plan-btn-sec", cta: "Start free →",
+    cta: "Start for Free",
+    btnClass: "bfx-plan-btn-sec"
   },
   {
-    name: "Basic", price: "14.99", accounts: 1, period: "/ month",
-    annual: "$9.99 / mo", annualSave: "Save 33% annually", featured: false, badge: null,
+    name: "Basic", price: "14.99", period: "/ month",
     tagline: "One account. Full execution.",
     features: [
-      { t: "1 broker account (MT4 / MT5)", on: true },
-      { t: "3 signal instrument subscriptions", on: true },
-      { t: "Unlimited trade journal + screenshots", on: true },
-      { t: "Signal & setup push alerts", on: true },
-      { t: "Auto-trade integration", on: true },
-      { t: "Basic analytics dashboard", on: true },
-      { t: "Advanced analytics suite", on: false },
-      { t: "Loss Guard circuit breaker", on: false },
+      "1 broker account (MT4 / MT5)",
+      "3 signal instrument subscriptions",
+      "Unlimited trade journal + screenshots",
+      "Signal & setup push alerts",
+      "Auto-trade integration",
+      "Basic analytics dashboard",
+      "Email support"
     ],
-    btn: "bfx-plan-btn-sec", cta: "Get started →",
+    cta: "Get started",
+    btnClass: "bfx-plan-btn-sec"
   },
   {
-    name: "Pro", price: "44.97", accounts: 3, period: "/ month",
-    annual: "$29.97 / mo", annualSave: "Save 33% annually", featured: true, badge: "MOST POPULAR",
+    name: "Pro", price: "44.97", period: "/ month",
     tagline: "Full stack. Built for serious traders.",
+    badge: "Most Popular",
     features: [
-      { t: "3 broker accounts (MT4 / MT5)", on: true },
-      { t: "6 signal instrument subscriptions", on: true },
-      { t: "Everything in Basic", on: true },
-      { t: "Advanced analytics suite — all 8 modules", on: true },
-      { t: "Session & hour heatmap", on: true },
-      { t: "Loss Guard circuit breaker", on: true },
-      { t: "Risk-of-Ruin calculator", on: true },
-      { t: "Income projection module", on: true },
+      "Everything in Basic, plus:",
+      "3 broker accounts (MT4 / MT5)",
+      "6 signal instrument subscriptions",
+      "Advanced analytics suite — all 8 modules",
+      "Session & hour heatmap",
+      "Loss Guard circuit breaker",
+      "Risk-of-Ruin calculator",
+      "Income projection module"
     ],
-    btn: "bfx-plan-btn-gold", cta: "Start Pro →",
+    cta: "Start Pro",
+    btnClass: "bfx-plan-btn-gold",
+    featured: true
   },
   {
-    name: "Elite", price: "149.90", accounts: 10, period: "/ month",
-    annual: "$99.90 / mo", annualSave: "Save 33% annually", featured: false, badge: null,
-    tagline: "Scale across every funded account.",
+    name: "Elite", price: "149.90", period: "/ month",
+    tagline: "Scale across every account.",
     features: [
-      { t: "10 broker accounts (MT4 / MT5)", on: true },
-      { t: "All 6 instruments", on: true },
-      { t: "5 simultaneous auto-trade pipelines", on: true },
-      { t: "Multi-account analytics", on: true },
-      { t: "Funded / prop account mode", on: true },
-      { t: "Everything in Pro", on: true },
-      { t: "Early access to new features", on: true },
-      { t: "Dedicated support channel", on: true },
+      "Everything in Pro, plus:",
+      "10 broker accounts (MT4 / MT5)",
+      "All 6 instruments",
+      "5 simultaneous auto-trade pipelines",
+      "Multi-account analytics",
+      "Funded account mode",
+      "Early access to new features",
+      "Dedicated support channel"
     ],
-    btn: "bfx-plan-btn-out", cta: "Get Elite →",
+    cta: "Get Elite",
+    btnClass: "bfx-plan-btn-sec"
   },
 ];
 
@@ -90,36 +88,39 @@ export default function Pricing() {
           {plans.map(p => (
             <div key={p.name} className={`bfx-plan${p.featured ? " bfx-plan-featured" : ""}`}>
               {p.badge && <div className="bfx-plan-badge">{p.badge}</div>}
-              <div className="bfx-plan-name">{p.name}</div>
-
-              {p.accounts > 0 && (
-                <div className="bfx-plan-accounts">
-                  {p.accounts} broker account{p.accounts > 1 ? "s" : ""}
+              <div className="bfx-plan-header">
+                <h3 className="bfx-plan-name">{p.name}</h3>
+                <div className="bfx-plan-price-section">
+                  <div className="bfx-plan-price">
+                    {p.price === "0" ? (
+                      <span className="bfx-plan-price-free">Free</span>
+                    ) : (
+                      <>
+                        <span className="bfx-plan-price-currency">$</span>
+                        <span className="bfx-plan-price-amount">{p.price}</span>
+                      </>
+                    )}
+                  </div>
+                  {p.period && <div className="bfx-plan-period">{p.period}</div>}
                 </div>
-              )}
-
-              <div className="bfx-plan-price">
-                {p.price === "0" ? (
-                  <span style={{ fontSize: 36, fontWeight: 800 }}>Free</span>
-                ) : (
-                  <><sup>$</sup>{p.price.split(".")[0]}<span style={{ fontSize: 20, fontWeight: 600 }}>.{p.price.split(".")[1]}</span></>
-                )}
               </div>
-              {p.period && <div className="bfx-plan-period">{p.period}</div>}
-              {p.tagline && <div className="bfx-plan-tagline">{p.tagline}</div>}
 
-              {p.annual && (
-                <div className="bfx-plan-annual-block">
-                  <div className="bfx-plan-annual-price">{p.annual} billed annually</div>
-                  <div className="bfx-plan-annual-save">{p.annualSave}</div>
-                </div>
-              )}
+              <p className="bfx-plan-tagline">{p.tagline}</p>
 
-              <div className="bfx-plan-divider" />
               <ul className="bfx-plan-features">
-                {p.features.map((f, i) => <li key={i} className={f.on ? "" : "off"}>{f.t}</li>)}
+                {p.features.map((feature, i) => (
+                  <li key={i} className="bfx-plan-feature">
+                    <svg className="bfx-plan-feature-icon" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
               </ul>
-              <a href="https://app.bobisquote.com/login" className={`bfx-plan-btn ${p.btn}`}>{p.cta}</a>
+
+              <a href="https://app.bobisquote.com/login" className={`bfx-plan-btn ${p.btnClass}`}>
+                {p.cta}
+              </a>
             </div>
           ))}
         </div>
@@ -140,23 +141,6 @@ export default function Pricing() {
         }
         @media(max-width:768px) {
           .bfx-pricing-grid--two-by-two { grid-template-columns: 1fr !important; }
-        }
-        .bfx-plan-accounts {
-          font-family:var(--mono);font-size:11px;font-weight:600;
-          color:var(--dim);letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;
-        }
-        .bfx-plan-tagline {
-          font-size:12px;color:var(--muted);margin-bottom:8px;
-          font-family:var(--mono);letter-spacing:.03em;
-        }
-        .bfx-plan-annual-block {
-          border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin:8px 0 0;background:var(--surface);
-        }
-        .bfx-plan-annual-price {
-          font-family:var(--mono);font-size:12px;color:var(--text2);font-weight:600;
-        }
-        .bfx-plan-annual-save {
-          font-size:11px;color:var(--dim);font-family:var(--mono);margin-top:1px;
         }
         .bfx-pricing-footer {
           text-align:center;margin-top:32px;
