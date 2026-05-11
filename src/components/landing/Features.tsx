@@ -59,7 +59,7 @@ const groups = [
       {
         name: "Loss Guard — automatic kill switch",
         tier: "PRO",
-        desc: "Set daily loss limits, consecutive stop rules, and rolling window caps. The engine pauses automatically before damage compounds — essential for prop firms like FTMO and MyFundedFX.",
+        desc: "Set daily loss limits, consecutive stop rules, and rolling window caps. The engine pauses automatically before damage compounds — essential for risk management.",
         detail: null,
       },
       {

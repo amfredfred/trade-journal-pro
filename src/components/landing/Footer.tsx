@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="bfx-footer-inner">
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-            <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="Bobi's Quote logo" width={24} height={24} /></div>
+            <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="Bobi's Quote logo" width={80} height={80} /></div>
             <span className="bfx-footer-brand">Bobi&apos;s Quote</span>
           </div>
           <p className="bfx-footer-desc">

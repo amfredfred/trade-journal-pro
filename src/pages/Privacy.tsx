@@ -28,33 +28,8 @@ const Li = ({ children }: { children: React.ReactNode }) => (
 export default function Privacy() {
   return (
     <div style={{ background: "#0a0a0a", minHeight: "100vh", fontFamily: "var(--sans)" }}>
-      {/* Nav strip */}
-      <div style={{ padding: "0 40px", height: 64, display: "flex", alignItems: "center", borderBottom: "1px solid #1a1a1a", background: "rgba(10,10,10,.9)", position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(20px)" }}>
-        <Link to="/" className="bfx-nav-logo">
-          <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="Bobi's Quote logo" /></div>
-          <span className="bfx-nav-brand">Bobi's Quote</span>
-        </Link>
-        <span style={{ marginLeft: "auto", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555", letterSpacing: "0.06em" }}>PRIVACY POLICY</span>
-      </div>
 
       <div style={{ maxWidth: 760, margin: "0 auto", padding: "64px 40px 100px" }}>
-        {/* Header */}
-        <div style={{ marginBottom: 56 }}>
-          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#00d68f", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ display: "block", width: 24, height: 1, background: "#00d68f" }} />
-            Legal
-          </div>
-          <h1 style={{ fontFamily: "var(--display)", fontSize: "clamp(36px, 5vw, 52px)", fontWeight: 800, color: "#ffffff", letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: 20 }}>
-            Privacy Policy
-          </h1>
-          <p style={{ color: "#888888", fontSize: 16, lineHeight: 1.75, marginBottom: 16 }}>
-            This Privacy Policy explains how Bobi's Quote ("we", "us", "our") collects, uses, stores, and protects your personal information when you use our web platform at <strong style={{ color: "#e0e0e0" }}>https://app.bobisquote.com/</strong>, our Android mobile application <strong style={{ color: "#e0e0e0" }}>Bobi's Quote</strong>, and our public website at <strong style={{ color: "#e0e0e0" }}>bobisquote.com</strong> (collectively, the "Service").
-          </p>
-          <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Effective date: April 4, 2026</span>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Last updated: April 4, 2026</span>
-          </div>
-        </div>
 
         <Section title="1. Information We Collect">
           <Sub title="1.1 Account & Profile Data">

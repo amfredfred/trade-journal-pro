@@ -86,7 +86,7 @@ export default function Pricing() {
           <span>Priced per broker pipeline. No hidden per-trade fees. Cancel anytime.</span>
         </div>
 
-        <div className="bfx-pricing-grid bfx-pricing-grid--four">
+        <div className="bfx-pricing-grid bfx-pricing-grid--two-by-two">
           {plans.map(p => (
             <div key={p.name} className={`bfx-plan${p.featured ? " bfx-plan-featured" : ""}`}>
               {p.badge && <div className="bfx-plan-badge">{p.badge}</div>}
@@ -135,14 +135,11 @@ export default function Pricing() {
           font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.04em;
           margin-bottom:40px;
         }
-        .bfx-pricing-grid--four {
-          grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        .bfx-pricing-grid--two-by-two {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         }
-        @media(max-width:1024px) {
-          .bfx-pricing-grid--four { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-        @media(max-width:560px) {
-          .bfx-pricing-grid--four { grid-template-columns: 1fr !important; }
+        @media(max-width:768px) {
+          .bfx-pricing-grid--two-by-two { grid-template-columns: 1fr !important; }
         }
         .bfx-plan-accounts {
           font-family:var(--mono);font-size:11px;font-weight:600;

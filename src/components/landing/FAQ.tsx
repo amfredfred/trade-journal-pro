@@ -3,7 +3,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What brokers does Bobi's Quote support?",
-    a: "Bobi's Quote connects to any MT4 or MT5 broker account. This covers the vast majority of retail forex brokers worldwide — including IC Markets, Pepperstone, FTMO, and most prop firms. If your broker supports MT4 or MT5, you can connect it.",
+    a: "Bobi's Quote connects to any MT4 or MT5 broker account. This covers the vast majority of retail forex brokers worldwide — including IC Markets, Pepperstone, FTMO, and other major brokers. If your broker supports MT4 or MT5, you can connect it.",
   },
   {
     q: "How is Bobi's Quote different from a copy-trading service?",

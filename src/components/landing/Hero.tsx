@@ -12,55 +12,51 @@ export default function Hero() {
 
   return (
     <section className="bfx-hero" aria-label="Hero">
-      <div className="bfx-hero-glow" aria-hidden="true" />
       <div className="bfx-hero-inner">
+        <div className="bfx-hero-grid">
 
-        {/* Eyebrow */}
-        <div className="bfx-hero-eyebrow">
-          <div className="bfx-pulse" />
-          Live signals · 6 instruments · Around the clock
-        </div>
+          {/* Primary headline */}
+          <h1 className="bfx-h1">
+            Your forex trades,<br />
+            <em>planned and placed — automatically.</em>
+          </h1>
 
-        {/* Primary headline */}
-        <h1 className="bfx-h1">
-          Your forex trades,<br />
-          <em>planned and placed — automatically.</em>
-        </h1>
+          {/* Sub-copy */}
+          <p className="bfx-hero-sub">
+            Bobi's Quote monitors 6 instruments across forex, metals, and US indices around the clock,
+            generates complete trade plans, and executes them directly on your MT4 or MT5
+            broker account.&nbsp;
+            <span style={{ color: "var(--text2)" }}>No manual work. No copy-trading.</span>
+          </p>
 
-        {/* Sub-copy */}
-        <p className="bfx-hero-sub">
-          Bobi's Quote monitors 6 instruments across forex, metals, and US indices around the clock,
-          generates complete trade plans, and executes them directly on your MT4 or MT5
-          broker account.&nbsp;
-          <span style={{ color: "var(--text2)" }}>No manual work. No copy-trading.</span>
-        </p>
-
-        {/* CTA row */}
-        <div className="bfx-hero-actions">
-          <a href="https://app.bobisquote.com/login" className="bfx-btn-hero">
-            Start free →
-          </a>
-          <a href="#backtest" className="bfx-btn-hero-ghost">
-            ▶ See the results
-          </a>
-        </div>
-
-        {/* Trust anchors */}
-        <div className="bfx-hero-anchors" aria-label="Key facts">
-          <div className="bfx-anchor-item">
-            <span className="bfx-anchor-n">25,403</span>
-            <span className="bfx-anchor-l">trades tested · 89 months</span>
+          {/* CTA row */}
+          <div className="bfx-hero-actions">
+            <a href="https://app.bobisquote.com/login" className="bfx-btn-hero">
+              Start free →
+            </a>
+            <a href="#backtest" className="bfx-btn-hero-ghost">
+              ▶ See the results
+            </a>
           </div>
-          <div className="bfx-anchor-sep" aria-hidden="true" />
-          <div className="bfx-anchor-item">
-            <span className="bfx-anchor-n">MT4 &amp; MT5</span>
-            <span className="bfx-anchor-l">No fund transfers</span>
+
+          {/* Trust anchors */}
+          <div className="bfx-hero-anchors" aria-label="Key facts">
+            <div className="bfx-anchor-item">
+              <span className="bfx-anchor-n">25,403</span>
+              <span className="bfx-anchor-l">trades tested · 89 months</span>
+            </div>
+            <div className="bfx-anchor-sep" aria-hidden="true" />
+            <div className="bfx-anchor-item">
+              <span className="bfx-anchor-n">MT4 &amp; MT5</span>
+              <span className="bfx-anchor-l">No fund transfers</span>
+            </div>
+            <div className="bfx-anchor-sep" aria-hidden="true" />
+            <div className="bfx-anchor-item">
+              <span className="bfx-anchor-n">Loss Guard</span>
+              <span className="bfx-anchor-l">Professional trading</span>
+            </div>
           </div>
-          <div className="bfx-anchor-sep" aria-hidden="true" />
-          <div className="bfx-anchor-item">
-            <span className="bfx-anchor-n">Loss Guard</span>
-            <span className="bfx-anchor-l">Built for prop accounts</span>
-          </div>
+
         </div>
 
         {/* Signal card visual */}
@@ -127,19 +123,12 @@ export default function Hero() {
           display: flex;
           justify-content: center;
           background: var(--bg);
+          background-image:
+            linear-gradient(89deg, rgba(255, 255, 255, .015) 1px, transparent 1px),
+            linear-gradient(89deg, rgba(255, 255, 255, .015) 1px, transparent 1px);
+          background-size: 60px 60px;
           position: relative;
           overflow: hidden;
-        }
-        .bfx-hero-glow {
-          position: absolute;
-          top: -120px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 700px;
-          height: 500px;
-          background: radial-gradient(ellipse at 50% 30%, rgba(0,214,143,.07) 0%, transparent 65%);
-          pointer-events: none;
-          z-index: 0;
         }
         .bfx-hero-inner {
           max-width: 760px;
@@ -152,20 +141,11 @@ export default function Hero() {
           position: relative;
           z-index: 1;
         }
-        .bfx-hero-eyebrow {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-family: var(--mono);
-          font-size: 11px;
-          letter-spacing: .1em;
-          color: var(--muted);
-          text-transform: uppercase;
-          margin-bottom: 28px;
-          background: rgba(255,255,255,.03);
-          border: 1px solid var(--border2);
-          padding: 6px 14px;
-          border-radius: var(--radius-pill);
+        .bfx-hero-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 24px;
+          width: 100%;
         }
         .bfx-h1 {
           font-family: var(--display-hero);
@@ -205,10 +185,10 @@ export default function Hero() {
           padding: 13px 30px;
           border-radius: 8px;
           text-decoration: none;
-          transition: opacity .15s, transform .15s;
-          box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 4px 24px rgba(255,255,255,.08);
+          transition: opacity .15s;
+          box-shadow: none;
         }
-        .bfx-btn-hero:hover { opacity: .88; transform: translateY(-1px); }
+        .bfx-btn-hero:hover { opacity: .88; }
         .bfx-btn-hero-ghost {
           font-family: var(--sans);
           font-size: 15px;
@@ -274,13 +254,11 @@ export default function Hero() {
           border-radius: var(--radius);
           overflow: hidden;
           opacity: 0;
-          transform: translateY(12px);
-          transition: opacity .5s ease, transform .5s ease;
-          box-shadow: 0 8px 40px rgba(0,0,0,.5);
+          transition: opacity .5s ease;
+          box-shadow: none;
         }
         .bfx-sig-card--visible {
           opacity: 1;
-          transform: translateY(0);
         }
         .bfx-sig-card-header {
           display: flex;
@@ -368,13 +346,11 @@ export default function Hero() {
           border-radius: var(--radius);
           padding: 12px 16px;
           opacity: 0;
-          transform: translateY(8px) scale(.97);
-          transition: opacity .45s ease, transform .45s ease;
-          box-shadow: 0 8px 32px rgba(0,0,0,.4), 0 0 0 1px rgba(0,214,143,.08);
+          transition: opacity .45s ease;
+          box-shadow: none;
         }
         .bfx-exec-card--visible {
           opacity: 1;
-          transform: translateY(0) scale(1);
         }
         .bfx-exec-icon {
           width: 28px;

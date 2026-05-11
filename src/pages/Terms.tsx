@@ -34,33 +34,8 @@ const Warning = ({ children }: { children: React.ReactNode }) => (
 export default function Terms() {
   return (
     <div style={{ background: "#0a0a0a", minHeight: "100vh", fontFamily: "var(--sans)" }}>
-      {/* Nav strip */}
-      <div style={{ padding: "0 40px", height: 64, display: "flex", alignItems: "center", borderBottom: "1px solid #1a1a1a", background: "rgba(10,10,10,.9)", position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(20px)" }}>
-        <Link to="/" className="bfx-nav-logo">
-          <div className="bfx-logo-mark"><img src="/bobi-foreground.png" alt="Bobi's Quote logo" /></div>
-          <span className="bfx-nav-brand">Bobi's Quote</span>
-        </Link>
-        <span style={{ marginLeft: "auto", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555", letterSpacing: "0.06em" }}>TERMS OF SERVICE</span>
-      </div>
 
       <div style={{ maxWidth: 760, margin: "0 auto", padding: "64px 40px 100px" }}>
-        {/* Header */}
-        <div style={{ marginBottom: 56 }}>
-          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#00d68f", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ display: "block", width: 24, height: 1, background: "#00d68f" }} />
-            Legal
-          </div>
-          <h1 style={{ fontFamily: "var(--display)", fontSize: "clamp(36px, 5vw, 52px)", fontWeight: 800, color: "#ffffff", letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: 20 }}>
-            Terms of Service
-          </h1>
-          <p style={{ color: "#888888", fontSize: 16, lineHeight: 1.75, marginBottom: 16 }}>
-            These Terms of Service ("Terms") govern your access to and use of Bobi's Quote, including the web platform at <strong style={{ color: "#e0e0e0" }}>https://app.bobisquote.com/</strong>, the Android mobile application <strong style={{ color: "#e0e0e0" }}>Bobi's Quote</strong>, and the public website at <strong style={{ color: "#e0e0e0" }}>bobisquote.com</strong> (collectively, the "Service"). By creating an account or using the Service you agree to be bound by these Terms.
-          </p>
-          <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Effective date: April 4, 2026</span>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#555555" }}>Last updated: April 4, 2026</span>
-          </div>
-        </div>
 
         {/* Risk warning banner */}
         <Warning>
@@ -96,12 +71,12 @@ export default function Terms() {
               <Li>You must configure your risk parameters (lot sizing, max daily loss, stop-loss ratios, loss-guard circuit breakers) before enabling Auto-Trade. These settings are your responsibility.</Li>
               <Li>You must ensure your broker account is adequately funded and that margin requirements are met.</Li>
               <Li>You are responsible for monitoring your account. Bobi's Quote does not guarantee uninterrupted service; network outages, broker API downtime, or system errors may prevent timely execution.</Li>
-              <Li>You must comply with your broker's terms of service. Some prop firm or funded account rules prohibit automated trading — verify this before enabling the feature.</Li>
+              <Li>You must comply with your broker's terms of service. Some trading accounts may have restrictions on automated trading — verify this before enabling the feature.</Li>
             </Sub>
             <Sub title="4.2 Limitations of liability">
               <Li>Bobi's Quote and MetaAPI are separate services. We are not responsible for execution failures, latency, slippage, or rejections caused by MetaAPI or your broker.</Li>
               <Li>Signal-generated entries, SL levels, and TP levels are algorithmic outputs. They are not guaranteed to be profitable. Market conditions may cause signals to perform differently in live trading than in backtests.</Li>
-              <Li>We do not accept liability for losses arising from: broker outages, internet connectivity issues, incorrect risk configuration set by the user, prop firm rule violations, or force majeure events.</Li>
+              <Li>We do not accept liability for losses arising from: broker outages, internet connectivity issues, incorrect risk configuration set by the user, account rule violations, or force majeure events.</Li>
             </Sub>
             <Sub title="4.3 Broker credentials">
               <p>You authorise Bobi's Quote to store and use your broker login credentials solely for the purpose of connecting to and operating your trading account via MetaAPI. We will not access your account for any purpose other than executing the automated pipeline you have configured.</p>

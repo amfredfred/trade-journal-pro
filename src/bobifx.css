@@ -48,8 +48,8 @@ html {
   --radius: 14px;
   --radius-lg: 20px;
   --radius-pill: 999px;
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, .4), 0 4px 24px rgba(0, 0, 0, .3);
-  --shadow-elevated: 0 8px 40px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .04) inset;
+  --shadow-card: none;
+  --shadow-elevated: none;
 }
 
 body {
@@ -80,6 +80,13 @@ body {
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   border-bottom: 1px solid var(--border);
   width: 100%;
+}
+
+.bfx-nav-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: 100%;
   gap: 4px;
 }
 
@@ -88,26 +95,21 @@ body {
   align-items: center;
   gap: 9px;
   text-decoration: none;
-  margin-right: auto;
   flex-shrink: 0;
 }
 
 .bfx-logo-mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 7px;
-  background: var(--surface);
-  border: 1px solid var(--border2);
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, .04) inset;
 }
 
 .bfx-logo-mark img {
-  width: 22px;
-  height: 22px;
+  width: 48px;
+  height: 48px;
   object-fit: contain
 }
 
@@ -182,14 +184,13 @@ body {
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: opacity .15s, transform .15s;
+  transition: opacity .15s;
   white-space: nowrap;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, .12), 0 2px 12px rgba(255, 255, 255, .06);
+  box-shadow: none;
 }
 
 .bfx-btn-primary:hover {
   opacity: .88;
-  transform: translateY(-1px)
 }
 
 .bfx-mobile-toggle {
@@ -318,12 +319,10 @@ body {
   0%,
   100% {
     opacity: 1;
-    transform: scale(1)
   }
 
   50% {
     opacity: .3;
-    transform: scale(.85)
   }
 }
 
@@ -362,31 +361,6 @@ body {
     linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
   background-size: 52px 52px;
-}
-
-.bfx-hero::before {
-  content: '';
-  position: absolute;
-  top: -200px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 600px;
-  background: radial-gradient(ellipse at 50% 30%, rgba(0, 214, 143, .055) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.bfx-hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(to bottom, transparent, var(--bg));
-  pointer-events: none;
-  z-index: 0;
 }
 
 .bfx-hero-inner {
@@ -456,13 +430,12 @@ body {
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: opacity .15s, transform .15s;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, .12), 0 4px 20px rgba(255, 255, 255, .07);
+  transition: opacity .15s;
+  box-shadow: none;
 }
 
 .bfx-btn-hero:hover {
   opacity: .88;
-  transform: translateY(-1px)
 }
 
 .bfx-btn-hero-ghost {
@@ -591,7 +564,7 @@ body {
   border-radius: 12px;
   width: 100%;
   transition: border-color .2s, background .2s;
-  box-shadow: var(--shadow-card);
+  box-shadow: none;
 }
 
 .bfx-pipe-node:hover {
@@ -1029,7 +1002,7 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 24px;
-  box-shadow: var(--shadow-card);
+  box-shadow: none;
 }
 
 .bfx-eq-head {
@@ -1104,13 +1077,11 @@ body {
   border-radius: var(--radius-lg);
   padding: 30px;
   position: relative;
-  transition: border-color .2s, transform .2s, box-shadow .2s;
+  transition: border-color .2s, transform .2s;
 }
 
 .bfx-plan:hover {
   border-color: var(--border2);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-card)
 }
 
 .bfx-plan-featured {
@@ -1217,18 +1188,17 @@ body {
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 600;
-  transition: opacity .15s, transform .15s;
+  transition: opacity .15s;
 }
 
 .bfx-plan-btn:hover {
   opacity: .88;
-  transform: translateY(-1px)
 }
 
 .bfx-plan-btn-gold {
   background: var(--gold);
   color: #000;
-  box-shadow: 0 0 24px rgba(251, 191, 36, .2);
+  box-shadow: none;
 }
 
 .bfx-plan-btn-sec,
@@ -1282,13 +1252,11 @@ body {
   border-radius: var(--radius-lg);
   padding: 28px 24px;
   text-align: center;
-  transition: border-color .2s, transform .2s, box-shadow .2s;
+  transition: border-color .2s, transform .2s;
 }
 
 .bfx-bw-card:hover {
   border-color: var(--border2);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-card)
 }
 
 .bfx-bw-icon {
@@ -1349,7 +1317,7 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: none;
 }
 
 .bfx-faq-item {
