@@ -8,7 +8,7 @@ export default function WhatItIs() {
             One engine. The full trade lifecycle.
           </h2>
           <p className="bfx-whatitis-body">
-            Bobi's Quote monitors 20 forex pairs 24/7, identifies trade setups,
+            Bobi's Quote monitors 6 instruments 24/7, identifies trade setups,
             and places orders directly on your broker when a signal is confirmed —
             no Telegram group, no copy-trading, no manual action required.
           </p>
@@ -20,12 +20,12 @@ export default function WhatItIs() {
 
           <div className="bfx-whatitis-pillars">
             {[
-              { label: "Signal Engine",     desc: "Monitors 20 pairs · Generates complete trade plans" },
-              { label: "Risk Engine",       desc: "Multi-rule gate before any order is placed" },
-              { label: "Execution Engine",  desc: "Places orders on your MT4 / MT5 broker account" },
-              { label: "Position Manager",  desc: "Moves stop to breakeven at TP1 · Closes at TP2 or SL" },
-              { label: "Loss Guard",        desc: "Automatic pause for prop &amp; funded accounts" },
-              { label: "Deep Analytics",    desc: "Equity curve · Win rate · Profit factor · Monthly score" },
+              { label: "Signal Engine", desc: "Monitors 6 instruments · Generates complete trade plans" },
+              { label: "Risk Engine", desc: "Multi-rule gate before any order is placed" },
+              { label: "Execution Engine", desc: "Places orders on your MT4 / MT5 broker account" },
+              { label: "Position Manager", desc: "Moves stop to breakeven at TP1 · Closes at TP2 or SL" },
+              { label: "Loss Guard", desc: "Automatic pause for prop &amp; funded accounts" },
+              { label: "Deep Analytics", desc: "Equity curve · Win rate · Profit factor · Monthly score" },
             ].map(p => (
               <div key={p.label} className="bfx-whatitis-pillar">
                 <div className="bfx-whatitis-pillar-label">{p.label}</div>

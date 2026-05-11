@@ -52,8 +52,8 @@ export default function Footer() {
       </div>
       <div className="bfx-disclaimer" style={{ maxWidth: 1280, margin: "18px auto 0" }}>
         Risk disclaimer: Trading foreign exchange and CFDs carries significant risk of loss and is not suitable for all investors.
-        Past performance, including simulated results, does not guarantee future returns. The +20,127R figure was generated from a
-        7-year historical simulation (Jan 2019 – May 2026, 25,403 trades across 6 instruments) using the same rules the live engine
+        Past performance, including simulated results, does not guarantee future returns. The +20,126.55R figure was generated from an
+        89-month historical simulation (Jan 2019 – May 2026, 25,403 trades across 6 instruments) using the same rules the live engine
         applies, and may not reflect live trading results. Bobi&apos;s Quote is not a licensed financial adviser or broker. Trade responsibly.
       </div>
     </footer>

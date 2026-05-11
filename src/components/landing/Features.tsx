@@ -1,12 +1,12 @@
 const analyticsModules = [
-  { n: "1", name: "Risk of Ruin",     desc: "Probability of account loss given your current win rate and drawdown — updated continuously." },
-  { n: "2", name: "Equity Curve",     desc: "Cumulative P&L with peak-to-trough drawdown overlay across all connected accounts." },
-  { n: "3", name: "Rolling Windows",  desc: "Last 10 / 20 / 50 / all-time performance with a trend flag showing if things are improving." },
-  { n: "4", name: "Strategy Stats",   desc: "Win rate, expectancy, and profit factor per instrument — know exactly which pairs are earning." },
-  { n: "5", name: "Session Heatmap",  desc: "Performance broken down by trading session — Sydney, Tokyo, London, New York, and overlaps." },
-  { n: "6", name: "Streak Alerts",    desc: "Safe / Caution / Danger indicator on consecutive losses — before the damage compounds." },
+  { n: "1", name: "Risk of Ruin", desc: "Probability of account loss given your current win rate and drawdown — updated continuously." },
+  { n: "2", name: "Equity Curve", desc: "Cumulative P&L with peak-to-trough drawdown overlay across all connected accounts." },
+  { n: "3", name: "Rolling Windows", desc: "Last 10 / 20 / 50 / all-time performance with a trend flag showing if things are improving." },
+  { n: "4", name: "Strategy Stats", desc: "Win rate, expectancy, and profit factor per instrument — know exactly which pairs are earning." },
+  { n: "5", name: "Session Heatmap", desc: "Performance broken down by trading session — Sydney, Tokyo, London, New York, and overlaps." },
+  { n: "6", name: "Streak Alerts", desc: "Safe / Caution / Danger indicator on consecutive losses — before the damage compounds." },
   { n: "7", name: "Pattern Tracking", desc: "Win rates and returns tracked over time per setup type — see what is improving or fading." },
-  { n: "8", name: "Monthly Score",    desc: "A single 0–100 score for month-on-month progress — one number that tells the truth." },
+  { n: "8", name: "Monthly Score", desc: "A single 0–100 score for month-on-month progress — one number that tells the truth." },
 ];
 
 const groups = [
@@ -23,7 +23,7 @@ const groups = [
       {
         name: "Setup Monitor",
         tier: "FREE",
-        desc: "See every active setup across all 20 pairs — watching, confirmed, or invalidated. Always know where the next opportunity is building.",
+        desc: "See every active setup across all 6 instruments — watching, confirmed, or invalidated. Always know where the next opportunity is building.",
         detail: null,
       },
       {

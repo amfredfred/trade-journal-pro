@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div style={{ marginBottom: 48 }}>
     <h2 style={{
-      fontFamily: "'Syne', system-ui, sans-serif", fontSize: 20, fontWeight: 700,
+      fontFamily: "var(--display)", fontSize: 20, fontWeight: 700,
       color: "#ffffff", marginBottom: 16, letterSpacing: "-0.02em",
       paddingBottom: 12, borderBottom: "1px solid #252525",
     }}>{title}</h2>
@@ -27,7 +27,7 @@ const Li = ({ children }: { children: React.ReactNode }) => (
 
 export default function Privacy() {
   return (
-    <div style={{ background: "#0a0a0a", minHeight: "100vh", fontFamily: "'Instrument Sans','Segoe UI',system-ui,sans-serif" }}>
+    <div style={{ background: "#0a0a0a", minHeight: "100vh", fontFamily: "var(--sans)" }}>
       {/* Nav strip */}
       <div style={{ padding: "0 40px", height: 64, display: "flex", alignItems: "center", borderBottom: "1px solid #1a1a1a", background: "rgba(10,10,10,.9)", position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(20px)" }}>
         <Link to="/" className="bfx-nav-logo">
@@ -44,7 +44,7 @@ export default function Privacy() {
             <span style={{ display: "block", width: 24, height: 1, background: "#00d68f" }} />
             Legal
           </div>
-          <h1 style={{ fontFamily: "'Syne',system-ui,sans-serif", fontSize: "clamp(36px, 5vw, 52px)", fontWeight: 800, color: "#ffffff", letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: 20 }}>
+          <h1 style={{ fontFamily: "var(--display)", fontSize: "clamp(36px, 5vw, 52px)", fontWeight: 800, color: "#ffffff", letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: 20 }}>
             Privacy Policy
           </h1>
           <p style={{ color: "#888888", fontSize: 16, lineHeight: 1.75, marginBottom: 16 }}>
@@ -181,7 +181,7 @@ export default function Privacy() {
         <Section title="10. Contact">
           <p style={{ marginBottom: 12 }}>For privacy-related enquiries, data access requests, or to report a concern:</p>
           <div style={{ background: "#111111", border: "1px solid #252525", borderRadius: 10, padding: "20px 24px" }}>
-            <div style={{ fontFamily: "'Syne',system-ui,sans-serif", fontWeight: 700, fontSize: 15, color: "#ffffff", marginBottom: 8 }}>Bobi's Quote</div>
+            <div style={{ fontFamily: "var(--display)", fontWeight: 700, fontSize: 15, color: "#ffffff", marginBottom: 8 }}>Bobi's Quote</div>
             <div style={{ fontSize: 14, color: "#888888", marginBottom: 4 }}>Privacy enquiries: <a href="mailto:privacy@bobisquote.com" style={{ color: "#00d68f", textDecoration: "none" }}>privacy@bobisquote.com</a></div>
             <div style={{ fontSize: 14, color: "#888888" }}>General support: <a href="mailto:support@bobisquote.com" style={{ color: "#00d68f", textDecoration: "none" }}>support@bobisquote.com</a></div>
           </div>

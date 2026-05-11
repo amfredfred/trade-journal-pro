@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
   const [confirmed, setConfirmed] = useState(false);
-  const [visible, setVisible]     = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setVisible(true),   400);
+    const t1 = setTimeout(() => setVisible(true), 400);
     const t2 = setTimeout(() => setConfirmed(true), 1800);
     return () => { clearTimeout(t1); clearTimeout(t2); }
   }, []);
@@ -18,7 +18,7 @@ export default function Hero() {
         {/* Eyebrow */}
         <div className="bfx-hero-eyebrow">
           <div className="bfx-pulse" />
-          Live signals · 20 pairs · Around the clock
+          Live signals · 6 instruments · Around the clock
         </div>
 
         {/* Primary headline */}
@@ -29,8 +29,8 @@ export default function Hero() {
 
         {/* Sub-copy */}
         <p className="bfx-hero-sub">
-          Bobi's Quote monitors 20 forex pairs around the clock, generates
-          complete trade plans, and executes them directly on your MT4 or MT5
+          Bobi's Quote monitors 6 instruments across forex, metals, and US indices around the clock,
+          generates complete trade plans, and executes them directly on your MT4 or MT5
           broker account.&nbsp;
           <span style={{ color: "var(--text2)" }}>No manual work. No copy-trading.</span>
         </p>
@@ -49,7 +49,7 @@ export default function Hero() {
         <div className="bfx-hero-anchors" aria-label="Key facts">
           <div className="bfx-anchor-item">
             <span className="bfx-anchor-n">25,403</span>
-            <span className="bfx-anchor-l">trades tested · 7 years</span>
+            <span className="bfx-anchor-l">trades tested · 89 months</span>
           </div>
           <div className="bfx-anchor-sep" aria-hidden="true" />
           <div className="bfx-anchor-item">

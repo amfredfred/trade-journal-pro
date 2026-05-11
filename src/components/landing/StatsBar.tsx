@@ -1,17 +1,18 @@
 const stats = [
-  { n: "+20,127R",  lbl: "Total return",       src: "7-year dataset, 6 instruments" },
-  { n: "25,403",    lbl: "Trades analysed",    src: "Jan 2019 – May 2026" },
-  { n: "42.0%",     lbl: "Win rate",           src: "honest, not cherry-picked" },
-  { n: "2.37",      lbl: "Profit factor",      src: "same rules as live engine" },
-  { n: "+0.79R",    lbl: "Return per trade",   src: "average across all signals" },
-  { n: "6",         lbl: "Instruments",        src: "Forex, Gold, US Indices" },
+  { n: "+20,126.55R", lbl: "Total return", src: "89-month dataset, 6 instruments" },
+  { n: "25,403", lbl: "Trades analysed", src: "Jan 2019 – May 2026" },
+  { n: "42.0%", lbl: "Win rate", src: "honest, not cherry-picked" },
+  { n: "0.0%", lbl: "Breakeven rate", src: "no break-even trades in this dataset" },
+  { n: "2.37", lbl: "Profit factor", src: "same rules as live engine" },
+  { n: "+0.79R", lbl: "Return per trade", src: "average across all signals" },
+  { n: "12", lbl: "Pairs", src: "12 pair/timeframe pipelines" },
 ];
 
 export default function StatsBar() {
   return (
     <div className="bfx-stats-bar" aria-label="Backtest statistics">
       <div className="bfx-stats-source-label" aria-hidden="true">
-        7-year simulation · 6 instruments · Same rules as the live engine
+        89-month simulation · 6 instruments · Same rules as the live engine
       </div>
       <div className="bfx-stats-inner">
         {stats.map(s => (

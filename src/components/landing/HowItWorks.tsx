@@ -57,7 +57,7 @@ const steps: Step[] = [
   {
     icon: <IconScope />,
     name: "Market Analysed",
-    desc: "The engine scans 20 pairs continuously. Technical analysis runs in real time — 24/7, server-side, no manual trigger required.",
+    desc: "The engine scans 6 instruments continuously. Technical analysis runs in real time — 24/7, server-side, no manual trigger required.",
   },
   {
     icon: <IconActivity />,

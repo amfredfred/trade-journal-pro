@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "What do the results actually show?",
-    a: "The simulation ran across 6 instruments — EURUSD, XAUUSD, US100, US30, US500, and JP225 — covering 7 years from January 2019 to May 2026. 25,403 trades were executed using the exact same rules as the live engine. Total return was +20,127R with a profit factor of 2.37, win rate of 42%, and an average return of +0.79R per trade. No parameters were adjusted after reviewing results. The full trade-by-trade data is available inside the app.",
+    a: "The simulation ran across 6 instruments — EURUSD, XAUUSD, US100, US30, US500, and JP225 — covering 89 months from January 2019 to May 2026. 25,403 trades were executed using the exact same rules as the live engine. Total return was +20,126.55R with a profit factor of 2.37, win rate of 42%, and an average return of +0.79R per trade. No parameters were adjusted after reviewing results. The full trade-by-trade data is available inside the app.",
   },
   {
     q: "Can I use Bobi's Quote without auto-trade enabled?",
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: "What pairs does Bobi's Quote cover?",
-    a: "The signal engine covers 20 pairs across major and minor forex, plus gold (XAU/USD) and US indices including US100, US30, and US500. Each instrument runs an independent signal pipeline.",
+    a: "The signal engine covers 6 instruments across major forex, gold (XAU/USD), and US indices including US100, US30, and US500. Each instrument runs an independent signal pipeline.",
   },
   {
     q: "What happens if my internet connection drops?",
